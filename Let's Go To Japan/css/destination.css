@@ -1,0 +1,41 @@
+.location-image{
+    height: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#sanrio-title-img{
+    width: 50%;
+    height: auto;
+}
+
+.destination-title{
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #f68ca2;
+    margin-bottom: 0;
+    text-align: center;
+}
+.destination-summary {
+    border-radius: 25px;
+    border: 5px solid #f68ca2;
+    margin: auto;
+    margin-top: 20px;
+    padding: 50px;
+    width: 50%;
+    height: auto;
+  }
+
+.activity-pic-left{
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
+    gap:10px;
+}
+
+.activity-pic-right{
+    display: flex;
+}

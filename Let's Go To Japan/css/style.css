@@ -1,0 +1,55 @@
+/* Appears in Navigation Bar */
+img{
+    height: 300px;
+    width: 300px;
+}
+
+#torii-gate-logo{
+    height: 100px;
+    width: 100px;
+}
+
+.slide-image{
+    margin: 50%;
+}
+
+#website-logo{
+    display: flex;
+}
+
+p{
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#website-title {
+    color: #d04539;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none; /* Removes bullets   */
+    margin: auto;
+    padding: 100;
+    overflow: hidden;
+    background-color: red;
+    width: 100%;
+}
+li {
+    display: inline;
+}
+
+.top-page {
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+
+}
+
+body{
+    color: #3c3c3c;
+}
+
+.navbar{
+    color: red;
+    width: 100%;
+}
