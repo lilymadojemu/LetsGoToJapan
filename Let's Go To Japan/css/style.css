@@ -1,16 +1,12 @@
 /* Appears in Navigation Bar */
 img{
-    height: 300px;
-    width: 300px;
+    height: 500px;
+    width: 500px;
 }
 
 #torii-gate-logo{
-    height: 100px;
-    width: 100px;
-}
-
-.slide-image{
-    margin: 50%;
+    height: 250px;
+    width: 250px;
 }
 
 #website-logo{
@@ -20,10 +16,15 @@ img{
 p{
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
 }
 #website-title {
     color: #d04539;
     text-decoration: none;
+}
+
+footer {
+    background-color: #CFC493;
 }
 
 ul {
@@ -31,11 +32,12 @@ ul {
     margin: auto;
     padding: 100;
     overflow: hidden;
-    background-color: red;
     width: 100%;
 }
+
 li {
     display: inline;
+    color: #CFC493;
 }
 
 .top-page {
@@ -44,14 +46,31 @@ li {
     background-color: transparent;
 
 }
+.slideshow{
+    display: flex;
+    
 
-body{
-    color: #3c3c3c;
+}
+body {
+    background-color: #2E2E4D;
 }
 
-.navbar{
-    color: red;
-    width: 100%;
+.highlight {
+    color: #F7A8B8;
+}
+h1 {
+    color: white;
+}
+header {
+    display: inline-flex;
 }
 
+.rectangle{ 
+    width: 200px;
+    height: 200px;
+    background-color: #4a4a4a;
+    margin-top: -20px;
+}
 
+/* IMPORTANT Leaflet Map */
+#map { height: 180px; }

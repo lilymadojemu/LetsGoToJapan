@@ -11,58 +11,63 @@
         <script defer src="js/index.js"></script>
 
         <!-- Leaflet Library -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
         <link rel="stylesheet" href="/path/to/leaflet.css" />
         <script src="/path/to/leaflet.js"></script>
     </head>
 
     <body>
 
-        <!-- Navigation + Logo Area
+        <!-- Navigation + Logo Area -->
         <header class="top-page">
             <div id="website-logo">
-               <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
-               <a href="index.html" id = "website-title"> Let's Go To Japan! </a>
+               <img href="index.html" id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
             </div>
 
             <div class="nav-wrapper">
                 <nav class="navbar">
                     <ul>
-                        <li><a id="home-top" href="index.html">Home</a></li>
+                        <li><a id="home-top" class="highlight" href="index.html">Home</a></li>
                         <li><a id="itinerary-top" href="itinerary.html">Itinerary</a></li>
                         <li><a id="bucketList-top" href="bucketlist.html"> Bucket List</a></li>
-                        <li><a id="destination-top" href="destination.html">Destinations</a></li>
+                        <li><a id="destination-top" href="destination.html">Destination</a></li>
                     </ul>
-
                 </nav>
             </div>
         </header>
-        House Content on Welcome/Introduction Page -->
-        <!-- <div class="container"> -->
-            <!-- Image Carousel of Places in Japan -->
-            <!-- <div class="image-slideshow">
+        <div class="container-top">
 
-                <div class="slide-fade">
-                    <div class="slideshow-number"> 1/3</div>
-                    <img class="slide-img" src="introduction-images/clay-banks-hwLAI5lRhdM-unsplash.jpg" alt="">
-                    <div class="image-caption"> Caption Text</div>
+            <div class="slideshow">                    
+                <img src="introduction-images/jezael-melgoza-alY6_OpdwRQ-unsplash.jpg">
+                <div class="rectangle">                
+                    <h1> Explore <br> New <br> Places </h1> <!-- Can be filled in through javascript -->
+                    <!-- Would direct to destiantion page -->
+                    <button onclick=""> See More</button>
                 </div>
-
-                <div class="slide-fade">
-                    <div class="slideshow-number"> 2/3</div>
-                    <img class="slide-img" src="introduction-images/david-edelstein-N4DbvTUDikw-unsplash.jpg" alt="">
-                    <div class="image-caption"> Caption Text</div>
-                </div>
-
-                <div class="slide-fade">
-                    <div class="slideshow-number"> 3/3</div>
-                    <img class="slide-img" src="introduction-images/jezael-melgoza-alY6_OpdwRQ-unsplash.jpg" alt="">
-                    <div class="image-caption"> Caption Text</div>
-                </div>
+                <!-- Will add back later -->
+                <!-- <img src="introduction-images/david-edelstein-N4DbvTUDikw-unsplash.jpg">
+                <img src="introduction-images/clay-banks-hwLAI5lRhdM-unsplash.jpg"> -->
             </div>
-            <title> Let's Go To Japan!</title> -->
-            
+        </div>
 
-        <!-- </div> -->
+        <h1> Discover New Destinations </h1> 
+
+        <div id="map"></div>
+
+
+        <footer>
+            <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
+            <!-- Need to get icons -->
+            <p>lmadojem@andrew.cmu.edu</p>
+            <p>https://www.linkedin.com/in/lilymadojemu/</p>
+            <p></p>
+        </footer>
 
     </body>
 </html>
