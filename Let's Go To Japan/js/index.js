@@ -22,9 +22,26 @@ var castleMarker = L.marker([34.6873, 135.5259],{className:"customizedMarker"}).
 // openPopup: immediately opens the attached popup for markers only.
 
 // Sanrio Marker Popup
-sanrioMarker.bindPopup("Welcome to Sanrio PuroLand!").openPopup();
+sanrioMarker.bindPopup('<div><img src="location-images/Sanrio/sanrio_characters_image.jpeg" class="markerImg" alt="Sanrio Characters">  <p class="markerText">Welcome to Sanrio PuroLand!</p></div>').openPopup();
 // Fushimi Inari Marker Popup 
-inariMarker.bindPopup("Welcome to Fushimi Inari Temple").openPopup();
+inariMarker.bindPopup('<div><img src="location-images/Inari/stefan-k-62IRMCiDaPY-unsplash.jpg" class="markerImg" alt="Fushimi Inari Shrine"> <p class="markerText"> Welcome to Fushimi Inari Shrine! </p></div>').openPopup();
 // Osaka Castle Marker Popup
-castleMarker.bindPopup("Welcome to Osaka Castle").openPopup();
+castleMarker.bindPopup('<div><img src="location-images/Castle/cosmin-serban-kUQPX2kp8S8-unsplash.jpg" class="markerImg" alt="Osake Castle"> <p class="markerText"> Welcome to Osaka Castle</p></div>').openPopup();
 
+
+// bindTooltip: attaches a tooltip with the specified HTML content to your marker so the tooltip appears when you hover over the marker
+// with bindTooltip link to "preview" of destination: img, the destination name, and location
+
+// Sanrio Marker Tooltip
+sanrioMarker.bindTooltip('Sanrio PuroLand').openTooltip();
+// Fushimi Inari Marker Tooltip
+inariMarker.bindTooltip('Fushimi Inari Temple').openTooltip();
+// Osaka Castle Marker Tooltip
+castleMarker.bindTooltip('Osaka Castle').openTooltip();
+
+// Close all popups on page load
+map.eachLayer(function (layer) {
+    if (layer instanceof L.Popup) {
+        layer.closePopup();
+    }
+});

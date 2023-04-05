@@ -73,3 +73,12 @@ header {
 .customizedMarker{
     color: #F7A8B8;
 }
+
+.markerImg {
+    width: 100px;
+    height: 100px;
+}
+
+.markerText {
+    color:black;
+}
