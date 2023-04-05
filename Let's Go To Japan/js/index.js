@@ -22,7 +22,7 @@ var castleMarker = L.marker([34.6873, 135.5259],{className:"customizedMarker"}).
 // openPopup: immediately opens the attached popup for markers only.
 
 // Sanrio Marker Popup
-sanrioMarker.bindPopup('<div><img src="location-images/Sanrio/sanrio_characters_image.jpeg" class="markerImg" alt="Sanrio Characters">  <p class="markerText">Welcome to Sanrio PuroLand!</p></div>').openPopup();
+sanrioMarker.bindPopup('<div><img src="location-images/Sanrio/sanrio_characters_image.jpeg" class="markerImg" alt="Sanrio Characters">  <a href="destination.html"> <p class="markerText">Welcome to Sanrio PuroLand!</p></a></div>').openPopup();
 // Fushimi Inari Marker Popup 
 inariMarker.bindPopup('<div><img src="location-images/Inari/stefan-k-62IRMCiDaPY-unsplash.jpg" class="markerImg" alt="Fushimi Inari Shrine"> <p class="markerText"> Welcome to Fushimi Inari Shrine! </p></div>').openPopup();
 // Osaka Castle Marker Popup
