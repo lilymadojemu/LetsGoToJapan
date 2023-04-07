@@ -4,6 +4,10 @@ img{
     width: 500px;
 }
 
+body {
+    background-color: #2E2E4D;
+}
+
 #torii-gate-logo{
     height: 250px;
     width: 250px;
@@ -51,10 +55,6 @@ li {
 .slideshow{
     display: flex;
     
-
-}
-body {
-    background-color: #2E2E4D;
 }
 
 .highlight {
