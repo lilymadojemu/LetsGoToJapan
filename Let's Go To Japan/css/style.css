@@ -1,7 +1,7 @@
 /* Appears in Navigation Bar */
 
 .customBg{
-    background-color: #2E2E4D;
+    background-color: #CFC493 !important;
 }
 
 img{
@@ -14,8 +14,8 @@ body {
 }
 
 #torii-gate-logo{
-    height: 250px;
-    width: 250px;
+    height: auto;
+    width: auto;
 }
 
 #torii-gate-footer-logo{
@@ -23,9 +23,6 @@ body {
     width: 30%;
     padding: 20px;
     margin-left: 10%;
-}
-#website-logo{
-    display: flex;
 }
 
 p{
@@ -62,8 +59,8 @@ li {
     
 }
 
-.nav-link active {
-    color: #F7A8B8;
+.nav-link:active {
+    color: #F7A8B8 !important;
 }
 
 h1 {
