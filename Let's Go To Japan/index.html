@@ -2,10 +2,12 @@
 <html lang="en">
     <!-- Head for the Introduction Page -->
     <head>
-        <link rel="stylesheet" href="css/style.css">
-
-        <title>Introduction</title>
+      
         <meta charset="UTF-8">
+        <title>Introduction</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 
         <!-- JavaScript File -->
         <script defer src="js/index.js"></script>
@@ -20,6 +22,10 @@
         crossorigin=""></script>
         <link rel="stylesheet" href="/path/to/leaflet.css" />
         <script src="/path/to/leaflet.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
     </head>
 
     <body>
@@ -60,13 +66,16 @@
 
         <div id="map"></div>
 
-
         <footer>
-            <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
-            <!-- Need to get icons -->
-            <p>lmadojem@andrew.cmu.edu</p>
-            <p>https://www.linkedin.com/in/lilymadojemu/</p>
-            <p></p>
+            <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
+            <div class="contactMe"> 
+                <h2> Contact Me! </h2>
+                <ul>
+                    <img class="contactIcon" src="introduction-images/Gmail Icon.png"><li class="contactMe">lmadojem@andrew.cmu.edu</li>
+                    <img class="contactIcon" src="introduction-images/Linkedin Icon.png"><li class="contactMe">https://www.linkedin.com/in/lilymadojemu/</li>
+                    <img class="contactIcon" src="introduction-images/Github Icon.png"><li class="contactMe">https://github.com/lilymadojemu/PUIFinalProject</li>
+                </ul>
+            </div>
         </footer>
 
     </body>

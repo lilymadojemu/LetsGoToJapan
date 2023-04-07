@@ -9,6 +9,12 @@ img{
     width: 250px;
 }
 
+#torii-gate-footer-logo{
+    height: auto;
+    width: 30%;
+    padding: 20px;
+    margin-left: 10%;
+}
 #website-logo{
     display: flex;
 }
@@ -21,6 +27,7 @@ p{
 
 footer {
     background-color: #CFC493;
+    display: flex;
 }
 
 ul {
@@ -81,4 +88,15 @@ header {
 
 .markerText {
     color:black;
+}
+
+.contactMe {
+    display: block;
+    color: white;
+}
+
+.contactIcon {
+    height: 32px;
+    width: 43px;
+
 }
