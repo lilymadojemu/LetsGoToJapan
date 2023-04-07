@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <!-- Head for the Bucket List Page -->
+    <!-- Head for the Itinerary Page -->
     <head>
 
-        <title>Bucket List Page</title>
-        <meta charset="UTF-8">
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bucketlist.css">
+        <!-- CSS Files -->
         <link rel="stylesheet" href="css/style.css">
 
+        <link rel="stylesheet" href ="css/itinerary.css">
 
-        <!-- Bucket List JavaScript File -->
-        <script defer src="js/bucketlist.js"></script>
+        <link rel="stylesheet" href="timetablejs.css">
+        <script src="timetable.min.js"></script>
+    
+        <title>Itinerary</title>
+        <meta charset="UTF-8">
 
-        <!-- Leaflet Library -->
-        <link rel="stylesheet" href="/path/to/leaflet.css" />
-        <script src="/path/to/leaflet.js"></script>
-
-
-        <!-- Leaflet Library -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-        crossorigin=""/>
-
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-        crossorigin=""></script>
-        <link rel="stylesheet" href="/path/to/leaflet.css" />
-        <script src="/path/to/leaflet.js"></script>
-
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+        <!-- JavaScript Files -->
+        <script defer src="js/itineraryInDepth.js"></script>
 
     </head>
 
     <body>
-
-        <!-- Bucket List Cards -->
+        
+        <!-- Navigation + Logo Area -->
         <header class="top-page">
             <nav class="navbar navbar-expand-lg" class="customBg">
               <div class="container-fluid">
@@ -51,13 +34,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a id="home-top" class="nav-link" href="index.html">Home</a>
+                      <a id="home-top" class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                       <a id="itinerary-top" class="nav-link" href="itinerary.html">Itinerary</a>
                     </li>
                     <li class="nav-item">
-                      <a id="bucketList-top" class="nav-link active" aria-current="page" href="bucketlist.html">Bucket List</a>
+                      <a id="bucketList-top" class="nav-link" href="bucketlist.html">Bucket List</a>
                     </li>
                     <li class="nav-item">
                       <a id="destination-top" class="nav-link" href="destinationOverview.html">Destination</a>
@@ -74,9 +57,13 @@
             </nav>
         </header> 
 
-        <h2> Recently Edited </h2>
+        <!-- House Content on Itinerary Page -->
+        <div class="container">
 
-        <button> Create a new trip </button>
+            <!-- Time Table: http://timetablejs.org/ -->
+            <div class="timetable"></div>
+
+        </div>
 
         <footer>
             <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
@@ -89,7 +76,7 @@
                 </ul>
             </div>
         </footer>
+
     </body>
 </html>
-
 
