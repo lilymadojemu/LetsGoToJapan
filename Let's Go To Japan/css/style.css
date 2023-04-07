@@ -1,4 +1,9 @@
 /* Appears in Navigation Bar */
+
+.customBg{
+    background-color: #2E2E4D;
+}
+
 img{
     height: 500px;
     width: 500px;
@@ -57,9 +62,10 @@ li {
     
 }
 
-.highlight {
+.nav-link active {
     color: #F7A8B8;
 }
+
 h1 {
     color: white;
 }
