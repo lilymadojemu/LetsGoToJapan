@@ -3,20 +3,24 @@
     <!-- Head for the Itinerary Page -->
     <head>
 
-        <!-- CSS Files -->
-        <link rel="stylesheet" href="css/style.css">
+      <!-- CSS Files -->
 
-        <link rel="stylesheet" href ="css/itinerary.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="timetablejs.css">
-        <script src="timetable.min.js"></script>
-    
-        <title>Itinerary</title>
-        <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/style.css">
 
-        <!-- JavaScript Files -->
-        <script defer src="js/itineraryInDepth.js"></script>
+      <link rel="stylesheet" href ="css/itineraryViewer.css">
 
+      <link rel="stylesheet" href="timetablejs.css">
+
+  
+      <title>Itinerary</title>
+      <meta charset="UTF-8">
+
+      <!-- JavaScript Files -->
+      <script defer src="js/itineraryViewer.js"></script>
+
+      <script src="timetable.min.js"></script>
     </head>
 
     <body>
@@ -34,10 +38,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a id="home-top" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                      <a id="home-top" class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a id="itinerary-top" class="nav-link" href="itinerary.html">Itinerary</a>
+                      <a id="itinerary-top" class="nav-link" href="itineraryOverview.html">Itinerary</a>
                     </li>
                     <li class="nav-item">
                       <a id="bucketList-top" class="nav-link" href="bucketlist.html">Bucket List</a>
@@ -59,10 +63,34 @@
 
         <!-- House Content on Itinerary Page -->
         <div class="container">
+          <img class="topLocationImg"src="" alt="">
 
-            <!-- Time Table: http://timetablejs.org/ -->
-            <div class="timetable"></div>
+          <h2> Your Day at </h2> <h2 class="destinationName"></h2>
 
+          <div class="summaryContainer">
+            <!-- Same as what was on top of the destination in-pth page -->
+          </div>
+
+          <h3> 1. Attractions </h3>
+          <div class="attractions">
+          </div>
+          
+          <h3>2. [Figure it out]</h3>
+          <div class="">
+          </div>
+
+          <h3> 3. Time for Food! </h3>
+          <div class="foodTime">
+          </div>
+
+          <h4> Similar Trips</h4>
+          <div class="similarTrips">
+          </div>
+
+          <!-- Time Table: http://timetablejs.org/ -->
+          <div class="timetable">
+
+          </div>
         </div>
 
         <footer>
