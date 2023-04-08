@@ -85,20 +85,18 @@ header {
     margin-top: -20px;
 }
 
-/* IMPORTANT Leaflet Map */
+/* Leaflet Map */
 #map { 
     height: 600px;
     width: 100%; 
     
 }
 
-.customizedMarker{
-    color: #F7A8B8;
-}
-
 .markerImg {
     width: 100px;
     height: 100px;
+    display: block;
+    margin: auto;
 }
 
 .markerText {
