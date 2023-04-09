@@ -77,25 +77,31 @@
               </div>
             </nav>
         </header> 
-
         <h2> Recently Edited </h2>
 
-        <div class="buckListItem">
-          <!-- Background Image -->
-          <img class="bucketListBgImg" src="" alt="">
-          <!-- Title of bucket list -->
-          <h4 class="buckListTitle"></h4>
-          <!-- Tags of the bucklist (Not decided yet) -->
+        <div class="bucketRow">
+          <div class="col-xs-6 col-md-3" >
+            <div class="thumbnail" class="buckListItem">
+              <!-- Background Image -->
+              <img class="bucketListBgImg" class="img-fluid" src="location-images/Castle/christopher-lee-T4kj3qwOEus-unsplash.jpg" alt="">
+              <div class="caption">
+                <!-- Title of bucket list -->
+                <h4 class="buckListTitle"> Osaka Castle</h4>
+                <!-- User submitted summary-->
+                <p class="sentenceSummary"> This is the place to be!</p>
+                <span  class="bucketListButtons">
+                  <p><a href="bucketlistEditor.html" class="btn btn-primary" role="button">Edit Bucket</a></p> 
+                  <p><a class="btn btn-primary" role="button" onclick=""> Delete Bucket</a></p>
+                </span>
+              </div>
+            </div>
+          </div>
+            
+          <div class="rectangle">
+            <!-- Want this button to move as more things are added -->
+            <button class="createBucket" href="bucketlistEditor.html"> Create Your Bucket!</button>            
+          </div>
         </div>
-
-        <button> Create a new trip </button>
-
-
-
-
-
-
-
 
         <footer>
             <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
