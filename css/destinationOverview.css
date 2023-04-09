@@ -14,12 +14,13 @@
 
 .featuredCaption {
     position: absolute;
-    top: 0;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    width: 100%;
-    padding: 10px;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
     text-align: auto;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 10px;
 }
   
   
