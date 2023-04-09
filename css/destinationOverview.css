@@ -1,3 +1,28 @@
 .destinationLittleImg {
     margin-bottom: 20px;
 }
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: auto;
+}
+
+.featuredCaption {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: auto;
+}
+  
+  
+  
+  
+  
