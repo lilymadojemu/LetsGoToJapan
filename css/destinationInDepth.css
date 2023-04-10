@@ -1,24 +1,60 @@
-.location-image{
-    height: 500px;
+img {
+    vertical-align: top;
+    pointer-events: none;
+}
+.locationPage{
+    display: flex;
+}
+
+/* Left Content */
+.mainImgContainer {
+    display:flex;
+    position: relative;
+    height: 100%;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    overflow-x: hidden;
 }
 
-#sanrio-title-img{
-    width: 50%;
-    height: auto;
+.locationMainImg{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 0.3rem;
 }
 
-.destination-title{
+/* Right Content */
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    flex-basis: 30%;
+}
+.destinationContent {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px; /* Width of the scrolling content */
+    overflow-y: auto;
+}
+
+.destinationTitle{
     font-size: 3rem;
     line-height: 3rem;
     color: #f68ca2;
     margin-bottom: 0;
     text-align: center;
 }
-.destination-summary {
+
+.destinationTagline {
+    margin:auto;
+}
+
+.destinationSummary {
     border-radius: 25px;
     border: 5px solid #f68ca2;
     margin: auto;
@@ -28,7 +64,11 @@
     height: auto;
   }
 
-.activity-pic-left{
+.activityImg {
+    margin:auto;
+}
+
+.activityImgLeft{
     display: flex;
     margin: auto;
     margin-top: 50px;
@@ -36,6 +76,41 @@
     gap:10px;
 }
 
-.activity-pic-right{
+.activityDescriptionRight {
+    margin:auto;
+}
+
+.rightPositioning {
+    margin:auto;
+}
+
+.activityImgRight{
     display: flex;
+}
+
+.activityDescriptionLeft {
+    margin:auto;
+}
+
+/* Destination tips */
+.destinationSquare {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+.destinationTip {
+    margin:auto;
+}
+
+#vocabTip {
+    margin: auto;
+}
+
+#bestVisitTimes {
+    margin: auto;
+}
+
+#randomTip {
+    margin: auto;
 }

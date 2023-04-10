@@ -56,113 +56,139 @@
             </nav>
         </header>
 
-
         <!-- Progress Bar, TO BE Edited with Bootstrap -->
         <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            60% Complete
-          </div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
         </div>
 
         <div class="location-page">
-            <!-- top image  -->
-          <img class="location-image" src="" alt="">
-          <img id="" class="location-image" src="" alt="">
-          <h1 class="destination-title"></h1> 
-
-          <div class="destination-summary">
+          <!-- On Left side of the page -->
+          <div class="mainImgContainer">
+            <img class="locationMainImg" src="location-images/Castle/pexels-satoshi-hirayama-4058519.jpg" alt="">
           </div>
-          
-          <h2 class="destination-title"></h2>
 
-          <div class="activity-pic-left">
-              <img src="" alt="">
+          <!-- On right side of the page -->
+          <div class="destinationContent"> 
+            <h1 class="destinationTitle"></h1> 
+            <h3 class="destinationTagline"> </h3>
+            <div class="destinationSummary"></div>
+
+            <ul>
+              <!-- Testing -->
+              <li class="activityImg"><img class="activityImgLeft" src="" alt=""></li>
               <!-- Witty Description here -->
-              <li class="activity-little-description">
-                  <p></p>
-              </li>        
-          </div>
+              <li class="activityDescriptionRight"><p ></p></li>        
+            </ul>
 
-          <div class="activity-pic-right">
-              <li class="activity-little-description">
-                  <p> </p>
-              </li>
-              <img src="" alt="">
-          </div>
+            <ul class="rightPositioning">
+              <li><img class="activityImgRight" src="" alt=""></li>
+              <li class="activityDescriptionLeft"><p ></p></li>  
+            </ul>
 
-          <div class="activity-pic-left">
-            <!--  -->
-              <img src="" alt="">
+            <ul>
+              <li><img class="activityImgLeft" src="" alt=""></li>
               <!-- Witty Description here -->
-              <li class="activity-little-description">
-                  <p> </p>
-              </li>
+              <li class="activityDescriptionRight"><p ></p></li>
+            </ul>
           </div>
 
-          <h2> Vocabulary to Know</h2>
-          <table class="japaneseTable"> 
-              <tbody>
-                <!-- tr == Row of a table -->
-                <tr class="row1">
-                  <td>
-                    <span lang="ja" class="japnText"></span>
-                    "("
-                    <!-- Romaji -->
-                    <em class="romajiText"></em>
-                    ")"
-                  </td>
-                  <!-- English translation -->
-                  <td class="engTrans"></td>
-                </tr>
-                <tr class="row2">
-                  <td>
-                    <span lang="ja" class="japnText"></span>
-                    "("
-                    <!-- Romaji -->
-                    <em class="romajiText"></em>
-                    ")"
-                  </td>
-                  <!-- English translation -->
-                  <td class="engTrans"></td>
-                </tr>
-                <tr class="row3">
-                  <td>
-                    <span lang="ja" class="japnText"></span>
-                    "("
-                    <!-- Romaji -->
-                    <em class="romajiText"></em>
-                    ")"
-                  </td>
-                  <!-- English translation -->
-                  <td class="engTrans"></td>
-                </tr>
-                <tr class="row4">
-                  <td>
-                    <span lang="ja" class="japnText"></span>
-                    "("
-                    <!-- Romaji -->
-                    <em class="romajiText"></em>
-                    ")"
-                  </td>
-                  <!-- English translation -->
-                  <td class="engTrans"></td>
-                </tr>
-                <tr class="row5">
-                  <td>
-                    <span lang="ja" class="japnText"></span>
-                    "("
-                    <!-- Romaji -->
-                    <em class="romajiText"></em>
-                    ")"
-                  </td>
-                  <!-- English translation -->
-                  <td class="engTrans"></td>
-                </tr>
-              </tbody>
-          </table>
-        </div>
-        <div>
-          <h2> Destination Tips </h2>
+          <!-- Destination Tips (Create squares with click to expand feature), let's do three -->
+          <h1> Destination Tips</h1>
+
+          <div class="destinationSquare">
+            <div class="destinationTip" id="vocabTip">    
+              <h2> Vocabulary to Know</h2>
+              <table class="japaneseTable"> 
+                  <tbody>
+                    <!-- tr == Row of a table -->
+                    <tr class="row1">
+                      <td>
+                        <span lang="ja" class="japnText"></span>
+                        "("
+                        <!-- Romaji -->
+                        <em class="romajiText"></em>
+                        ")"
+                      </td>
+                      <!-- English translation -->
+                      <td class="engTrans"></td>
+                    </tr>
+                    <tr class="row2">
+                      <td>
+                        <span lang="ja" class="japnText"></span>
+                        "("
+                        <!-- Romaji -->
+                        <em class="romajiText"></em>
+                        ")"
+                      </td>
+                      <!-- English translation -->
+                      <td class="engTrans"></td>
+                    </tr>
+                    <tr class="row3">
+                      <td>
+                        <span lang="ja" class="japnText"></span>
+                        "("
+                        <!-- Romaji -->
+                        <em class="romajiText"></em>
+                        ")"
+                      </td>
+                      <!-- English translation -->
+                      <td class="engTrans"></td>
+                    </tr>
+                    <tr class="row4">
+                      <td>
+                        <span lang="ja" class="japnText"></span>
+                        "("
+                        <!-- Romaji -->
+                        <em class="romajiText"></em>
+                        ")"
+                      </td>
+                      <!-- English translation -->
+                      <td class="engTrans"></td>
+                    </tr>
+                    <tr class="row5">
+                      <td>
+                        <span lang="ja" class="japnText"></span>
+                        "("
+                        <!-- Romaji -->
+                        <em class="romajiText"></em>
+                        ")"
+                      </td>
+                      <!-- English translation -->
+                      <td class="engTrans"></td>
+                    </tr>
+                  </tbody>
+              </table>  
+              <p>This is some sample text that will be initially truncated. Click the "Expand" button to view the full text.</p>
+            </div>
+            <button onclick="expandTextField()">See more!</button>
+          </div>
+
+          <div class="destinationSquare">
+            <div class="destinationTip" id="bestVisitTimes">
+              <h2> Best Time to Visit</h2>
+
+              <h5> Come During the Off-Season(s): </h5>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+
+              <h5> Avoid the crowd by coming during these times:</h5>
+              <ul> 
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="destinationSquare">
+            <div class="destinationTip" id="randomTip">
+              <h2></h2>
+              <p></p>
+            </div>
+          </div>
         </div>
     </body>
 </html>
