@@ -1,4 +1,4 @@
-// // Japan Map
+// Japan Map
 
 // // SlideShow Photo Data
 // var sanrioPhotos = [
@@ -60,11 +60,11 @@ var castleMarker = L.marker([34.6873, 135.5259]).addTo(map);
 // openPopup: immediately opens the attached popup for markers only.
 
 // Sanrio Marker Popup
-sanrioMarker.bindPopup('<div><img src="location-images/Sanrio/sanrio_characters_image.jpeg" class="markerImg" alt="Sanrio Characters"></div> <div><a href="destinationInDepth.html"> <p class="markerText"> Sanrio Puroland </p></a></div>').openPopup();
+sanrioMarker.bindPopup('<div><img src="location-images/Sanrio Puroland/Sanrio Puroland Preview.jpg" class="markerImg" alt="Entrance of Sanrio Puroland"></div> <div><a href="./destinationInDepth.html?destinations=Sanrio Puroland"> <p class="markerText"> Sanrio Puroland </p></a></div>').openPopup();
 // Fushimi Inari Marker Popup 
-inariMarker.bindPopup('<div><img src="location-images/Inari/stefan-k-62IRMCiDaPY-unsplash.jpg" class="markerImg" alt="Fushimi Inari Shrine"> </div> <div><a href="destinationInDepth.html"> <p class="markerText"> Fushimi Inari Shrine</p></a></div>').openPopup();
+inariMarker.bindPopup('<div><img src="location-images/Fushimi Inari Shrine/stefan-k-62IRMCiDaPY-unsplash.jpg" class="markerImg" alt="Fushimi Inari Shrine"> </div> <div><a href="./destinationInDepth.html?destinations=Fushimi Inari Shrine"> <p class="markerText"> Fushimi Inari Shrine</p></a></div>').openPopup();
 // Osaka Castle Marker Popup
-castleMarker.bindPopup('<div><img src="location-images/Castle/cosmin-serban-kUQPX2kp8S8-unsplash.jpg" class="markerImg" alt="Osaka Castle"> </div> <div><a href="destinationInDepth.html"> <p class="markerText"> Osaka Castle </p></a></div>').openPopup();
+castleMarker.bindPopup('<div><img src="location-images/Osaka Castle/cosmin-serban-kUQPX2kp8S8-unsplash.jpg" class="markerImg" alt="Osaka Castle"> </div> <div><a href="./destinationInDepth.html?destinations=Osaka Castle"> <p class="markerText"> Osaka Castle </p></a></div>').openPopup();
 
 
 // bindTooltip: attaches a tooltip with the specified HTML content to your marker so the tooltip appears when you hover over the marker
