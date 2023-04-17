@@ -125,6 +125,7 @@ console.log(params);
 
 // Gets the current destination and stores it in a variable
 const destinationName = params.get('destinations');
+destinationList.push(destinationName);
 console.log(destinationName);
 
 // Adding a new destination's Info to Destination Page
@@ -133,11 +134,12 @@ function addNewDestination(destinationTitle, destinationTagline, destinationSumm
     destinationList.push(destinationInfo);
     return destinationInfo;    
 }; 
-
-// For of loop that creates destination elements
-for (const destinationInfo of destinationList) {
-    createCartItem(destinationInfo);
-};
+document.addEventListener('DOMContentLoaded', function() {
+    // For of loop that creates destination elements
+    for (const destinationInfo of destinationList) {
+        createDestination(destinationInfo);
+    }
+});
 
 // Updating the DOM
 function createDestination(destinationInfo) {
@@ -269,56 +271,7 @@ function createItinerary(destinationName) {
     itineraryList.push(destinationName)
 }
 
-// Retrieves shopping cart items from local storage
-function retrieveFromLocalStorage() {
-    const destinationString = localStorage.getItem('storedDestinationItems');
-    const storedDestinationArray = JSON.parse(destinationString);
-    console.log('retrieved from local storage ' + destinationString);
-    for (const destinationData of storedDestinationArray) {
-        const destinationInfo = new addNewDestination (
-            destinationData.title,
-            destinationData.tagline,
-            destinationData.summary,
-            destinationData.activityImgOne,
-            destinationData.activityImgOneAlt,
-            destinationData.activityImgTwo,
-            destinationData.activityImgTwoAlt,
-            destinationData.activityImgThree,
-            destinationData.activityImgThreeAlt,
-            destinationData.activityTitleOne,
-            destinationData.activityTitleTwo,
-            destinationData.activityTitleThree,
-            destinationData.activityDescriptionOne,
-            destinationData.activityDescriptionTwo,
-            destinationData.activityDescriptionThree,
-            destinationData.japnTextOne,
-            destinationData.romajiTextOne,
-            destinationData.engTransOne,
-            destinationData.japnTextTwo,
-            destinationData.romajiTextTwo,
-            destinationData.engTransTwo,
-            destinationData.japnTextThree,
-            destinationData.romajiTextThree,
-            destinationData.engTransThree,
-            destinationData.japnTextFour,
-            destinationData.romajiTextFour,
-            destinationData.engTransFour,
-            destinationData.japnTextFive,
-            destinationData.romajiTextFive,
-            destinationData.engTransFive,
-            destinationData.seasonOne,
-            destinationData.seasonTwo,
-            destinationData.avoidTimesOne,
-            destinationData.avoidTimesTwo,
-            destinationData.locationMainImg,
-            destinationData.locationMainImgAlt
-          );
-        createDestinationItem(destinationInfo);
-        console.log(storedDestinationArray);
-    }
-};
 
-// Saves items in shopping cart to local storage
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(destinationList);
     localStorage.setItem('storedDestinationItems', destinationString);    
@@ -326,14 +279,4 @@ function saveToLocalStorage(){
     console.log('Items in Destination Array ' + destinationList);
     console.log('Items in local storage: ' + localStorage.storedDestinationItems);
 };
-
-if (localStorage.getItem('storedDestinationItems') != null) {
-    retrieveFromLocalStorage();
-};
-
-if (localStorage.getItem('storedDestinationItems') == null) {
-    let destinationList = [];
-};
-
-
 
