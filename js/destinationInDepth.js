@@ -125,7 +125,6 @@ console.log(params);
 
 // Gets the current destination and stores it in a variable
 const destinationName = params.get('destinations');
-destinationList.push(destinationName);
 console.log(destinationName);
 
 // Adding a new destination's Info to Destination Page
@@ -134,11 +133,12 @@ function addNewDestination(destinationTitle, destinationTagline, destinationSumm
     destinationList.push(destinationInfo);
     return destinationInfo;    
 }; 
+
+
 document.addEventListener('DOMContentLoaded', function() {
-    // For of loop that creates destination elements
-    for (const destinationInfo of destinationList) {
-        createDestination(destinationInfo);
-    }
+    // On load the addNewDestination Needs to be called so that it can populate immediately
+    createDestination(destinationInfo);
+    
 });
 
 // Updating the DOM
@@ -153,19 +153,19 @@ function createDestination(destinationInfo) {
     // Images & Alts
     // Main Image
     const destinationMainImage = clone.querySelector('.locationMainImg');
-    destinationMainImage.src = `location_images/${destinationInfo.title}/${destinationName} Main Image.jpg`;
+    destinationMainImage.src = `location_images/${destinationInfo.title}/${destinationInfo.title} Main Image.jpg`;
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
     // Activity One 
     const destinationActOneImg = clone.querySelector('.locationMainImg');
-    destinationActOneImg.src = `location_images/${destinationInfo.title}/${destinationName} Activity One.jpg`;
+    destinationActOneImg.src = `location_images/${destinationInfo.title}/${destinationInfo.title} Activity One.jpg`;
     destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
     // Activity Two
     const destinationActTwoImg = clone.querySelector('.locationMainImg');
-    destinationActTwoImg .src = `location_images/${destinationInfo.title}/${destinationName} Activity Two.jpg`;
+    destinationActTwoImg .src = `location_images/${destinationInfo.title}/${destinationInfo.title} Activity Two.jpg`;
     destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
     // Activity Three
     const destinationActThreeImg = clone.querySelector('.locationMainImg');
-    destinationActThreeImg.src = `location_images/${destinationInfo.title}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.src = `location_images/${destinationInfo.title}/${destinationInfo.title} Activity Three.jpg`;
     destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
 
     // Top things
