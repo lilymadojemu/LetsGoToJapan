@@ -65,8 +65,55 @@ const destinations = {
         "activityDescriptionThree":"",
         "locationMainImg": "location-images/pexels-satoshi-hirayama-4058530.jpg",
     }
-   
 };
+
+// Destination Class to save current destination's information
+class Destination {
+    constructor(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt) {
+        this.title = destinationTitle;
+        this.tagline = destinationTagline;
+        this.summary = destinationSummary;
+        this.activityImgOne = activityImgOne;
+        this.activityImgOneAlt = activityImgOneAlt;
+        this.activityImgTwo = activityImgTwo;
+        this.activityImgTwoAlt = activityImgTwoAlt;
+        this.activityImgThree = activityImgThree;
+        this.activityImgThreeAlt = activityImgThreeAlt;
+        this.activityTitleOne = activityTitleOne;
+        this.activityTitleTwo = activityTitleTwo;
+        this.activityTitleThree = activityTitleThree;
+        this.activityDescriptionOne = activityDescriptionOne;
+        this.activityDescriptionTwo = activityDescriptionTwo;
+        this.activityDescriptionThree = activityDescriptionThree;
+        this.japnTextOne = japnTextOne;
+        this.romajiTextOne = romajiTextOne;
+        this.engTransOne = engTransOne;
+        this.japnTextTwo = japnTextTwo;
+        this.romajiTextTwo = romajiTextTwo;
+        this.engTransTwo = engTransTwo;
+        this.japnTextThree = japnTextThree;
+        this.romajiTextThree = romajiTextThree;
+        this.engTransThree = engTransThree;
+        this.japnTextFour = japnTextFour;
+        this.romajiTextFour = romajiTextFour;
+        this.engTransFour = engTransFour;
+        this.japnTextFive = japnTextFive;
+        this.romajiTextFive = romajiTextFive;
+        this.engTransFive = engTransFive;
+        this.seasonOne = seasonOne;
+        this.seasonTwo = seasonTwo;
+        this.avoidTimesOne = avoidTimesOne;
+        this.avoidTimesTwo = avoidTimesTwo;
+        this.locationMainImg = locationMainImg;
+        this.locationMainImgAlt = locationMainImgAlt;
+    }
+};
+
+// Array containing the destination housed on web page (only one at a time)
+let destinationList = []
+
+// A set Housing destinations saved to the itinerary page (no duplicates)
+let itineraryList = new Set();
 
 // Gather info from URL
 const queryString = window.location.search;
@@ -77,50 +124,22 @@ const params = new URLSearchParams(queryString);
 console.log(params);
 
 // Gets the current destination and stores it in a variable
-const destinationName = params.get('destination');
-console.log(rollType);
+const destinationName = params.get('destinations');
+console.log(destinationName);
 
-// Update Destination Title based on chosen location
-const titleElement = document.querySelector('.destinationTitle');
+// Adding a new destination's Info to Destination Page
+function addNewDestination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt) {
+    const destinationInfo = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
+    destinationList.push(destinationInfo);
+    return destinationInfo;    
+}; 
 
-// Change text of title element based on chosen location
-titleElement.innerText = 'Welcome to '+ destinationName + ' !';
-
-// Update Main Image & Alt Text based on selected location
-const destinationMainImg = document.querySelector('.locationMainImg');
-destinationMainImg.src = 'location_images/' + destinationName + '/' + destinationName + ' Main Image'+'.jpg';
-console.log(destinationMainImg.src);
-destinationMainImg.alt = destinations[destinationName]["locationMainImgAlt"];
-
-// Update Activity Images & Alt Text based on selected location
-
-// Activity One
-const actImgOne = document.querySelector('.activityImgOne');
-actImgOne.src = 'location_images/' + destinationName +'/'+ destinationName + ' Activity One'+'.jpg';
-console.log(actImgOne.src);
-actImgOne.alt = destinations[destinationName]["activityImgOneAlt"];
-
-// Activity Two
-const actImgTwo = document.querySelector('.activityImgTwo');
-actImgTwo.src = 'location_images/' + destinationName +'/'+ destinationName +' Activity Two'+ '.jpg';
-console.log(actImgTwo.src);
-actImgTwo.alt = destinations[destinationName]["activityImgTwoAlt"];
-
-// Activity Three
-const actImgThree = document.querySelector('.activityImgThree');
-actImgThree.src = 'location_images/' + destinationName + '/'+destinationName +' Activity Three'+ '.jpg';
-console.log(actImgThree.src);
-actImgThree.alt = destinations[destinationName]["activityImgThreeAlt"];
-
-// May need more information
-class Destination {
-    constructor(destinationName, destinationSummary) {
-        this.type = destinationName;
-        this.destinationSummary = destinationSummary
-    }
+// For of loop that creates destination elements
+for (const destinationInfo of destinationList) {
+    createCartItem(destinationInfo);
 };
-// Updating the DOM
 
+// Updating the DOM
 function createDestination(destinationInfo) {
     // Grabs a reference to the destination template:
     const template = document.querySelector('#destinationTemplate');
@@ -129,24 +148,28 @@ function createDestination(destinationInfo) {
 
     // update Dom Elements
 
-    // Images
+    // Images & Alts
     // Main Image
     const destinationMainImage = clone.querySelector('.locationMainImg');
-    destinationMainImage.src = `location_images/${destinationName.type}/${destinationName} Main Image.jpg`;
+    destinationMainImage.src = `location_images/${destinationInfo.title}/${destinationName} Main Image.jpg`;
+    destinationMainImage.alt = destinationInfo.locationMainImgAlt;
     // Activity One 
     const destinationActOneImg = clone.querySelector('.locationMainImg');
-    destinationActOneImg.src = `location_images/${destinationName.type}/${destinationName} Activity One.jpg`;
+    destinationActOneImg.src = `location_images/${destinationInfo.title}/${destinationName} Activity One.jpg`;
+    destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
     // Activity Two
     const destinationActTwoImg = clone.querySelector('.locationMainImg');
-    destinationActTwoImg .src = `location_images/${destinationName.type}/${destinationName} Activity Two.jpg`;
+    destinationActTwoImg .src = `location_images/${destinationInfo.title}/${destinationName} Activity Two.jpg`;
+    destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
     // Activity Three
     const destinationActThreeImg = clone.querySelector('.locationMainImg');
-    destinationActThreeImg.src = `location_images/${destinationName.type}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.src = `location_images/${destinationInfo.title}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
 
     // Top things
     // Destination Name
     const destinationTopTitle = clone.querySelector('.destinationTitle')
-    destinationTopTitle.textContent = destinationInfo.type;
+    destinationTopTitle.textContent = 'Welcome to ' + destinationInfo.title + '!';
     // Destination Tagline
     const destinationTopTag = clone.querySelector('.destinationTagline');
     destinationTopTag.textContent = destinationInfo.destinationTagline;
@@ -156,6 +179,7 @@ function createDestination(destinationInfo) {
 
     // Activity Descriptions
     // Activity 1
+
     const actOneTitle = clone.querySelector('.activityTitleOne');
     actOneTitle.textContent = destinationInfo.activityTitleOne;
     const actOneDescription = clone.querySelector('.activityDescriptionOne');
@@ -215,29 +239,101 @@ function createDestination(destinationInfo) {
     // Best Visit Times
 
     // Off-Seasons
+    const offSeasonOne = clone.querySelector('.seasonOne');
+    offSeasonOne.textContent = 'Season:' + destinationInfo.seasonOne;
+    const offSeasonTwo = clone.querySelector('.seasonTwo');
+    offSeasonTwo.textContent = 'Season:' + destinationInfo.seasonTwo;
+    // Avoid Times
+    const avoidedTimeOne = clone.querySelector('.avoidTimesOne');
+    avoidedTimeOne.textContent = destinationInfo.avoidTimeOne;
+    const avoidedTimeTwo = clone.querySelector('.avoidTimesTwo');
+    avoidedTimeTwo.textContent = destinationInfo.avoidTimeTwo;
 
-    
+    // Removes destination from itinerary list based on user input (click)
+    // const removeSaveToItineraryBtn = clone.querySelector('.saveDestination');
+    // removeSaveToItineraryBtn.addEventListener('click', () =>{
+    //     deleteDestination(destinationInfo);
+    // });
 
+    // Adding cart item elements to the DOM to be displayed
+    const destinationContainer = document.querySelector('.destinationItems');
+    destinationContainer.appendChild(clone);
 
-
-    const cinnaRollType = clone.querySelector('.cartRollType');
-    cinnaRollType.textContent = cartItem.type + ' Cinnamon Roll';
-
-    const cinnaRollGlazing = clone.querySelector('.cartItemGlazing');
-    cinnaRollGlazing.textContent = 'Glazing: ' + cartItem.glazing; 
-    
-    const cinnaRollPackSize =  clone.querySelector('.cartItemPackSize');
-    cinnaRollPackSize.textContent = 'Pack Size: ' + cartItem.size;    
-
-    const cinnaRollFinalPrice = clone.querySelector('.cartItemPrice');
-    cinnaRollFinalPrice.textContent = '$' + cartItem.basePrice;  
-
-}
+};
 
 // Saving Destination to Itinerary
-const saveToItinerary = document.querySelector('.saveDestination');
-saveToItinerary.onclick = this.createItinerary
+// const saveToItinerary = document.querySelector('.saveDestination');
+// saveToItinerary.onclick = this.createItinerary
 
+function createItinerary(destinationName) {
+    itineraryList.push(destinationName)
+}
+
+// Retrieves shopping cart items from local storage
+function retrieveFromLocalStorage() {
+    const destinationString = localStorage.getItem('storedDestinationItems');
+    const storedDestinationArray = JSON.parse(destinationString);
+    console.log('retrieved from local storage ' + destinationString);
+    for (const destinationData of storedDestinationArray) {
+        const destinationInfo = new addNewDestination (
+            destinationData.title,
+            destinationData.tagline,
+            destinationData.summary,
+            destinationData.activityImgOne,
+            destinationData.activityImgOneAlt,
+            destinationData.activityImgTwo,
+            destinationData.activityImgTwoAlt,
+            destinationData.activityImgThree,
+            destinationData.activityImgThreeAlt,
+            destinationData.activityTitleOne,
+            destinationData.activityTitleTwo,
+            destinationData.activityTitleThree,
+            destinationData.activityDescriptionOne,
+            destinationData.activityDescriptionTwo,
+            destinationData.activityDescriptionThree,
+            destinationData.japnTextOne,
+            destinationData.romajiTextOne,
+            destinationData.engTransOne,
+            destinationData.japnTextTwo,
+            destinationData.romajiTextTwo,
+            destinationData.engTransTwo,
+            destinationData.japnTextThree,
+            destinationData.romajiTextThree,
+            destinationData.engTransThree,
+            destinationData.japnTextFour,
+            destinationData.romajiTextFour,
+            destinationData.engTransFour,
+            destinationData.japnTextFive,
+            destinationData.romajiTextFive,
+            destinationData.engTransFive,
+            destinationData.seasonOne,
+            destinationData.seasonTwo,
+            destinationData.avoidTimesOne,
+            destinationData.avoidTimesTwo,
+            destinationData.locationMainImg,
+            destinationData.locationMainImgAlt
+          );
+        createDestinationItem(destinationInfo);
+        console.log(storedDestinationArray);
+    }
+};
+
+// Saves items in shopping cart to local storage
+function saveToLocalStorage(){
+    const destinationString = JSON.stringify(destinationList);
+    localStorage.setItem('storedDestinationItems', destinationString);    
+    // printing the current contents of the cart in local storage after saving
+    console.log('Items in Destination Array ' + destinationList);
+    console.log('Items in local storage: ' + localStorage.storedDestinationItems);
+};
+
+if (localStorage.getItem('storedDestinationItems') != null) {
+    retrieveFromLocalStorage();
+};
+
+if (localStorage.getItem('storedDestinationItems') == null) {
+    let destinationList = [];
+};
 
 
 
