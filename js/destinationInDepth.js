@@ -1,5 +1,5 @@
 // Destination Data
-const destinations = {
+const destinationInfo = {
     "Sanrio Puroland": {
         "destinationTitle": "Sanrio Puroland",
         "destinationTagline":"Where Hello Kitty and Friends Come to Life: Experience the Magic of Sanrio Puroland!",
@@ -83,6 +83,7 @@ class Destination {
     }
 };
 
+
 // Array containing the destination housed on web page (only one at a time)
 let destinationList = []
 
@@ -103,7 +104,7 @@ console.log(destinationName);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    destinationList.push(destinationName);
+    destinationList.push(destinationInfo);
     // On load the addNewDestination Needs to be called so that it can populate immediately
     // For of loop that creates cart item elements
     for (const destinationInfo of destinationList) {
@@ -122,20 +123,14 @@ function addNewDestination(destinationTitle, destinationTagline, destinationSumm
 
 // Updating the DOM
 function createDestination(destinationInfo) {
+    console.log(destinationInfo);
     // Grabs a reference to the destination template:
     const template = document.querySelector('#destinationTemplate');
     const clone = template.content.cloneNode(true);
     destinationInfo.element = clone.querySelector('.destinationInfo');
-    console.log(destinationInfo);
-
-    if (destinationInfo) {
-        console.log(destinationInfo.type);
-    } else {
-        console.log('destinationInfo is undefined');
-    };
-
+    
+    console.log(destinationInfo.element);
     // update Dom Elements
-
     // Images & Alts
     // Main Image
     const destinationMainImage = clone.querySelector('.locationMainImg');
@@ -250,7 +245,20 @@ function createDestination(destinationInfo) {
     const destinationContainer = document.querySelector('.destinationItems');
     destinationContainer.appendChild(clone);
 
+    // updateElement(destinationInfo);
+
+
 };
+
+// function updateElement(destinationInfo) {
+//     const destinationImageElement = destinationInfo.element.querySelector('.notecard-thumbnail');
+// 	const noteTitleElement = destinationInfo.element.querySelector('.note-title');
+// 	const noteBodyElement = destinationInfo.element.querySelector('.note-body');
+
+//     noteImageElement.src = notecard.noteImageURL;
+//     noteTitleElement.innerText = notecard.noteTitle;
+//     noteBodyElement.innerText = notecard.noteBody;
+// }
 
 // Saving Destination to Itinerary
 // const saveToItinerary = document.querySelector('.saveDestination');
@@ -261,11 +269,11 @@ function createItinerary(destinationName) {
 }
 
 
-function saveToLocalStorage(){
-    const destinationString = JSON.stringify(destinationList);
-    localStorage.setItem('storedDestinationItems', destinationString);    
-    // printing the current contents of the cart in local storage after saving
-    console.log('Items in Destination Array ' + destinationList);
-    console.log('Items in local storage: ' + localStorage.storedDestinationItems);
-};
+// function saveToLocalStorage(){
+//     const destinationString = JSON.stringify(destinationList);
+//     localStorage.setItem('storedDestinationItems', destinationString);    
+//     // printing the current contents of the cart in local storage after saving
+//     console.log('Items in Destination Array ' + destinationList);
+//     console.log('Items in local storage: ' + localStorage.storedDestinationItems);
+// };
 
