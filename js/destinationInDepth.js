@@ -39,32 +39,6 @@ const destinations = {
         "locationMainImgAlt":"Display of various Sanrio Characters",
     },
 
-    "Fushimi Inari Shrine": {
-        "destinationTitle": "Fushimi Inari Shrine",
-        "destinationTagline":"",
-        "destinationSummary": "",
-        "activityImgOne": "",
-        "activityImgTwo": "",
-        "activityImgThree": "",
-        "activityDescriptionOne":"",
-        "activityDescriptionTwo":"",
-        "activityDescriptionThree":"",
-        "locationMainImg": "location-images/pexels-pixabay-161401.jpg",
-
-    },
-
-    "Osaka Castle": {
-        "destinationTitle": "Osaka Castle",
-        "destinationTagline":"",
-        "destinationSummary": "",
-        "activityImgOne": "",
-        "activityImgTwo": "",
-        "activityImgThree": "",
-        "activityDescriptionOne":"",
-        "activityDescriptionTwo":"",
-        "activityDescriptionThree":"",
-        "locationMainImg": "location-images/pexels-satoshi-hirayama-4058530.jpg",
-    }
 };
 
 // Destination Class to save current destination's information
@@ -127,19 +101,22 @@ console.log(params);
 const destinationName = params.get('destinations');
 console.log(destinationName);
 
-// Adding a new destination's Info to Destination Page
-function addNewDestination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt) {
-    return destinationInfo;    
-}; 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // On load the addNewDestination Needs to be called so that it can populate immediately
     destinationList.push(destinationName);
+    // On load the addNewDestination Needs to be called so that it can populate immediately
     // For of loop that creates cart item elements
     for (const destinationInfo of destinationList) {
         createDestination(destinationInfo);
     };      
 });
+
+// Adding a new destination's Info to Destination Page
+function addNewDestination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt) {
+    const destinationInfo = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
+    destinationList.push(destinationInfo);
+    return destinationInfo; 
+}; 
 
 // destinationName will have to change
 
@@ -164,25 +141,25 @@ function createDestination(destinationInfo) {
     const destinationMainImage = clone.querySelector('.locationMainImg');
     destinationMainImage.src = `location-images/${destinationName}/${destinationName} Main Image.jpg`;
     console.log(destinationMainImage.src);
-    // destinationMainImage.src = `lo`locat;
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
     // Activity One 
     const destinationActOneImg = clone.querySelector('.locationMainImg');
-    destinationActOneImg.src = `location_images/${destinationInfo.title}/${destinationInfo.title} Activity One.jpg`;
+    destinationActOneImg.src = `location-images/${destinationName}/${destinationName} Activity One.jpg`;
     destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
     // Activity Two
     const destinationActTwoImg = clone.querySelector('.locationMainImg');
-    destinationActTwoImg .src = `location_images/${destinationInfo.title}/${destinationInfo.title} Activity Two.jpg`;
+    destinationActTwoImg.src = `location-images/${destinationName}/${destinationName} Activity Two.jpg`;
     destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
     // Activity Three
     const destinationActThreeImg = clone.querySelector('.locationMainImg');
-    destinationActThreeImg.src = `location_images/${destinationName}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.src = `location-images/${destinationName}/${destinationName} Activity Three.jpg`;
     destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
 
     // Top things
     // Destination Name
     const destinationTopTitle = clone.querySelector('.destinationTitle')
     destinationTopTitle.textContent = 'Welcome to ' + destinationName + '!';
+
     // Destination Tagline
     const destinationTopTag = clone.querySelector('.destinationTagline');
     destinationTopTag.textContent = destinationInfo.destinationTagline;
