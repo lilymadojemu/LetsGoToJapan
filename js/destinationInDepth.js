@@ -1,45 +1,4 @@
 // Destination Data
-const destinationInfo = {
-    "Sanrio Puroland": {
-        "destinationTitle": "Sanrio Puroland",
-        "destinationTagline":"Where Hello Kitty and Friends Come to Life: Experience the Magic of Sanrio Puroland!",
-        "destinationSummary": "Sanrio Puroland is a must-visit destination for fans of Sanrio characters, offering a magical world of kawaii-themed shows, rides, and shopping. Located in Tokyo, Japan, it's a paradise for Hello Kitty, My Melody, Cinnamoroll, and other beloved characters, with unique experiences and merchandise that delight visitors of all ages.",
-        "activityImgOne": "location-images/Sanrio/Sanrio_food_1.jpeg",
-        "activityImgOneAlt":"Milkshakes, Cakes, and Curry with faces of Cinnamoroll",
-        "activityImgTwo": "location-images/Sanrio/kawaiikabuki_Image.jpeg",
-        "activityImgTwoAlt":"Kawaii Kabuki Poster",
-        "activityImgThree": "location-images/Sanrio/enjoygoods_image.jpeg",
-        "activityImgThreeAlt":"Headbands depicting various Sanrio characters",
-        "activityTitleOne":"Food",
-        "activityTitleTwo":"Have Fun!",
-        "activityTitleThree":"Souvenirs",
-        "activityDescriptionOne":"You'll love the diverse menu options we have, ranging from cute dishes with character motifs to filling meals that will satisfy your hunger. There's something for everyone! Don't miss the chance to capture the picture-perfect presentation of our dishes and share them on social media. Additionally, our seasonal menu items change throughout the year, so be sure to check them out before you come for a unique and delicious dining experience",
-        "activityDescriptionTwo":"This mesmerizing musical show combines the irresistible charm of Sanrio characters with the time-honored art form of Kabuki. Kabuki is a traditional form of Japanese theater known for its elaborate costumes, stylized movements, and dramatic performances. It has a rich history dating back to the Edo period, and is renowned for its unique blend of music, dance, and drama. In this collaborative show, you'll experience the captivating fusion of Sanrio's KAWAII (cuteness) with the elegance and artistry of Kabuki, creating a truly unforgettable performance. Don't miss the chance to see beloved Sanrio characters take the stage in their finest Kabuki-inspired costumes!",
-        "activityDescriptionThree":"At Puroland, you'll be spoiled for choice with the wide array of goodies available! From candy to stationery, clothing, and more, there's something for everyone. You'll find an overwhelming number and variety of products, including items featuring popular Sanrio characters like Hello Kitty, My Melody, and Cinnamoroll. What's more, there are loads of original products that are exclusive to Puroland, so you won't find them anywhere else. Whether you're looking for a cute souvenir or a unique item to commemorate your visit, you're sure to find your favorite items at Puroland!",
-        "japnTextOne":"可愛い",
-        "romajiTextOne":"kawaii",
-        "engTransOne":"Cute",
-        "japnTextTwo":"キャラ",
-        "romajiTextTwo":"kyara",
-        "engTransTwo":"Character",
-        "japnTextThree":"お土産",
-        "romajiTextThree":"omiyage",
-        "engTransThree":"Souvenirs",
-        "japnTextFour":"ガチャ",
-        "romajiTextFour":"gachya",
-        "engTransFour":"Capsule-toy vending machines",
-        "japnTextFive":"美味しい",
-        "romajiTextFive":"oishii",
-        "engTransFive":"Delicious",
-        "seasonOne":"June",
-        "seasonTwo":"Early July",
-        "avoidTimesOne":"12:00pm - 4:00pm",
-        "avoidTimesTwo":"Weekends",
-        "locationMainImg": "location-images/Sanrio/sanrio_characters_image.jpeg",
-        "locationMainImgAlt":"Display of various Sanrio Characters",
-    },
-
-};
 
 // Destination Class to save current destination's information
 class Destination {
@@ -104,12 +63,64 @@ console.log(destinationName);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    destinationList.push(destinationInfo);
-    // On load the addNewDestination Needs to be called so that it can populate immediately
-    // For of loop that creates cart item elements
-    for (const destinationInfo of destinationList) {
-        createDestination(destinationInfo);
-    };      
+    const destinationInfo = {
+        "Sanrio Puroland": {
+            "destinationTitle": "Sanrio Puroland",
+            "destinationTagline":"Where Hello Kitty and Friends Come to Life: Experience the Magic of Sanrio Puroland!",
+            "destinationSummary": "Sanrio Puroland is a must-visit destination for fans of Sanrio characters, offering a magical world of kawaii-themed shows, rides, and shopping. Located in Tokyo, Japan, it's a paradise for Hello Kitty, My Melody, Cinnamoroll, and other beloved characters, with unique experiences and merchandise that delight visitors of all ages.",
+            "activityImgOne": "location-images/Sanrio/Sanrio_food_1.jpeg",
+            "activityImgOneAlt":"Milkshakes, Cakes, and Curry with faces of Cinnamoroll",
+            "activityImgTwo": "location-images/Sanrio/kawaiikabuki_Image.jpeg",
+            "activityImgTwoAlt":"Kawaii Kabuki Poster",
+            "activityImgThree": "location-images/Sanrio/enjoygoods_image.jpeg",
+            "activityImgThreeAlt":"Headbands depicting various Sanrio characters",
+            "activityTitleOne":"Food",
+            "activityTitleTwo":"Have Fun!",
+            "activityTitleThree":"Souvenirs",
+            "activityDescriptionOne":"You'll love the diverse menu options we have, ranging from cute dishes with character motifs to filling meals that will satisfy your hunger. There's something for everyone! Don't miss the chance to capture the picture-perfect presentation of our dishes and share them on social media. Additionally, our seasonal menu items change throughout the year, so be sure to check them out before you come for a unique and delicious dining experience",
+            "activityDescriptionTwo":"This mesmerizing musical show combines the irresistible charm of Sanrio characters with the time-honored art form of Kabuki. Kabuki is a traditional form of Japanese theater known for its elaborate costumes, stylized movements, and dramatic performances. It has a rich history dating back to the Edo period, and is renowned for its unique blend of music, dance, and drama. In this collaborative show, you'll experience the captivating fusion of Sanrio's KAWAII (cuteness) with the elegance and artistry of Kabuki, creating a truly unforgettable performance. Don't miss the chance to see beloved Sanrio characters take the stage in their finest Kabuki-inspired costumes!",
+            "activityDescriptionThree":"At Puroland, you'll be spoiled for choice with the wide array of goodies available! From candy to stationery, clothing, and more, there's something for everyone. You'll find an overwhelming number and variety of products, including items featuring popular Sanrio characters like Hello Kitty, My Melody, and Cinnamoroll. What's more, there are loads of original products that are exclusive to Puroland, so you won't find them anywhere else. Whether you're looking for a cute souvenir or a unique item to commemorate your visit, you're sure to find your favorite items at Puroland!",
+            "japnTextOne":"可愛い",
+            "romajiTextOne":"kawaii",
+            "engTransOne":"Cute",
+            "japnTextTwo":"キャラ",
+            "romajiTextTwo":"kyara",
+            "engTransTwo":"Character",
+            "japnTextThree":"お土産",
+            "romajiTextThree":"omiyage",
+            "engTransThree":"Souvenirs",
+            "japnTextFour":"ガチャ",
+            "romajiTextFour":"gachya",
+            "engTransFour":"Capsule-toy vending machines",
+            "japnTextFive":"美味しい",
+            "romajiTextFive":"oishii",
+            "engTransFive":"Delicious",
+            "seasonOne":"June",
+            "seasonTwo":"Early July",
+            "avoidTimesOne":"12:00pm - 4:00pm",
+            "avoidTimesTwo":"Weekends",
+            "locationMainImg": "location-images/Sanrio/sanrio_characters_image.jpeg",
+            "locationMainImgAlt":"Display of various Sanrio Characters",
+        },
+        "Fushimi Inari Shrine": {
+            "destinationTitle": "Fushimi Inari Shrine",
+
+        },
+
+    
+    };
+    // addNewDestination(destinationName);
+    // // destinationList.push(destinationName);
+    // // On load the addNewDestination Needs to be called so that it can populate immediately
+    // // For of loop that creates cart item elements
+    // // const destinationInfo = addNewDestination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
+    
+    // createDestination(destination);
+    for (const key in destinationInfo) {
+        const destinationElement = createDestination(destinationInfo[key]);
+        addNewDestination(destinationElement);
+    }
+
 });
 
 // Adding a new destination's Info to Destination Page
@@ -128,15 +139,13 @@ function createDestination(destinationInfo) {
     const template = document.querySelector('#destinationTemplate');
     const clone = template.content.cloneNode(true);
     destinationInfo.element = clone.querySelector('.destinationInfo');
-    
-    console.log(destinationInfo.element);
     // update Dom Elements
     // Images & Alts
     // Main Image
     const destinationMainImage = clone.querySelector('.locationMainImg');
     destinationMainImage.src = `location-images/${destinationName}/${destinationName} Main Image.jpg`;
-    console.log(destinationMainImage.src);
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
+    
     // Activity One 
     const destinationActOneImg = clone.querySelector('.locationMainImg');
     destinationActOneImg.src = `location-images/${destinationName}/${destinationName} Activity One.jpg`;
@@ -245,21 +254,12 @@ function createDestination(destinationInfo) {
     const destinationContainer = document.querySelector('.destinationItems');
     destinationContainer.appendChild(clone);
 
-    // updateElement(destinationInfo);
 
 
 };
 
 // function updateElement(destinationInfo) {
-//     const destinationImageElement = destinationInfo.element.querySelector('.notecard-thumbnail');
-// 	const noteTitleElement = destinationInfo.element.querySelector('.note-title');
-// 	const noteBodyElement = destinationInfo.element.querySelector('.note-body');
-
-//     noteImageElement.src = notecard.noteImageURL;
-//     noteTitleElement.innerText = notecard.noteTitle;
-//     noteBodyElement.innerText = notecard.noteBody;
-// }
-
+//     const destinationImageElement = destinationInfo.element.querySelector('.notecard-thumbnail
 // Saving Destination to Itinerary
 // const saveToItinerary = document.querySelector('.saveDestination');
 // saveToItinerary.onclick = this.createItinerary
