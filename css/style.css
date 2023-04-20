@@ -6,6 +6,7 @@
 
 .navbar {
     background-color: #CFC493;
+    width: 100%;
 }
 
 nav .container-fluid {
@@ -41,7 +42,7 @@ p{
 footer {
     background-color: #CFC493;
     display: flex;
-    height: 200px;
+    width: 100%;
 }
 
 ul {
