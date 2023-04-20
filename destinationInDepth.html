@@ -48,19 +48,18 @@
             <div class="destinationInfo">
 
               <!-- On Left side of the page -->
-              <div class="mainImgContainer">
-                <img class="locationMainImg" src="" alt="">
+              <div class="col-md-7">
+                <img class="locationMainImg" class="img-fluid" src="" alt="">
               </div>
 
               <!-- On right side of the page -->
-              <div class="destinationContent"> 
-                
-                <h1 class="destinationTitle"></h1> 
-                <h3 class="destinationTagline"></h3>
-                <button class="saveDestination"> Save to Itinerary</button>
-                <div class="destinationSummary"></div>
+              <div class="destinationContent" class="col-md-5" > 
+                <h1 class="destinationTitle" class="fw-bold" ></h1> 
+                <h3 class="destinationTagline" class="fw-bold" ></h3>
+                <button type="button" class="btn btn-primary">Save to Itinerary</button>
+                <p class="destinationSummary" class="lead" ></p>
 
-                <ul>
+                <ul class="activity">
                   <li><img class="activityImgOne" src="" alt=""></li>
                   <li>
                     <p class="activityTitleOne"></p>
@@ -76,7 +75,7 @@
                   </li>  
                 </ul>
 
-                <ul>
+                <ul class="activity">
                   <li><img class="activityImgThree" src="" alt=""></li>
                   <li class="activityDescriptionThree">
                     <p class="activityTitleThree"></p>
@@ -87,103 +86,103 @@
 
               <!-- Destination Tips (Create squares with click to expand feature), let's do three -->
               <h1> Destination Tips</h1>
-              <div class="destinationSquare">
-                <div class="destinationTip" id="vocabTip">    
-                  <h2> Vocabulary to Know</h2>
-                  <table class="japaneseTable"> 
-                      <tbody>
-                        <!-- tr == Row of a table -->
-                        <tr class="row1">
-                          <td>
-                            <span lang="ja" class="japnTextOne"></span>
-                         
-                            <!-- Romaji -->
-                            <em class="romajiTextOne"></em>
+              <section class="destinationTipArea">
+                <div class="destinationSquare">
+                  <div class="destinationTip" id="vocabTip">    
+                    <h2> Vocabulary to Know</h2>
+                    <table class="japaneseTable"> 
+                        <tbody>
+                          <!-- tr == Row of a table -->
+                          <tr class="row1">
+                            <td>
+                              <span lang="ja" class="japnTextOne"></span>
+                          
+                              <!-- Romaji -->
+                              <em class="romajiTextOne"></em>
+                              
+                            </td>
+                            <!-- English translation -->
+                            <td class="engTransOne"></td>
+                          </tr>
+                          <tr class="row2">
+                            <td>
+                              <span lang="ja" class="japnTextTwo"></span>
+                              
+                              <!-- Romaji -->
+                              <em class="romajiTextTwo"></em>
                             
-                          </td>
-                          <!-- English translation -->
-                          <td class="engTransOne"></td>
-                        </tr>
-                        <tr class="row2">
-                          <td>
-                            <span lang="ja" class="japnTextTwo"></span>
+                            </td>
+                            <!-- English translation -->
+                            <td class="engTransTwo"></td>
+                          </tr>
+                          <tr class="row3">
+                            <td>
+                              <span lang="ja" class="japnTextThree"></span>
                             
-                            <!-- Romaji -->
-                            <em class="romajiTextTwo"></em>
-                           
-                          </td>
-                          <!-- English translation -->
-                          <td class="engTransTwo"></td>
-                        </tr>
-                        <tr class="row3">
-                          <td>
-                            <span lang="ja" class="japnTextThree"></span>
-                           
-                            <!-- Romaji -->
-                            <em class="romajiTextThree"></em>
-                           
-                          </td>
-                          <!-- English translation -->
-                          <td class="engTransThree"></td>
-                        </tr>
-                        <tr class="row4">
-                          <td>
-                            <span lang="ja" class="japnTextFour"></span>
-                           
-                            <!-- Romaji -->
-                            <em class="romajiTextFour"></em>
+                              <!-- Romaji -->
+                              <em class="romajiTextThree"></em>
                             
-                          </td>
-                          <!-- English translation -->
-                          <td class="engTransFour"></td>
-                        </tr>
-                        <tr class="row5">
-                          <td>
-                            <span lang="ja" class="japnTextFive"></span>
-                            <!-- Romaji -->
-                            <em class="romajiTextFive"></em>
-                          </td>
-                          <!-- English translation -->
-                          <td class="engTransFive"></td>
-                        </tr>
-                      </tbody>
-                  </table>  
+                            </td>
+                            <!-- English translation -->
+                            <td class="engTransThree"></td>
+                          </tr>
+                          <tr class="row4">
+                            <td>
+                              <span lang="ja" class="japnTextFour"></span>
+                            
+                              <!-- Romaji -->
+                              <em class="romajiTextFour"></em>
+                              
+                            </td>
+                            <!-- English translation -->
+                            <td class="engTransFour"></td>
+                          </tr>
+                          <tr class="row5">
+                            <td>
+                              <span lang="ja" class="japnTextFive"></span>
+                              <!-- Romaji -->
+                              <em class="romajiTextFive"></em>
+                            </td>
+                            <!-- English translation -->
+                            <td class="engTransFive"></td>
+                          </tr>
+                        </tbody>
+                    </table>  
+                  </div>
                 </div>
-              </div>
 
-              <div class="destinationSquare">
-                <div class="destinationTip" id="bestVisitTimes">
-                  <h2> Best Time to Visit</h2>
+                <div class="destinationSquare">
+                  <div class="destinationTip" id="bestVisitTimes">
+                    <h2> Best Time to Visit</h2>
 
-                  <h5> Come During the Off-Season(s): </h5>
-                  <ul>
-                    <li class="seasonOne"></li>
-                    <li class="seasonTwo"></li>
-                  </ul>
+                    <h5> Come During the Off-Season(s): </h5>
+                    <ul>
+                      <li class="seasonOne"></li>
+                      <li class="seasonTwo"></li>
+                    </ul>
 
-                  <h5> Avoid the crowd by coming during these times:</h5>
-                  <ul> 
-                    <li class="avoidTimesOne"></li>
-                    <li class="avoidTimesTwo"></li>
-                  </ul>
+                    <h5> Avoid the crowd by coming during these times:</h5>
+                    <ul> 
+                      <li class="avoidTimesOne"></li>
+                      <li class="avoidTimesTwo"></li>
+                    </ul>
                 </div>
-              </div>
+                </div>
+              </section>
             </div>
           </template>
-
-        <div class="destinationItems">
-        </div> 
-
-        </div>
+        <div class="destinationItems"></div> 
         <footer>
-          <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
-          <div class="contactMe">
-            <h2> Contact Me! </h2>
+          <div class="container">
+            <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
+            <div class="contactMe">
+              <h2> Contact Me! </h2>
               <ul class="contactInfo">
-                 <span><img class="contactIcon" src="introduction-images/Gmail Icon.png"><li class="contactMe">lmadojem@andrew.cmu.edu</li></span>
-                  <img class="contactIcon" src="introduction-images/Linkedin Icon.png"><li class="contactMe">https://www.linkedin.com/in/lilymadojemu/</li>
-                  <img class="contactIcon" src="introduction-images/Github Icon.png"><li class="contactMe">https://github.com/lilymadojemu/PUIFinalProject</li>
+                <span><img class="contactIcon" src="introduction-images/Gmail Icon.png"><li class="contactMe">lmadojem@andrew.cmu.edu</li></span>
+                <img class="contactIcon" src="introduction-images/Linkedin Icon.png"><li class="contactMe">https://www.linkedin.com/in/lilymadojemu/</li>
+                <img class="contactIcon" src="introduction-images/Github Icon.png"><li class="contactMe">https://github.com/lilymadojemu/PUIFinalProject</li>
               </ul>
+            </div>
           </div>
         </footer>
     </body>
