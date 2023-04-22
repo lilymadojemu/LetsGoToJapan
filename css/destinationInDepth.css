@@ -27,10 +27,7 @@ img {
     left: 0;
 }
 
-
 /* Right Content */
-
-
 ul {
     display: flex;
     justify-content: space-between;
@@ -47,8 +44,9 @@ ul li {
 .destinationContent {
     padding-left: 5.17%;
     width: 50%;
-    min-height: calc(100vh - 128px);
-    float: right;
+}
+.destinationInfo {
+    display: flex;
 }
 
 .destinationTitle{
@@ -71,6 +69,7 @@ ul li {
     width: 50%;
     height: auto;
     float: left;
+    text-align: justify;
 }
 
 /* Activities */
@@ -93,11 +92,16 @@ ul li {
     height: 40%;
     width: auto;
 }
+
 /* Destination tips */
 .destinationTipArea {
-    display: block;
+    position: absolute;
+    bottom: 0;
     margin-left: auto;
-    margin-right: 50%;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+   
 }
 
 .destinationTip {
@@ -125,4 +129,4 @@ ul li {
     .background-image {
       height: 300px;
     }
-  }
+}
