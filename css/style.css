@@ -41,8 +41,12 @@ p{
 
 footer {
     background-color: #CFC493;
-    display: flex;
-    width: 100%;
+ 
+    color: #fff;
+    margin-top: 50px;
+    font-size: .75rem;
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
 ul {
