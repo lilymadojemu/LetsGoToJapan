@@ -4,23 +4,29 @@
     <head>
 
       <!-- CSS Files -->
-
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 
       <link rel="stylesheet" href="css/style.css">
 
       <link rel="stylesheet" href ="css/itineraryViewer.css">
 
-      <link rel="stylesheet" href="timetablejs.css">
+      <link rel="stylesheet" href="Calendar.js-main/dist/calendarjs.css" />
 
-  
+      <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.4.1@dist/glide.core.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.4.1@dist/glide.theme.min.css">
+      <link rel="stylesheet" href="calendar.css">
+      
       <title>Itinerary</title>
       <meta charset="UTF-8">
 
       <!-- JavaScript Files -->
       <script defer src="js/itineraryViewer.js"></script>
+      <script src="dist/calendarjs.js"></script>
+      <script src="https://unpkg.com/calendarjs@2.2.5/dist/calendar.min.js"></script>
+      <script src="https://unpkg.com/@glidejs/glide@3.4.1@dist/glide.min.js"></script>
+      <script src="Calendar.js-main/dist/calendarjs.js"></script>
 
-      <script src="timetable.min.js"></script>
+
     </head>
 
     <body>
@@ -54,7 +60,7 @@
         <div class="container">
           <img class="topLocationImg"src="" alt="">
 
-          <h2> Your Day at</h2><h2 class="destinationName"></h2>
+          <h2></h2>
 
           <div class="summaryContainer">
             <!-- Same as what was on top of the destination in-depth page -->
@@ -76,10 +82,9 @@
           <div class="similarTrips">
           </div>
 
-          <!-- Time Table: http://timetablejs.org/ -->
-          <div class="timetable">
+          <!-- Calendar Library-->
+          <div id="calendar"></div>
 
-          </div>
         </div>
 
         <footer>
