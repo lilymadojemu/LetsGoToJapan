@@ -1,4 +1,4 @@
-// Destination Data
+
 
 // Destination Class to save current destination's information
 class Destination {
@@ -62,6 +62,7 @@ const destinationName = params.get('destinations');
 console.log(destinationName);
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const destinationInfo = {
         "Sanrio Puroland": {
@@ -121,8 +122,6 @@ function addNewDestination(destinationTitle, destinationTagline, destinationSumm
     const destinationInfo = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
     return destinationInfo; 
 }; 
-
-// destinationName will have to change
 
 // Updating the DOM
 function createDestination(destinationInfo) {
@@ -251,16 +250,40 @@ function createDestination(destinationInfo) {
 
 };
 
-function createItinerary(destinationName) {
-    itineraryList.push(destinationName)
+const saveToItinerary = document.querySelector('.btn.btn-info');
+saveToItinerary.onclick = this.createItinerary;
+
+// Save current destination information 
+function createItinerary() {
+    const itineraryDestination = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
+    itineraryList.push(destinationName);
+
+    saveToLocalStorage();
+
+    return itineraryDestination;
+};
+
+function saveToLocalStorage(){
+    const destinationString = JSON.stringify(destinationList);
+    localStorage.setItem('storedDestinationItems', destinationString);    
+    // printing the current contents of the cart in local storage after saving
+    console.log('Items in Destination Array ' + destinationList);
+    console.log('Items in local storage: ' + localStorage.storedDestinationItems);
+};
+
+function retrieveFromLocalStorage(){
+    const destinationString = localStorage.getItem('storedDestinationItems');
+    const storedDestination = JSON.parse(destinationString);
+    if (storedDestination) {
+        destinationList = storedDestination;
+        console.log(destinationList);
+    }
 }
 
-
-// function saveToLocalStorage(){
-//     const destinationString = JSON.stringify(destinationList);
-//     localStorage.setItem('storedDestinationItems', destinationString);    
-//     // printing the current contents of the cart in local storage after saving
-//     console.log('Items in Destination Array ' + destinationList);
-//     console.log('Items in local storage: ' + localStorage.storedDestinationItems);
-// };
-
+if (localStorage.getItem('storedDestinations') != null) {
+    retrieveFromLocalStorage();
+}
+  
+if (localStorage.getItem('storedDestinations') != null) {
+    const destinationList = [];
+}

@@ -33,6 +33,9 @@ body {
     
 }
 
+h1, h2, h3 {
+    color: white;
+}
 p{
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
