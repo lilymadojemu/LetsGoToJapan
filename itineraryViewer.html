@@ -40,48 +40,42 @@
                       <a id="home-top" class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a id="itinerary-top" class="nav-link active" aria-current="page"href="itinerariesOverview.html">Itinerary</a>
+                      <a id="itinerary-top" class="nav-link active" aria-current="page"href="itinerariesOverview.html">My Itineraries</a>
                     </li>
                   </ul>
                 </div>
               </div>
             </nav>
         </header> 
-
         <!-- House Content on Itinerary Page -->
         <div class="container">
-          <div class="row">
-            <div class="col-4">
-              
+          <template id="itineraryEditTemplate">
+            <!-- Destination Image Header -->
+            <img class="topLocationImg"src="" alt="">
+
+            <!-- Your Day at destination Name -->
+            <h2 class="itineraryTitle"></h2>
+
+            <div class="summaryContainer">
+              <!-- Same as what was on top of the destination in-depth page -->
             </div>
-          </div>
-          <img class="topLocationImg"src="" alt="">
 
-          <h2></h2>
+            <h3 class=""> 1. Attractions </h3>
+            <div class="attractions"></div>
+            
+            <h3 class="">2. [Figure it out]</h3>
+            <div class=""></div>
 
-          <div class="summaryContainer">
-            <!-- Same as what was on top of the destination in-depth page -->
-          </div>
+            <h3 class=""> 3. Time for Food! </h3>
+            <div class="foodTime"></div>
 
-          <h3> 1. Attractions </h3>
-          <div class="attractions">
-          </div>
-          
-          <h3>2. [Figure it out]</h3>
-          <div class="">
-          </div>
+            <h3 class=""> Similar Trips</h4>
+            <div class="similarTrips"> </div>
 
-          <h3> 3. Time for Food! </h3>
-          <div class="foodTime">
-          </div>
+            <!-- Calendar Library-->
+            <div id="calendar"></div>
 
-          <h4> Similar Trips</h4>
-          <div class="similarTrips">
-          </div>
-
-          <!-- Calendar Library-->
-          <div id="calendar"></div>
-
+          </template>
         </div>
 
         <footer>
