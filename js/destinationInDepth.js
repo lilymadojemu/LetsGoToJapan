@@ -42,12 +42,8 @@ class Destination {
     }
 };
 
-
 // Array containing the destination housed on web page (only one at a time)
 let destinationList = []
-
-// A set Housing destinations saved to the itinerary page (no duplicates)
-let itineraryList = new Set();
 
 // Gather info from URL
 const queryString = window.location.search;
@@ -60,8 +56,6 @@ console.log(params);
 // Gets the current destination and stores it in a variable
 const destinationName = params.get('destinations');
 console.log(destinationName);
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const destinationInfo = {
@@ -237,40 +231,40 @@ function createDestination(destinationInfo) {
     avoidedTimeTwo.textContent = destinationInfo.avoidTimeTwo;
 
     // Removes destination from itinerary list based on user input (click)
-    // const removeSaveToItineraryBtn = clone.querySelector('.saveDestination');
-    // removeSaveToItineraryBtn.addEventListener('click', () =>{
-    //     deleteDestination(destinationInfo);
-    // });
+    const removeSaveToItineraryBtn = clone.querySelector('.saveDestination');
+    removeSaveToItineraryBtn.addEventListener('click', () =>{
+        deleteDestination(destinationInfo);
+    });
 
-    // Adding cart item elements to the DOM to be displayed
+    // Adding destination elements to the DOM to be displayed
     const destinationContainer = document.querySelector('.destinationItems');
     destinationContainer.appendChild(clone);
-
-
 
 };
 
 const saveToItinerary = document.querySelector('.btn.btn-info');
 saveToItinerary.onclick = this.createItinerary;
 
-// Save current destination information 
+// Save current destination information and add current destination to itinerary list
 function createItinerary() {
     const itineraryDestination = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
-    itineraryList.push(destinationName);
+    destinationList.push(itineraryDestination);
 
     saveToLocalStorage();
 
     return itineraryDestination;
 };
 
+// Save current destination info to local storage
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(destinationList);
+    console.log(destinationList)
     localStorage.setItem('storedDestinationItems', destinationString);    
-    // printing the current contents of the cart in local storage after saving
-    console.log('Items in Destination Array ' + destinationList);
-    console.log('Items in local storage: ' + localStorage.storedDestinationItems);
+    // printing the current contents of the destinations in local storage after saving
+    console.log(destinationString);
 };
 
+// Retrieves destinations from local storage
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedDestinationItems');
     const storedDestination = JSON.parse(destinationString);
@@ -280,10 +274,10 @@ function retrieveFromLocalStorage(){
     }
 }
 
-if (localStorage.getItem('storedDestinations') != null) {
+if (localStorage.getItem('storedDestinationItems') != null) {
     retrieveFromLocalStorage();
 }
   
-if (localStorage.getItem('storedDestinations') != null) {
+if (localStorage.getItem('storedDestinationItems') != null) {
     const destinationList = [];
 }

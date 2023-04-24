@@ -45,22 +45,23 @@
         <!-- House Content on Itinerary Page -->
         <div class="container">
           <h1> Recently Saved </h1>
+
           <div class="row">
             <template id="itineraryPreviewTemplate">
               <!-- Itinerary Preview -->
-              <div class="col-4">
+              <div class="col">
                 <div class="itineraryPreview">
                   <img class="previewImg" src="" alt="">
                   <!--destination Name -->
                   <h4 class="itineraryTitle"></h4>
-                  <button class="editTrip">Edit Trip</button>
+                  <button type="button" class="btn btn-outline-primary">Edit Trip</button>
+                  <button type="button" class="btn btn-outline-danger">Delete Trip</button>
                 </div>
               </div>     
             </template>
           </div>
-          <div class="itineraries"></div> 
         </div>
-
+        <div class="itineraries"></div> 
         <footer>
             <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Footer Logo.png" alt="Let's Go to Japan Logo">
             <div class="contactMe"> 
