@@ -39,11 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // Array that will house products intended to be on itinerary page
 let itineraryList = [];
 
-var calendarInstance1 = calendarJs( "calendar", {
-    // User can create events but will be auto populated with info.
-    manualEditingEnabled: true
+const activities = []
 
-    // All your options can be set here
+// Creating an instance of a calendar
+var calendarInstance1 = calendarJs( "calendar", {
+    // Calendar Options/Properties
+    manualEditingEnabled: false,
+    startWeekOn: 1,
+    weekNumbers: true,
+    dayHeaderFormat: 'ddd',
+    showAllDayEvents: false
 } );
 
 // Updating the DOM to show itinerary components
