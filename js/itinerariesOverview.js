@@ -1,16 +1,16 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    // createDestination(destination);
-    for (const key in destinationInfo) {
-        if (destinationName == key) {
-            const destinationElement = createDestination(destinationInfo[key]);
-            addNewDestination(destinationElement);
-        }
-    }
-    
+    // createItineraryPreview(storedDestinationItems);
+    // for (const key in storedDestinationItems) {
+    //     if (destinationName == key) {
+    //         const destinationElement = createDestination(destinationInfo[key]);
+    //         addNewDestination(destinationElement);
+    //     }
+    // }
+
     // If destinationName has been deleted from itinerary from destination In Depth Page, remove it from the DOM of itinerary Page
     // Removes selected element from the DOM
-    destinationName.element.remove();
+    // destinationName.element.remove();
 });
 
 function createItineraryPreview(destinationInfo) {
@@ -47,10 +47,17 @@ function createItineraryPreview(destinationInfo) {
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedDestinationItems');
     const storedDestination = JSON.parse(destinationString);
+    console.log('retrieved from local storage ' + destinationString);
     if (storedDestination) {
         destinationList = storedDestination;
         console.log(destinationList);
     }
+    for (const key in destinationString) {
+        if (storedDestination == key) {
+            createItineraryPreview(storedDestination);
+        }
+    }
+    console.log(destinationString);
 }
 
 // Saves destinations in Destination List to itinerary Page 
@@ -63,10 +70,10 @@ function saveToLocalStorage(){
 };
 
 
-if (localStorage.getItem('storedDestinations') != null) {
+if (localStorage.getItem('storedDestinationsItems') != null) {
     retrieveFromLocalStorage();
 };
 
-if (localStorage.getItem('storedDestinations') == null) {
-    let destinationList = [];
-};
+// if (localStorage.getItem('storedDestinationsItems') == null) {
+//     let destinationList = [];
+// };
