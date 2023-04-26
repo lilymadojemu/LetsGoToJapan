@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "romajiTextFive":"kitsune",
             "engTransFive":"Fox",
             "seasonOne":"Mid-January to Mid-March",
-            "seasonTwo":"Mid-June to Mid-SAptember",
+            "seasonTwo":"Mid-June to Mid-September",
             "avoidTimesOne":"12:00pm - 4:00pm",
             "avoidTimesTwo":"Weekends & Public Holidays",
             "locationMainImgAlt":"Fushimi Inari Shrine",
@@ -296,15 +296,29 @@ function createDestination(destinationInfo) {
     avoidedTimeTwo.textContent = destinationInfo.avoidTimeTwo;
 
     // Removes destination from itinerary list based on user input (click)
-    const removeSaveToItineraryBtn = clone.querySelector('.saveDestination');
-    removeSaveToItineraryBtn.addEventListener('click', () =>{
-        deleteDestination(destinationInfo);
+    const removeDestinationBtn = clone.querySelector('.btn.btn-outline-danger');
+    removeDestinationBtn.addEventListener('click', () =>{
+        deleteDestination(destinationName);
+    });
+
+    // Removes destination from itinerary list based on user input (click)
+    const saveDestinationBtn = clone.querySelector('.btn.btn-outline-success');
+    removeDestinationBtn.addEventListener('click', () =>{
+        saveDestination(destinationName);
     });
 
     // Adding destination elements to the DOM to be displayed
     const destinationContainer = document.querySelector('.destinationItems');
     destinationContainer.appendChild(clone);
 
+};
+// Deletes Destination from destinationList
+function deleteDestination(destinationName){
+    // Remove the actual destinationName from destinationList array
+    destinationList.splice(destinationList.indexOf(destinationName), 1)
+
+    // Update Local Storage
+    saveToLocalStorage();
 };
 
 const saveToItinerary = document.querySelector('.btn.btn-info');

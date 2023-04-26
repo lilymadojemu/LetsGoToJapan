@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
             addNewDestination(destinationElement);
         }
     }
+    
+    // If destinationName has been deleted from itinerary from destination In Depth Page, remove it from the DOM of itinerary Page
+    // Removes selected element from the DOM
+    destinationName.element.remove();
 });
 
 function createItineraryPreview(destinationInfo) {
