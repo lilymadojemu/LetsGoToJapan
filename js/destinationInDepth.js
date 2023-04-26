@@ -303,7 +303,7 @@ function createDestination(destinationInfo) {
 
     // Removes destination from itinerary list based on user input (click)
     const saveDestinationBtn = clone.querySelector('.btn.btn-outline-success');
-    removeDestinationBtn.addEventListener('click', () =>{
+    saveDestinationBtn.addEventListener('click', () =>{
         saveDestination(destinationName);
     });
 
@@ -312,6 +312,18 @@ function createDestination(destinationInfo) {
     destinationContainer.appendChild(clone);
 
 };
+
+// Saves Current Destination from destinationList
+function saveDestination(destinationName){
+    // Add actual destinationName to destinationList array
+    destinationList.push(destinationName);
+
+    console.log(destinationList);
+
+    // Update Local Storage
+    saveToLocalStorage();
+};
+
 // Deletes Destination from destinationList
 function deleteDestination(destinationName){
     // Remove the actual destinationName from destinationList array
@@ -321,8 +333,8 @@ function deleteDestination(destinationName){
     saveToLocalStorage();
 };
 
-const saveToItinerary = document.querySelector('.btn.btn-info');
-saveToItinerary.onclick = this.createItinerary;
+const saveToItinerary = document.querySelector('.btn.btn-outline-success');
+// saveToItinerary.onclick = this.createItinerary;
 
 // Save current destination information and add current destination to itinerary list
 function createItinerary() {

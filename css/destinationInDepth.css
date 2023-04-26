@@ -130,3 +130,23 @@ ul li {
       height: 300px;
     }
 }
+
+.heart-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    border: none;
+  }
+  
+  .heart-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .heart-btn:active {
+    transform: scale(0.9);
+  }
