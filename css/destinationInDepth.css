@@ -16,7 +16,7 @@ h1 {
 div {
     display: block;
 }
-
+/* Sett up stagnant demensions for all images */
 img {
     pointer-events: none;
     border-radius: 0.3rem;
