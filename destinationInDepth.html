@@ -43,128 +43,126 @@
         <div class="location-page">
           <template id="destinationTemplate">
             <div class="destinationInfo">
-
-              <!-- On Left side of the page -->
-              <div class="col-md-7">
-                <img class="locationMainImg" class="img-fluid" src="" alt="">
-              </div>
-
-              <!-- On right side of the page -->
-              <div class="destinationContent" class="col-md-5" > 
-                <h1 class="destinationTitle" class="fw-bold" ></h1> 
-                <h3 class="destinationTagline" class="fw-bold" ></h3>
-                <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
-                <button type="button" class="btn btn-outline-danger">Remove from My Itineraries</button>
-                <p class="destinationSummary" class="lead" ></p>
-
-                <ul class="activity">
-                  <li><img class="activityImgOne" src="" alt=""></li>
-                  <li>
-                    <p class="activityTitleOne"></p>
-                    <p class="activityDescriptionOne"></p>
-                  </li>        
-                </ul>
-
-                <ul class="rightPositioning">
-                  <li><img class="activityImgTwo" src="" alt=""></li>
-                  <li>
-                    <p class="activityTitleTwo"></p>
-                    <p class="activityDescriptionTwo"></p>
-                  </li>  
-                </ul>
-
-                <ul class="activity">
-                  <li><img class="activityImgThree" src="" alt=""></li>
-                  <li class="activityDescriptionThree">
-                    <p class="activityTitleThree"></p>
-                    <p class="activityDescriptionThree"></p>
-                  </li>
-                </ul>
-              </div>
-
-              
-              <div class="destinationTipArea">
-                <h1> Destination Tips</h1>
-                <div class="destinationSquare">
-                  <div class="destinationTip" id="vocabTip">    
-                    <h2> Vocabulary to Know</h2>
-                    <table class="japaneseTable"> 
-                        <tbody>
-                          <!-- tr == Row of a table -->
-                          <tr class="row1">
-                            <td>
-                              <span lang="ja" class="japnTextOne"></span>
-                          
-                              <!-- Romaji -->
-                              <em class="romajiTextOne"></em>
-                              
-                            </td>
-                            <!-- English translation -->
-                            <td class="engTransOne"></td>
-                          </tr>
-                          <tr class="row2">
-                            <td>
-                              <span lang="ja" class="japnTextTwo"></span>
-                              
-                              <!-- Romaji -->
-                              <em class="romajiTextTwo"></em>
-                            
-                            </td>
-                            <!-- English translation -->
-                            <td class="engTransTwo"></td>
-                          </tr>
-                          <tr class="row3">
-                            <td>
-                              <span lang="ja" class="japnTextThree"></span>
-                            
-                              <!-- Romaji -->
-                              <em class="romajiTextThree"></em>
-                            
-                            </td>
-                            <!-- English translation -->
-                            <td class="engTransThree"></td>
-                          </tr>
-                          <tr class="row4">
-                            <td>
-                              <span lang="ja" class="japnTextFour"></span>
-                            
-                              <!-- Romaji -->
-                              <em class="romajiTextFour"></em>
-                              
-                            </td>
-                            <!-- English translation -->
-                            <td class="engTransFour"></td>
-                          </tr>
-                          <tr class="row5">
-                            <td>
-                              <span lang="ja" class="japnTextFive"></span>
-                              <!-- Romaji -->
-                              <em class="romajiTextFive"></em>
-                            </td>
-                            <!-- English translation -->
-                            <td class="engTransFive"></td>
-                          </tr>
-                        </tbody>
-                    </table>  
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <!-- On Left side of the page -->
+                  <img id="locationMainImg" class="img-fluid" src="" alt="">
                 </div>
-
-                <div class="destinationSquare">
-                  <div class="destinationTip" id="bestVisitTimes">
-                    <h2> Best Time to Visit</h2>
-
-                    <h5> Come During the Off-Season(s): </h5>
-                    <ul>
-                      <li class="seasonOne"></li>
-                      <li class="seasonTwo"></li>
+                <div class="col">
+                  <!-- On right side of the page -->
+                  <section class="destinationContent"> 
+                    <h1 class="destinationTitle" class="fw-bold" ></h1> 
+                    <h3 class="destinationTagline" class="fw-bold" ></h3>
+                    <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
+                    <button type="button" class="btn btn-outline-danger">Remove from My Itineraries</button>
+                    <p class="destinationSummary" class="lead" ></p>
+    
+                    <ul class="activity">
+                      <li><img class="activityImgOne" src="" alt=""></li>
+                      <li>
+                        <p class="activityTitleOne"></p>
+                        <p class="activityDescriptionOne"></p>
+                      </li>        
                     </ul>
-
-                    <h5> Avoid the crowd by coming:</h5>
-                    <ul> 
-                      <li class="avoidTimesOne"></li>
-                      <li class="avoidTimesTwo"></li>
+    
+                    <ul class="rightPositioning">
+                      <li><img class="activityImgTwo" src="" alt=""></li>
+                      <li>
+                        <p class="activityTitleTwo"></p>
+                        <p class="activityDescriptionTwo"></p>
+                      </li>  
                     </ul>
-                </div>
+    
+                    <ul class="activity">
+                      <li><img class="activityImgThree" src="" alt=""></li>
+                      <li class="activityDescriptionThree">
+                        <p class="activityTitleThree"></p>
+                        <p class="activityDescriptionThree"></p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section class="destinationTipArea">
+                    <h1> Destination Tips</h1>
+
+                      <div class="destinationTip" id="vocabTip">    
+                        <h2> Vocabulary to Know</h2>
+                        <table class="japaneseTable"> 
+                            <tbody>
+                              <!-- tr == Row of a table -->
+                              <tr class="row1">
+                                <td>
+                                  <span lang="ja" class="japnTextOne"></span>
+                              
+                                  <!-- Romaji -->
+                                  <em class="romajiTextOne"></em>
+                                  
+                                </td>
+                                <!-- English translation -->
+                                <td class="engTransOne"></td>
+                              </tr>
+                              <tr class="row2">
+                                <td>
+                                  <span lang="ja" class="japnTextTwo"></span>
+                                  
+                                  <!-- Romaji -->
+                                  <em class="romajiTextTwo"></em>
+                                
+                                </td>
+                                <!-- English translation -->
+                                <td class="engTransTwo"></td>
+                              </tr>
+                              <tr class="row3">
+                                <td>
+                                  <span lang="ja" class="japnTextThree"></span>
+                                
+                                  <!-- Romaji -->
+                                  <em class="romajiTextThree"></em>
+                                
+                                </td>
+                                <!-- English translation -->
+                                <td class="engTransThree"></td>
+                              </tr>
+                              <tr class="row4">
+                                <td>
+                                  <span lang="ja" class="japnTextFour"></span>
+                                
+                                  <!-- Romaji -->
+                                  <em class="romajiTextFour"></em>
+                                  
+                                </td>
+                                <!-- English translation -->
+                                <td class="engTransFour"></td>
+                              </tr>
+                              <tr class="row5">
+                                <td>
+                                  <span lang="ja" class="japnTextFive"></span>
+                                  <!-- Romaji -->
+                                  <em class="romajiTextFive"></em>
+                                </td>
+                                <!-- English translation -->
+                                <td class="engTransFive"></td>
+                              </tr>
+                            </tbody>
+                        </table>  
+                      </div>
+                    
+                      <div class="destinationTip" id="bestVisitTimes">
+                        <h2> Best Time to Visit</h2>
+    
+                        <h5> Come During the Off-Season(s): </h5>
+                        <ul>
+                          <li class="seasonOne"></li>
+                          <li class="seasonTwo"></li>
+                        </ul>
+    
+                        <h5> Avoid the crowd by coming:</h5>
+                        <ul> 
+                          <li class="avoidTimesOne"></li>
+                          <li class="avoidTimesTwo"></li>
+                        </ul>
+                      </div>
+                  </section>
                 </div>
               </div>
             </div>

@@ -193,7 +193,7 @@ function createDestination(destinationInfo) {
 
     // Images & Alts
     // Main Image
-    const destinationMainImage = clone.querySelector('.locationMainImg');
+    const destinationMainImage = clone.querySelector('#locationMainImg');
     destinationMainImage.src = `location-images/${destinationName}/${destinationName} Main Image.jpg`;
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
     
