@@ -43,48 +43,65 @@
         <div class="location-page">
           <template id="destinationTemplate">
             <div class="destinationInfo">
-              <div class="row">
-                <div class="col">
-                  <!-- On Left side of the page -->
-                  <img id="locationMainImg" class="img-fluid" src="" alt="">
-                </div>
-                <div class="col">
-                  <!-- On right side of the page -->
-                  <section class="destinationContent"> 
-                    <h1 class="destinationTitle" class="fw-bold" ></h1> 
-                    <h3 class="destinationTagline" class="fw-bold" ></h3>
-                    <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
-                    <button type="button" class="btn btn-outline-danger">Remove from My Itineraries</button>
-                    <p class="destinationSummary" class="lead" ></p>
-    
-                    <ul class="activity">
-                      <li><img class="activityImgOne" src="" alt=""></li>
-                      <li>
-                        <p class="activityTitleOne"></p>
-                        <p class="activityDescriptionOne"></p>
-                      </li>        
-                    </ul>
-    
-                    <ul class="rightPositioning">
-                      <li><img class="activityImgTwo" src="" alt=""></li>
-                      <li>
-                        <p class="activityTitleTwo"></p>
-                        <p class="activityDescriptionTwo"></p>
-                      </li>  
-                    </ul>
-    
-                    <ul class="activity">
-                      <li><img class="activityImgThree" src="" alt=""></li>
-                      <li class="activityDescriptionThree">
-                        <p class="activityTitleThree"></p>
-                        <p class="activityDescriptionThree"></p>
-                      </li>
-                    </ul>
-                  </section>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <!-- On Left side of the page -->
+                    <img id="locationMainImg" class="img-fluid" src="" alt="">
+                  </div>
+                  <div class="col">
+                    <!-- On right side of the page -->
+                    <section class="destinationContent"> 
+                      <h1 class="destinationTitle" class="fw-bold" ></h1> 
+                      <h3 class="destinationTagline" class="fw-bold" ></h3>
 
-                  <section class="destinationTipArea">
-                    <h1> Destination Tips</h1>
+                      <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
+                      <button type="button" class="btn btn-outline-danger">Remove from My Itineraries</button>
+                      
+                      <p class="destinationSummary" class="lead" ></p>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <ul class="activity">
+                            <li><img class="activityImgOne" src="" alt=""></li>
+                            <li>
+                              <h3 class="activityTitleOne"></h3>
+                              <p class="activityDescriptionOne"></p>
+                            </li>        
+                          </ul>
+                        </div>
+                      </div>
 
+                      <div class="row">
+                        <div class="col-md-4">
+                          <!-- Reverse Position of Activity Information -->
+                          <ul class="reversePosition">
+                            <li><img class="activityImgTwo" src="" alt=""></li>
+                            <li>
+                              <h3 class="activityTitleTwo"></h3>
+                              <p class="activityDescriptionTwo"></p>
+                            </li>  
+                          </ul>
+                        </div>                        
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-4">
+                          <ul class="activity">
+                            <li><img class="activityImgThree" src="" alt=""></li>
+                            <li class="activityDescriptionThree">
+                              <h3 class="activityTitleThree"></h3> 
+                              <p class="activityDescriptionThree"></p>
+                            </li>
+                          </ul>
+                        </div>                        
+                      </div>
+      
+
+                    </section>
+  
+                    <section class="destinationTipArea">
+                      <h1> Destination Tips</h1>
+                      <!-- Reommended Vocabulary To Know -->
                       <div class="destinationTip" id="vocabTip">    
                         <h2> Vocabulary to Know</h2>
                         <table class="japaneseTable"> 
@@ -146,9 +163,10 @@
                             </tbody>
                         </table>  
                       </div>
-                    
+
+                      <!-- Recommended Visit Times -->
                       <div class="destinationTip" id="bestVisitTimes">
-                        <h2> Best Time to Visit</h2>
+                        <h2> Recommended Visit Times</h2>
     
                         <h5> Come During the Off-Season(s): </h5>
                         <ul>
@@ -162,8 +180,9 @@
                           <li class="avoidTimesTwo"></li>
                         </ul>
                       </div>
-                  </section>
+                    </section>
                 </div>
+              </div>
               </div>
             </div>
           </template>
