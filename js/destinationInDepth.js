@@ -198,15 +198,15 @@ function createDestination(destinationInfo) {
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
     
     // Activity One 
-    const destinationActOneImg = clone.querySelector('.activityImgOne');
+    const destinationActOneImg = clone.querySelector('#activityImgOne');
     destinationActOneImg.src = `location-images/${destinationName}/${destinationName} Activity One.jpg`;
     destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
     // Activity Two
-    const destinationActTwoImg = clone.querySelector('.activityImgTwo');
+    const destinationActTwoImg = clone.querySelector('#activityImgTwo');
     destinationActTwoImg.src = `location-images/${destinationName}/${destinationName} Activity Two.jpg`;
     destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
     // Activity Three
-    const destinationActThreeImg = clone.querySelector('.activityImgThree');
+    const destinationActThreeImg = clone.querySelector('#activityImgThree');
     destinationActThreeImg.src = `location-images/${destinationName}/${destinationName} Activity Three.jpg`;
     destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
 
@@ -250,28 +250,28 @@ function createDestination(destinationInfo) {
     const destinationJapnTextOne = clone.querySelector('.japnTextOne');
     destinationJapnTextOne.textContent = destinationInfo.japnTextOne;
     const destinationRomajiTextOne = clone.querySelector('.romajiTextOne');
-    destinationRomajiTextOne.textContent = destinationInfo.romajiTextOne;
+    destinationRomajiTextOne.textContent = '(' + destinationInfo.romajiTextOne + ')';
     const destinationEngTextOne = clone.querySelector('.engTransOne');
     destinationEngTextOne.textContent = destinationInfo.engTransOne;
     // Row 2
     const destinationJapnTextTwo = clone.querySelector('.japnTextTwo');
     destinationJapnTextTwo.textContent = destinationInfo.japnTextTwo;
     const destinationRomajiTextTwo= clone.querySelector('.romajiTextTwo');
-    destinationRomajiTextTwo.textContent = destinationInfo.romajiTextTwo;
+    destinationRomajiTextTwo.textContent = '(' + destinationInfo.romajiTextTwo + ')';
     const destinationEngTextTwo = clone.querySelector('.engTransTwo');
     destinationEngTextTwo.textContent = destinationInfo.engTransTwo;
     // Row 3
     const destinationJapnTextThree = clone.querySelector('.japnTextThree');
     destinationJapnTextThree.textContent = destinationInfo.japnTextThree;
     const destinationRomajiTextThree= clone.querySelector('.romajiTextThree');
-    destinationRomajiTextThree.textContent = destinationInfo.romajiTextThree;
+    destinationRomajiTextThree.textContent = '(' + destinationInfo.romajiTextThree + ')';
     const destinationEngTextThree = clone.querySelector('.engTransThree');
     destinationEngTextThree.textContent = destinationInfo.engTransThree;
     // Row 4
     const destinationJapnTextFour = clone.querySelector('.japnTextFour');
     destinationJapnTextFour.textContent = destinationInfo.japnTextFour;
     const destinationRomajiTextFour = clone.querySelector('.romajiTextFour');
-    destinationRomajiTextFour.textContent = destinationInfo.romajiTextFour;
+    destinationRomajiTextFour.textContent = '(' + destinationInfo.romajiTextFour +')';
     const destinationEngTextFour = clone.querySelector('.engTransFour');
     destinationEngTextFour.textContent = destinationInfo.engTransFour;
     // Row 5
