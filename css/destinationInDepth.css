@@ -1,31 +1,39 @@
 /* Typography */
-
 body {
     color:white
 }
 
-h1 {
-    color: #f68ca2 !important;    
+#torii-gate-footer-logo{
+    height: auto;
+    max-width: 200px; 
 }
 
-/* Sett up stagnant demensions for all images */
+
 img {
     pointer-events: none;
     border-radius: 0.3rem;    
 }
-
+.leftContent {
+    position: sticky;
+    top: 0;
+}
+.container {
+    display: flex;
+}
 /* Left Content */
-.locationMainImg{
-    margin-top: 20%;
-    height: 20%;
-    width: 70%;
-    margin: auto;
-    left: 0;
-    position: relative;
+#locationMainImg{
+    margin-top: 10%;
+    width: 100%;
+    height:auto;
+    box-sizing: border-box;
 }
 
 /* Right Content */
 
+.destinationContent {
+    width: 100%;
+    margin-left: 20%;
+}
 .destinationInfo {
     display:flex;
 }
@@ -35,14 +43,15 @@ h1, .destinationTitle{
     line-height: 3rem;
     color: #f68ca2;
     margin-bottom: 0;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 2%;
 }
 
 .destinationTagline {
     margin:auto;
     width: 100%;
+    margin-bottom: 2%;
 }
-
 
 .destinationSummary {
     border-radius: 25px;
@@ -51,7 +60,8 @@ h1, .destinationTitle{
     padding: 50px;
     width: 100%;
     height: auto;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 2%;
 }
 
 /* Activities */
@@ -69,24 +79,39 @@ p {
     width: 600px;
     text-align: left;
 }
-/* Activity Titles */
 
-/* Destination tips */
-.destinationTipArea {
-    width: 100%;
+/* Destination Tips */
+
+.destinationTipArea h1 {
+    margin-bottom: 2%;
+    color: #f68ca2 !important;
+    text-align: left !important;    
 }
 
+.destinationTipArea {
+    width: 100%;
+    margin-left: 20%;
+
+}
 .destinationTip {
     margin:auto;
 }
 
+#vocabTip, #bestVisitTimes {
+    margin-top: 5%;
+    width: 100%;
+    margin: auto;
+    width: 100%;
+}
 #vocabTip {
-    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.destinationTip ul {
+    margin: auto;
     width: 100%;
 }
 
-#bestVisitTimes {
-    margin-top: 5%;
-    width: 100%;
+.destinationTip li {
+    display: block;
+    color: white;
 }
-
