@@ -1,24 +1,70 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    // createItineraryPreview(storedDestinationItems);
-    // for (const key in storedDestinationItems) {
-    //     if (destinationName == key) {
-    //         const destinationElement = createDestination(destinationInfo[key]);
-    //         addNewDestination(destinationElement);
-    //     }
-    // }
+    
+    const itineraryInfoPrev = {
+        "Sanrio Puroland": {
+            "itineraryTitle": "Sanrio Puroland",
+            "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+        },
+        "Fushimi Inari Shrine": {
+            "itineraryTitle": "Fushimi Inari Shrine",
+            "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+        },
+        "Osaka Castle": {
+            "itineraryTitle": "Osaka Castle",
+            "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+        },
+
+    }
+    
+    for (const key in localStorage.storedDestinationItems) {
+        createItineraryPreview(itineraryInfoPrev);
+    }
 
     // If destinationName has been deleted from itinerary from destination In Depth Page, remove it from the DOM of itinerary Page
     // Removes selected element from the DOM
     // destinationName.element.remove();
 });
 
-function createItineraryPreview(destinationInfo) {
-    console.log(destinationInfo);
+function createItineraryPreview(itineraryInfoPrev) {
+    console.log(itineraryInfoPrev);
     // Grabs a reference to the destination template:
     const template = document.querySelector('#itineraryPreviewTemplate');
     const clone = template.content.cloneNode(true);
-    destinationInfo.element = clone.querySelector('.itineraryPreview');
+    itineraryInfoPrev.element = clone.querySelector('.itineraryPreview');
     // update Dom Elements
 
     // Itinerary Image

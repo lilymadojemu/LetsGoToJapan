@@ -1,37 +1,125 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itineraryInfo = {
         "Sanrio Puroland": {
-            "destinationTitle": "Sanrio Puroland",
-            "destinationTagline":"Where Hello Kitty and Friends Come to Life: Experience the Magic of Sanrio Puroland!",
-            "destinationSummary": "Sanrio Puroland is a must-visit destination for fans of Sanrio characters, offering a magical world of kawaii-themed shows, rides, and shopping. Located in Tokyo, Japan, it's a paradise for Hello Kitty, My Melody, Cinnamoroll, and other beloved characters, with unique experiences and merchandise that delight visitors of all ages.",
-            "activityImgOne": "location-images/Sanrio/Sanrio_food_1.jpeg",
-            "activityImgOneAlt":"Milkshakes, Cakes, and Curry with faces of Cinnamoroll",
-            "activityImgTwo": "location-images/Sanrio/kawaiikabuki_Image.jpeg",
-            "activityImgTwoAlt":"Kawaii Kabuki Poster",
-            "activityImgThree": "location-images/Sanrio/enjoygoods_image.jpeg",
-            "activityImgThreeAlt":"Headbands depicting various Sanrio characters",
-            "activityTitleOne":"Food",
-            "activityTitleTwo":"Have Fun!",
-            "activityTitleThree":"Souvenirs",
-            "activityDescriptionOne":"You'll love the diverse menu options we have, ranging from cute dishes with character motifs to filling meals that will satisfy your hunger. There's something for everyone! Don't miss the chance to capture the picture-perfect presentation of our dishes and share them on social media. Additionally, our seasonal menu items change throughout the year, so be sure to check them out before you come for a unique and delicious dining experience",
-            "activityDescriptionTwo":"This mesmerizing musical show combines the irresistible charm of Sanrio characters with the time-honored art form of Kabuki. Kabuki is a traditional form of Japanese theater known for its elaborate costumes, stylized movements, and dramatic performances. It has a rich history dating back to the Edo period, and is renowned for its unique blend of music, dance, and drama. In this collaborative show, you'll experience the captivating fusion of Sanrio's KAWAII (cuteness) with the elegance and artistry of Kabuki, creating a truly unforgettable performance. Don't miss the chance to see beloved Sanrio characters take the stage in their finest Kabuki-inspired costumes!",
-            "activityDescriptionThree":"At Puroland, you'll be spoiled for choice with the wide array of goodies available! From candy to stationery, clothing, and more, there's something for everyone. You'll find an overwhelming number and variety of products, including items featuring popular Sanrio characters like Hello Kitty, My Melody, and Cinnamoroll. What's more, there are loads of original products that are exclusive to Puroland, so you won't find them anywhere else. Whether you're looking for a cute souvenir or a unique item to commemorate your visit, you're sure to find your favorite items at Puroland!",
-
-
+            "itineraryTitle": "Sanrio Puroland",
+            "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+            "foodDrinkImgOneAlt":"",
+            "foodDrinkImgTwoAlt":"",
+            "foodDrinkImgThreeAlt":"",
+            "foodDrinkOneTitle":"",
+            "foodDrinkTwoTitle":"",
+            "foodDrinkThreeTitle":"",
+            "foodDrinkFourTitle":"",
+            "foodDrinkOneDesc":"",
+            "foodDrinkTwoDesc":"",
+            "foodDrinkThreeDesc":"",
+            "foodDrinkFourDesc":"",
+            "pracInfoImgOneAlt":"",
+            "pracInfoImgTwoAlt":"",
+            "pracInfoImgThreeAlt":"",
+            "pracInfoOneTitle":"",
+            "pracInfoTwoTitle":"",
+            "pracInfoThreeTitle":"",
+            "pracInfoFourTitle":"",
+            "pracInfoOneDesc":"",
+            "pracInfoTwoDesc":"",
+            "pracInfoThreeDesc":"",
+            "pracInfoFourDesc":"",
         },
         "Fushimi Inari Shrine": {
-            "destinationTitle": "Fushimi Inari Shrine",
+            "itineraryTitle": "Fushimi Inari Shrine",
+            "headerImgAlt":"",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+            "foodDrinkImgOneAlt":"",
+            "foodDrinkImgTwoAlt":"",
+            "foodDrinkImgThreeAlt":"",
+            "foodDrinkOneTitle":"",
+            "foodDrinkTwoTitle":"",
+            "foodDrinkThreeTitle":"",
+            "foodDrinkFourTitle":"",
+            "foodDrinkOneDesc":"",
+            "foodDrinkTwoDesc":"",
+            "foodDrinkThreeDesc":"",
+            "foodDrinkFourDesc":"",
+            "pracInfoImgOneAlt":"",
+            "pracInfoImgTwoAlt":"",
+            "pracInfoImgThreeAlt":"",
+            "pracInfoOneTitle":"",
+            "pracInfoTwoTitle":"",
+            "pracInfoThreeTitle":"",
+            "pracInfoFourTitle":"",
+            "pracInfoOneDesc":"",
+            "pracInfoTwoDesc":"",
+            "pracInfoThreeDesc":"",
+            "pracInfoFourDesc":"",
         },
         "Osaka Castle": {
-            "destinationTitle": "Osaka Castle",
+            "itineraryTitle": "Osaka Castle",
+            "headerImgAlt":"",
+            "actImgOneAlt":"",
+            "actImgTwoAlt":"",
+            "actImgThreeAlt":"",
+            "actOneTitle":"",
+            "actTwoTitle":"",
+            "actThreeTitle":"",
+            "actFourTitle":"",
+            "actOneDesc":"",
+            "actTwoDesc":"",
+            "actThreeDesc":"",
+            "actFourDesc":"",
+            "foodDrinkImgOneAlt":"",
+            "foodDrinkImgTwoAlt":"",
+            "foodDrinkImgThreeAlt":"",
+            "foodDrinkOneTitle":"",
+            "foodDrinkTwoTitle":"",
+            "foodDrinkThreeTitle":"",
+            "foodDrinkFourTitle":"",
+            "foodDrinkOneDesc":"",
+            "foodDrinkTwoDesc":"",
+            "foodDrinkThreeDesc":"",
+            "foodDrinkFourDesc":"",
+            "pracInfoImgOneAlt":"",
+            "pracInfoImgTwoAlt":"",
+            "pracInfoImgThreeAlt":"",
+            "pracInfoOneTitle":"",
+            "pracInfoTwoTitle":"",
+            "pracInfoThreeTitle":"",
+            "pracInfoFourTitle":"",
+            "pracInfoOneDesc":"",
+            "pracInfoTwoDesc":"",
+            "pracInfoThreeDesc":"",
+            "pracInfoFourDesc":"",
         },
     };
+    // Set that destination Name is equal to selected element from itinerariesOverview
 
+    // Creates an Itinerary 
     // createItinerary(destination);
     for (const key in itineraryInfo) {
         if (destinationName == key) {
-            const destinationElement = createItinerary(destinationInfo[key]);
-            addNewItinerary(destinationElement);
+            const itineraryElem = createItinerary(itineraryInfo[key]);
+            addNewItinerary(itineraryElem);
         }
     }
 });
@@ -52,67 +140,130 @@ var calendarInstance1 = calendarJs( "calendar", {
 } );
 
 // Updating the DOM to show itinerary components
-function createItinerary(destinationInfo) {
-    console.log(destinationInfo);
+function createItinerary(itineraryInfo) {
+    console.log(itineraryInfo);
     // Grabs a reference to the destination template:
-    const template = document.querySelector('#destinationTemplate');
+    const template = document.querySelector('#itineraryEditTemplate');
     const clone = template.content.cloneNode(true);
-    destinationInfo.element = clone.querySelector('.destinationInfo');
+    itineraryInfo.element = clone.querySelector('.itineraryInfo');
     // update Dom Elements
+    // Change text
 
     // Images & Alts
     // Main Image
     const destinationMainImage = clone.querySelector('.locationMainImg');
-    destinationMainImage.src = `location-images/${destinationName}/${destinationName} Main Image.jpg`;
-    destinationMainImage.alt = destinationInfo.locationMainImgAlt;
-    
+    destinationMainImage.src = `itinerary-viewer-images/${destinationName}/${destinationName} Main Image.jpg`;
+    destinationMainImage.alt = itineraryInfo.locationMainImgAlt;
+    // Recommended Activities
     // Activity One 
     const destinationActOneImg = clone.querySelector('.activityImgOne');
-    destinationActOneImg.src = `location-images/${destinationName}/${destinationName} Activity One.jpg`;
-    destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
+    destinationActOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity One.jpg`;
+    destinationActOneImg.alt = itineraryInfo.activityImgOneAlt;
     // Activity Two
     const destinationActTwoImg = clone.querySelector('.activityImgTwo');
-    destinationActTwoImg.src = `location-images/${destinationName}/${destinationName} Activity Two.jpg`;
-    destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
+    destinationActTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Two.jpg`;
+    destinationActTwoImg.alt = itineraryInfo.activityImgTwoAlt;
     // Activity Three
     const destinationActThreeImg = clone.querySelector('.activityImgThree');
-    destinationActThreeImg.src = `location-images/${destinationName}/${destinationName} Activity Three.jpg`;
-    destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
+    destinationActThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.alt = itineraryInfo.activityImgThreeAlt;
+    // Activity Four
+    const destinationActFourImg = clone.querySelector('.activityImgThree');
+    destinationActFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Three.jpg`;
+    destinationActFourImg.alt = itineraryInfo.activityImgThreeAlt;
 
-    // Removes destination from itineraries based on user input (click)
-    const removeSaveToItineraryBtn = clone.querySelector('.saveDestination');
-    removeSaveToItineraryBtn.addEventListener('click', () =>{
-        deleteDestination(destinationInfo);
+    // Food and Drink
+    // foodDrink One 
+    const destinationFoodDrinkOneImg = clone.querySelector('.activityImgOne');
+    destinationFoodDrinkOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink One.jpg`;
+    destinationFoodDrinkOneImg.alt = itineraryInfo.activityImgOneAlt;
+    // foodDrink Two
+    const destinationFoodDrinkTwoImg = clone.querySelector('.activityImgTwo');
+    destinationFoodDrinkTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Two.jpg`;
+    destinationFoodDrinkTwoImg.alt = itineraryInfo.activityImgTwoAlt;
+    //foodDrink Three
+    const destinationFoodDrinkThreeImg = clone.querySelector('.activityImgThree');
+    destinationFoodDrinkThreeImg .src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Three.jpg`;
+    destinationFoodDrinkThreeImg .alt = itineraryInfo.activityImgThreeAlt;
+    // foodDrink Four
+    const destinationFoodDrinkFourImg = clone.querySelector('.activityImgThree');
+    destinationFoodDrinkFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Four.jpg`;
+    destinationFoodDrinkFourImg.alt = itineraryInfo.activityImgThreeAlt;
+
+    // Practical Information
+    // PracInfo One 
+    const destinationPracInfoOneImg = clone.querySelector('.activityImgOne');
+    destinationPracInfoOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac One.jpg`;
+    destinationPracInfoOneImg.alt = itineraryInfo.activityImgOneAlt;
+    // PracInfo Two
+    const destinationPracInfoTwoImg = clone.querySelector('.activityImgTwo');
+    destinationPracInfoTwoImgsrc = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Two.jpg`;
+    destinationPracInfoTwoImg.alt = itineraryInfo.activityImgTwoAlt;
+    // PracInfo Three
+    const destinationPracInfoThreeImg = clone.querySelector('.activityImgThree');
+    destinationPracInfoThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Three.jpg`;
+    destinationPracInfoThreeImg.alt = itineraryInfo.activityImgThreeAlt;
+    // PracInfo Four
+    const destinationPracInfoFourImg = clone.querySelector('.activityImgThree');
+    destinationPracInfoFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Four.jpg`;
+    destinationPracInfoFourImg.alt = itineraryInfo.activityImgThreeAlt;
+
+    // Redirect to itinerary Preview/Overview Page
+    // Removes destination from itinerary list based on user input (click)
+    const deleteItineraryBtn = clone.querySelector('.btn.btn-outline-danger');
+    deleteItineraryBtn.addEventListener('click', () =>{
+        deleteItinerary(destinationName);
     });
 
-    // Saves current itinerary based on user input (click)
-    const saveCurrentItineraryBtn = clone.querySelector('.saveDestination');
-    saveCurrentItineraryBtn.addEventListener('click', () =>{
-        deleteDestination(destinationInfo);
+    // Save Current Itinerary Information for later viewing based on user input (click)
+    const saveItineraryBtn = clone.querySelector('.btn.btn-outline-success');
+    saveItineraryBtn.addEventListener('click', () =>{
+        saveItinerary(destinationName);
     });
 
-    // Adding location elements to the Itiernary DOM to be displayed
-    const itineraryDestinationContainer = document.querySelector('.itineraryInfo');
+    // Adding location elements to the Itinerary DOM to be displayed
+    const itineraryDestinationContainer = document.querySelector('.myItinerary');
     itineraryDestinationContainer.appendChild(clone);
 
 };
 
-// Saves Current Itinerary Info 
-function saveToLocalStorage(){
-    const cartString = JSON.stringify(shoppingCart);
-    localStorage.setItem('storedCartItems', cartString);    
-    // printing the current contents of the cart in local storage after saving
-    console.log('Items in shopping cart array: ' + shoppingCart);
-    console.log('Items in local storage: ' + localStorage.storedCartItems);
+
+// Saves Current Destination from destinationList
+function saveItinerary(destinationName){
+    // Add actual destinationName to destinationList array
+    destinationList.push(destinationName);
+
+    console.log(destinationList);
+
+    // Update Local Storage
+    saveToLocalStorage();
 };
 
-// Retrieves itinerary info from local storage if applicable
+// Deletes Destination from destinationList
+function deleteItinerary(destinationName){
+    // Remove the actual destinationName from destinationList array
+    destinationList.splice(destinationList.indexOf(destinationName), 1)
+
+    // Update Local Storage
+    saveToLocalStorage();
+};
+
+// Saves Current Itinerary Info 
+function saveToLocalStorage(){
+    const itineraryString = JSON.stringify(itineraryList);
+    localStorage.setItem('storedItineraryElem', itineraryString);    
+    // printing the current contents of the cart in local storage after saving
+    console.log('Items in itineraryList: ' + itineraryList);
+    console.log('Items in local storage: ' + localStorage.storedItinerary);
+};
+
+// Retrieves itinerary info from local storage 
 function retrieveFromLocalStorage(){
-    const destinationString = localStorage.getItem('storedDestinationItems');
-    const storedDestination = JSON.parse(destinationString);
-    if (storedDestination) {
-        destinationList = storedDestination;
-        console.log(destinationList);
+    const itineraryString = localStorage.getItem('storedItineraryElem');
+    const storedItinerary= JSON.parse(itineraryString);
+    if (storedItinerary) {
+        itineraryList = storedItinerary;
+        console.log(itineraryList);
     }
 }
 
