@@ -87,12 +87,12 @@ function editItinerary(destinationName){
 
 // Deletes Destination from destinationList
 function deleteItinerary(itineraryInfoPrev){
+    // Remove destination from the DOM
+    itineraryInfoPrev.element.remove();
 
     // Remove the actual destination from itineraryList array
     itineraryList.splice(itineraryList.indexOf(itineraryInfoPrev.element), 1);
-
-    // Remove destination from the DOM
-    itineraryInfoPrev.element.remove();
+    console.log('new itineraryList' + itineraryList );
 
     // Update Local Storage
     saveToLocalStorage();
