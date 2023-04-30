@@ -349,7 +349,8 @@ function deleteDestination(destinationName){
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(destinationList);
     console.log('saved' + destinationList)
-    localStorage.setItem('storedDestinationItems', destinationString);    
+    localStorage.setItem('storedDestinationItems', destinationString);
+    console.log('saved Destination List' + localStorage.storedDestinationList);  
     // printing the current contents of the destinations in local storage after saving
     console.log('saved string'+destinationString);
 };
@@ -358,9 +359,10 @@ function saveToLocalStorage(){
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedDestinationItems');
     const storedDestination = JSON.parse(destinationString);
+    console.log(storedDestination);
     if (storedDestination) {
         destinationList = storedDestination;
-        console.log('local storage'+destinationList);
+        console.log('local storage'+ destinationList);
     }
 }
 
