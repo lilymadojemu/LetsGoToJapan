@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "Sanrio Puroland": {
             "engLocation": "Sanrio Puroland",
             "jpnLocation":"サンリオピューロランド",
-            "romajiLocation":"伏見稲荷大社",
             "prevImgAlt":"Sanrio Characters Floating Over Park Entrance",
         },
         "Fushimi Inari Shrine": {
@@ -48,7 +47,7 @@ function createItineraryPreview(itineraryInfoPrev) {
     // update Dom Elements
 
     // Itinerary Image
-    const itineraryPreviewImg = clone.querySelector('.previewImg');
+    const itineraryPreviewImg = clone.querySelector('#previewImg');
     itineraryPreviewImg.src = randomPrevPic;
     console.log(itineraryPreviewImg.src);
     itineraryPreviewImg.alt = itineraryInfoPrev.prevImgAlt;
