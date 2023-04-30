@@ -84,19 +84,23 @@ h4, h5, h6 {
     text-align: center;
 }
 
+h5 {
+    color: white;
+}
+
+h4 {
+    color: white;
+}
+
 h2 {
     text-align: left;
+    color:#333333
 }
 
 p{
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FFFFFF;
-}
-
-/* Slideshow Carousel */
-.slideshow{
-    display: flex; 
 }
 
 /* Leaflet Map */
