@@ -41,7 +41,7 @@ function createItineraryPreview(itineraryInfoPrev) {
 
     // different image paths <-- Put into an array, then shuffle array (have if come with an output), set that output equal to .src
     // An array with the possible itinerary Preview Images
-    const itineraryPrevImgs = [`itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Itinerary Preview Image 1.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Itinerary Preview Image 2.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Itinerary Preview Image 3.jpg`];
+    const itineraryPrevImgs = [`itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 1.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 2.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 3.jpg`];
     const randomPrevIndex = Math.floor(Math.random() * itineraryPrevImgs.length);
     const randomPrevPic = itineraryPrevImgs[randomPrevIndex];
     console.log(randomPrevPic);
