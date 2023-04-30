@@ -3,12 +3,6 @@ body {
     color:white
 }
 
-#torii-gate-footer-logo{
-    height: auto;
-    max-width: 200px; 
-}
-
-
 img {
     pointer-events: none;
     border-radius: 0.3rem;    
