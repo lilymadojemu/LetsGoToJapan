@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itineraryInfo = {
         "Sanrio Puroland": {
-            "itineraryTitle": "Sanrio Puroland",
+            "itineraryTitle":"Sanrio Puroland",
             "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
             "actImgOneAlt":"3 girls waving hands with Hello Kitty",
-            "actImgTwoAlt":"",
-            "actImgThreeAlt":"",
-            "actImgFourAlt":"",
+            "actImgTwoAlt":"Hello Kitty and Daniel on a multicolored parade float",
+            "actImgThreeAlt":"Single rollercoaster cart with My melody's face",
+            "actImgFourAlt":"Sanrio Characters under Kawaii Kabuki sign",
             "actOneTitle":"Meet Hello Kitty and other Sanrio characters",
             "actTwoTitle":"Watch the Parade",
             "actThreeTitle":"Visit the Attractions",
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             "foodDrinkTwoDesc":"A delicious Japanese curry dish featuring cute and colorful Sanrio characters on top.",
             "foodDrinkThreeDesc":"A delightful Japanese dessert made with soft and chewy mochi dough wrapped around a creamy ice cream filling and shaped into the iconic Hello Kitty character.",
             "foodDrinkFourDesc":"A sparkling and fruity Japanese soda with a fun color-changing feature that adds a touch of magic to any drink.",
-            "pracInfoImgOneAlt":"",
-            "pracInfoImgTwoAlt":"",
+            "pracInfoImgOneAlt":"Hotel room with multicolored Hello Kitty theme",
+            "pracInfoImgTwoAlt":"Bus with Japanese Text",
             "pracInfoImgThreeAlt":"List of Ticket Prices for Children and Adults in Yen",
-            "pracInfoImgFourAlt":"",
+            "pracInfoImgFourAlt":"Four Sanrio Charcters standing behind a sign of Flower Puroland",
             "pracInfoOneTitle":"Nearby Accommodations",
             "pracInfoTwoTitle":"Transportation Available",
             "pracInfoThreeTitle":"Costs",
@@ -160,44 +160,44 @@ function createItinerary(itineraryInfo) {
     // Recommended Activities
     // Activity One 
     const destinationActOneImg = clone.querySelector('.activityImgOne');
-    destinationActOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity One.jpg`;
+    destinationActOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity 1.jpg`;
     destinationActOneImg.alt = itineraryInfo.activityImgOneAlt;
     // Activity Two
     const destinationActTwoImg = clone.querySelector('.activityImgTwo');
-    destinationActTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Two.jpg`;
+    destinationActTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity 2.jpg`;
     destinationActTwoImg.alt = itineraryInfo.activityImgTwoAlt;
     // Activity Three
     const destinationActThreeImg = clone.querySelector('.activityImgThree');
-    destinationActThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Three.jpg`;
+    destinationActThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity 3.jpg`;
     destinationActThreeImg.alt = itineraryInfo.activityImgThreeAlt;
     // Activity Four
     const destinationActFourImg = clone.querySelector('.activityImgThree');
-    destinationActFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Three.jpg`;
+    destinationActFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity 4.jpg`;
     destinationActFourImg.alt = itineraryInfo.activityImgFourAlt;
 
     // Food and Drink
     // foodDrink One 
     const destinationFoodDrinkOneImg = clone.querySelector('.activityImgOne');
-    destinationFoodDrinkOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink One.jpg`;
+    destinationFoodDrinkOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink 1.jpg`;
     destinationFoodDrinkOneImg.alt = itineraryInfo.activityImgOneAlt;
     // foodDrink Two
     const destinationFoodDrinkTwoImg = clone.querySelector('.activityImgTwo');
-    destinationFoodDrinkTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Two.jpg`;
+    destinationFoodDrinkTwoImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink 2.jpg`;
     destinationFoodDrinkTwoImg.alt = itineraryInfo.activityImgTwoAlt;
     //foodDrink Three
     const destinationFoodDrinkThreeImg = clone.querySelector('.activityImgThree');
-    destinationFoodDrinkThreeImg .src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Three.jpg`;
+    destinationFoodDrinkThreeImg .src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink 3.jpg`;
     destinationFoodDrinkThreeImg .alt = itineraryInfo.activityImgThreeAlt;
     // foodDrink Four
     const destinationFoodDrinkFourImg = clone.querySelector('.activityImgThree');
-    destinationFoodDrinkFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink Four.jpg`;
+    destinationFoodDrinkFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Food Drink 4.jpg`;
     destinationFoodDrinkFourImg.alt = itineraryInfo.activityImgThreeAlt;
 
     // Practical Information
     
     // PracInfo One 
     const destinationPracInfoOneImg = clone.querySelector('.activityImgOne');
-    destinationPracInfoOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac One.jpg`;
+    destinationPracInfoOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} PracInfo 1.jpg`;
     destinationPracInfoOneImg.alt = itineraryInfo.activityImgOneAlt;
     const pracInfoTitleOne = clone.querySelector('.seasonOne');
     pracInfoTitleOne.textContent = destinationInfo.seasonOne;
@@ -206,7 +206,7 @@ function createItinerary(itineraryInfo) {
 
     // PracInfo Two
     const destinationPracInfoTwoImg = clone.querySelector('.activityImgTwo');
-    destinationPracInfoTwoImgsrc = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Two.jpg`;
+    destinationPracInfoTwoImgsrc = `itinerary-viewer-images/${destinationName}/${destinationName} PracInfo 2.jpg`;
     destinationPracInfoTwoImg.alt = itineraryInfo.activityImgTwoAlt;
     const pracInfoTitleTwo = clone.querySelector('.seasonOne');
     pracInfoTitleOne.textContent = destinationInfo.seasonOne;
@@ -215,7 +215,7 @@ function createItinerary(itineraryInfo) {
 
     // PracInfo Three
     const destinationPracInfoThreeImg = clone.querySelector('.activityImgThree');
-    destinationPracInfoThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Three.jpg`;
+    destinationPracInfoThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} PracInfo 3.jpg`;
     destinationPracInfoThreeImg.alt = itineraryInfo.activityImgThreeAlt;
     const pracInfoTitleThree = clone.querySelector('.seasonOne');
     pracInfoTitleThree.textContent = destinationInfo.seasonOne;
@@ -224,7 +224,7 @@ function createItinerary(itineraryInfo) {
 
     // PracInfo Four
     const destinationPracInfoFourImg = clone.querySelector('.activityImgThree');
-    destinationPracInfoFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Four.jpg`;
+    destinationPracInfoFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} PracInfo 4.jpg`;
     destinationPracInfoFourImg.alt = itineraryInfo.activityImgThreeAlt;
     const pracInfoTitleFour = clone.querySelector('.seasonOne');
     pracInfoTitleOne.textContent = destinationInfo.seasonOne;
