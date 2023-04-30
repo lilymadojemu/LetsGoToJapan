@@ -3,39 +3,42 @@ document.addEventListener('DOMContentLoaded', function() {
         "Sanrio Puroland": {
             "itineraryTitle": "Sanrio Puroland",
             "headerImgAlt":"Sanrio Characters Floating Over Park Entrance",
-            "actImgOneAlt":"",
+            "actImgOneAlt":"3 girls waving hands with Hello Kitty",
             "actImgTwoAlt":"",
             "actImgThreeAlt":"",
-            "actOneTitle":"",
-            "actTwoTitle":"",
-            "actThreeTitle":"",
-            "actFourTitle":"",
-            "actOneDesc":"",
-            "actTwoDesc":"",
-            "actThreeDesc":"",
-            "actFourDesc":"",
-            "foodDrinkImgOneAlt":"",
-            "foodDrinkImgTwoAlt":"",
-            "foodDrinkImgThreeAlt":"",
-            "foodDrinkOneTitle":"",
-            "foodDrinkTwoTitle":"",
-            "foodDrinkThreeTitle":"",
-            "foodDrinkFourTitle":"",
-            "foodDrinkOneDesc":"",
-            "foodDrinkTwoDesc":"",
-            "foodDrinkThreeDesc":"",
-            "foodDrinkFourDesc":"",
+            "actImgFourAlt":"",
+            "actOneTitle":"Meet Hello Kitty and other Sanrio characters",
+            "actTwoTitle":"Watch the Parade",
+            "actThreeTitle":"Visit the Attractions",
+            "actFourTitle":"Enjoy the Shows",
+            "actOneDesc":"Visitors can meet and greet with popular Sanrio characters such as Hello Kitty, My Melody, and Little Twin Stars. They can take photos with the characters and even receive autographs.",
+            "actTwoDesc":"Visitors can watch the colorful parade of Sanrio characters, which is held several times a day. The parade features music, dancing, and elaborate floats that depict the different Sanrio characters.",
+            "actThreeDesc":"Sanrio Puroland has a number of attractions that are designed for visitors of all ages, such as the Sanrio Character Boat Ride, the My Melody & Kuromi Mymeroad Drive, and the Sanrio Puroland Theater.",
+            "actFourDesc":"Sanrio Puroland offers various shows throughout the day, such as the Miracle Gift Parade, the Hello Kitty in Wonderland show, and the Cinnamoroll & Friends show. These shows feature singing, dancing, and elaborate sets that are sure to delight visitors.",
+            "foodDrinkImgOneAlt":"Crepes with the faces of Sanrio Characters",
+            "foodDrinkImgTwoAlt":"Curry with the faces of Cinnamoroll and Hello Kitty",
+            "foodDrinkImgThreeAlt":"2 Mochi Ice Creams with the faces of Hello Kitty",
+            "foodDrinkImgFourAlt":"Multicolored Soda with a Kiki and Lala attached straw",
+            "foodDrinkOneTitle":"Character Crepes",
+            "foodDrinkTwoTitle":"Character Curry",
+            "foodDrinkThreeTitle":"Hello Kitty Mochi Ice Cream",
+            "foodDrinkFourTitle":"Kiki and Lala Twinkle Color Miracle Soda",
+            "foodDrinkOneDesc":"Sweet treats made of thin pancakes filled with various flavored creams and adorned with cute Sanrio character designs.",
+            "foodDrinkTwoDesc":"A delicious Japanese curry dish featuring cute and colorful Sanrio characters on top.",
+            "foodDrinkThreeDesc":"A delightful Japanese dessert made with soft and chewy mochi dough wrapped around a creamy ice cream filling and shaped into the iconic Hello Kitty character.",
+            "foodDrinkFourDesc":"A sparkling and fruity Japanese soda with a fun color-changing feature that adds a touch of magic to any drink.",
             "pracInfoImgOneAlt":"",
             "pracInfoImgTwoAlt":"",
-            "pracInfoImgThreeAlt":"",
-            "pracInfoOneTitle":"",
-            "pracInfoTwoTitle":"",
-            "pracInfoThreeTitle":"",
-            "pracInfoFourTitle":"",
-            "pracInfoOneDesc":"",
-            "pracInfoTwoDesc":"",
-            "pracInfoThreeDesc":"",
-            "pracInfoFourDesc":"",
+            "pracInfoImgThreeAlt":"List of Ticket Prices for Children and Adults in Yen",
+            "pracInfoImgFourAlt":"",
+            "pracInfoOneTitle":"Nearby Accommodations",
+            "pracInfoTwoTitle":"Transportation Available",
+            "pracInfoThreeTitle":"Costs",
+            "pracInfoFourTitle":"Hours of Operation",
+            "pracInfoOneDesc":"Consider staying at the Keio Plaza Hotel Tama during your visit to Sanrio Puroland for its convenient location and spacious, modern rooms, including Sanrio-themed options.",
+            "pracInfoTwoDesc":"Sanrio Puroland can be accessed via train or bus, with the nearest train station being Tama Center Station and a free shuttle bus service running between the station and the park, and there are also direct bus services available from Shinjuku and Shibuya stations.",
+            "pracInfoThreeDesc":"Sanrio Puroland's admission costs 3,300 yen (approximately $30 USD) for adults and 2,500 yen (approximately $23 USD) for children, with additional fees for certain attractions and activities.",
+            "pracInfoFourDesc":"Sanrio Puroland is typically open from 10:00 AM to 5:00 PM on weekdays, and from 10:00 AM to 6:00 PM on weekends and holidays, but the hours may vary depending on the season and special events.",
         },
         "Fushimi Inari Shrine": {
             "itineraryTitle": "Fushimi Inari Shrine",
@@ -108,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "pracInfoFourTitle":"",
             "pracInfoOneDesc":"",
             "pracInfoTwoDesc":"",
-            "pracInfoThreeDesc":"",
+            "pracInfoThreeDesc":"600 yen",
             "pracInfoFourDesc":"",
         },
     };
@@ -119,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (const key in itineraryInfo) {
         if (destinationName == key) {
             const itineraryElem = createItinerary(itineraryInfo[key]);
-            addNewItinerary(itineraryElem);
+            createItinerary(itineraryElem);
         }
     }
 });
@@ -170,7 +173,7 @@ function createItinerary(itineraryInfo) {
     // Activity Four
     const destinationActFourImg = clone.querySelector('.activityImgThree');
     destinationActFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Activity Three.jpg`;
-    destinationActFourImg.alt = itineraryInfo.activityImgThreeAlt;
+    destinationActFourImg.alt = itineraryInfo.activityImgFourAlt;
 
     // Food and Drink
     // foodDrink One 
@@ -191,22 +194,42 @@ function createItinerary(itineraryInfo) {
     destinationFoodDrinkFourImg.alt = itineraryInfo.activityImgThreeAlt;
 
     // Practical Information
+    
     // PracInfo One 
     const destinationPracInfoOneImg = clone.querySelector('.activityImgOne');
     destinationPracInfoOneImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac One.jpg`;
     destinationPracInfoOneImg.alt = itineraryInfo.activityImgOneAlt;
+    const pracInfoTitleOne = clone.querySelector('.seasonOne');
+    pracInfoTitleOne.textContent = destinationInfo.seasonOne;
+    const pracInfoDescOne = clone.querySelector('.seasonOne');
+    pracInfoDescOne.textContent = destinationInfo.seasonOne;
+
     // PracInfo Two
     const destinationPracInfoTwoImg = clone.querySelector('.activityImgTwo');
     destinationPracInfoTwoImgsrc = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Two.jpg`;
     destinationPracInfoTwoImg.alt = itineraryInfo.activityImgTwoAlt;
+    const pracInfoTitleTwo = clone.querySelector('.seasonOne');
+    pracInfoTitleOne.textContent = destinationInfo.seasonOne;
+    const pracInfoDescTwo = clone.querySelector('.seasonOne');
+    pracInfoDescTwo.textContent = destinationInfo.seasonOne;
+
     // PracInfo Three
     const destinationPracInfoThreeImg = clone.querySelector('.activityImgThree');
     destinationPracInfoThreeImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Three.jpg`;
     destinationPracInfoThreeImg.alt = itineraryInfo.activityImgThreeAlt;
+    const pracInfoTitleThree = clone.querySelector('.seasonOne');
+    pracInfoTitleThree.textContent = destinationInfo.seasonOne;
+    const pracInfoDescThree = clone.querySelector('.seasonOne');
+    pracInfoDescThree.textContent = destinationInfo.seasonOne;
+
     // PracInfo Four
     const destinationPracInfoFourImg = clone.querySelector('.activityImgThree');
     destinationPracInfoFourImg.src = `itinerary-viewer-images/${destinationName}/${destinationName} Prac Four.jpg`;
     destinationPracInfoFourImg.alt = itineraryInfo.activityImgThreeAlt;
+    const pracInfoTitleFour = clone.querySelector('.seasonOne');
+    pracInfoTitleOne.textContent = destinationInfo.seasonOne;
+    const pracInfoDescFour= clone.querySelector('.seasonOne');
+    pracInfoDescOne.textContent = destinationInfo.seasonOne;
 
     // Redirect to itinerary Preview/Overview Page
     // Removes destination from itinerary list based on user input (click)
