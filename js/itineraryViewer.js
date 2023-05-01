@@ -144,14 +144,14 @@ let itineraryList = [];
 const activities = []
 
 // Creating an instance of a calendar
-var calendarInstance1 = calendarJs( "calendar", {
-    // Calendar Options/Properties
+var calendarInstance1 = calendarJs("calendar", {
     manualEditingEnabled: false,
-    // startWeekOn: 1,
-    // weekNumbers: true,
-    // dayHeaderFormat: 'ddd',
-    // showAllDayEvents: false,
-});
+    startWeekOn: 1, // Start the calendar on Monday
+    weekNumbers: true, // Display week numbers
+    dayHeaderFormat: 'ddd',
+    showAllDayEvents: false,
+  });
+
 
 // Updating the DOM to show itinerary components
 function createItinerary(itineraryInfo) {
@@ -160,10 +160,8 @@ function createItinerary(itineraryInfo) {
     const template = document.querySelector('#itineraryEditTemplate');
     const clone = template.content.cloneNode(true);
     itineraryInfo.element = clone.querySelector('.itineraryInfo');
+
     // update Dom Elements
-    // Change text
-
-
 
     // Images & Alts
     // Main Image
@@ -287,6 +285,17 @@ function createItinerary(itineraryInfo) {
     const pracInfoDescFour= clone.querySelector('.pracInfoDesc4');
     pracInfoDescFour.textContent = itineraryInfo.pracInfoFourDesc;
 
+    const myCal = clone.querySelector('#calendar');
+
+    const calendarInstance1 = calendarJs(myCal, {
+        manualEditingEnabled: false,
+        startWeekOn: 1, // Start the calendar on Monday
+        weekNumbers: false, // Display week numbers
+        dayHeaderFormat: 'ddd',
+        showAllDayEvents: false,
+    });
+    
+    // Array of activites +FoodDrink
     // Redirect to itinerary Preview/Overview Page
     // Removes destination from itinerary list based on user input (click)
     const deleteItineraryBtn = clone.querySelector('.btn.btn-outline-danger');
@@ -297,8 +306,11 @@ function createItinerary(itineraryInfo) {
     // Save Current Itinerary Information for later viewing based on user input (click)
     const saveItineraryBtn = clone.querySelector('.btn.btn-outline-success');
     saveItineraryBtn.addEventListener('click', () =>{
+        // Also Saves Current State of Calendar
         saveItinerary(destinationName);
     });
+
+  
 
     // Adding location elements to the Itinerary DOM to be displayed
     const itineraryDestinationContainer = document.querySelector('.myItinerary');
