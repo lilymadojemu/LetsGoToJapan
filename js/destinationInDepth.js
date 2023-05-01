@@ -294,34 +294,42 @@ function createDestination(destinationInfo) {
     const avoidedTimeTwo = clone.querySelector('.avoidTimesTwo');
     avoidedTimeTwo.textContent = destinationInfo.avoidTimesTwo;
 
-    // Removes destination from itinerary list based on user input (click)
-    const removeDestinationBtn = clone.querySelector('.btn.btn-outline-danger');
-    removeDestinationBtn.addEventListener('click', () =>{
+    // Toggles save/remove functionality of button
+    let isSaved = false;
+
+    const toggleDestinationBtn = clone.querySelector('.btn');
+    toggleDestinationBtn.addEventListener('click', () => {
+    if (isSaved) {
         deleteDestination(destinationName);
-    });
-
-    // Removes destination from itinerary list based on user input (click)
-    const saveDestinationBtn = clone.querySelector('.btn.btn-outline-success');
-    saveDestinationBtn.addEventListener('click', () =>{
+        toggleDestinationBtn.classList.remove('btn-outline-danger');
+        toggleDestinationBtn.classList.add('btn-outline-success');
+        toggleDestinationBtn.textContent = 'Save to My Itineraries';
+        isSaved = false;
+    } else {
         saveDestination(destinationName);
+        toggleDestinationBtn.classList.remove('btn-outline-success');
+        toggleDestinationBtn.classList.add('btn-outline-danger');
+        toggleDestinationBtn.textContent = 'Remove from My Itineraries';
+        isSaved = true;
+    }
     });
-
     // Adding destination elements to the DOM to be displayed
     const destinationContainer = document.querySelector('.destinationItems');
     destinationContainer.appendChild(clone);
 
 };
-
 // Saves Current Destination from destinationList
 function saveDestination(destinationName){
-    // Add actual destinationName to destinationList array
-    destinationList.push(destinationName);
+    if (!destinationList.includes(destinationName)){
+        // Add actual destinationName to destinationList array
+        destinationList.push(destinationName);
+        console.log(destinationList);
 
-    console.log(destinationList);
-
-    // Update Local Storage
-    saveToLocalStorage();
+        // Update Local Storage
+        saveToLocalStorage();
+    }
 };
+
 
 // Deletes Destination from destinationList
 function deleteDestination(destinationName){
@@ -332,25 +340,12 @@ function deleteDestination(destinationName){
     saveToLocalStorage();
 };
 
-// const saveToItinerary = document.querySelector('.btn.btn-outline-success');
-// // saveToItinerary.onclick = this.createItinerary;
-
-// // Save current destination information and add current destination to itinerary list
-// function createItinerary() {
-//     const itineraryDestination = new Destination(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt);
-//     destinationList.push(itineraryDestination);
-
-//     saveToLocalStorage();
-
-//     return itineraryDestination;
-// };
-
 // Save current destination info to local storage
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(destinationList);
     console.log('saved' + destinationList)
     localStorage.setItem('storedDestinationItems', destinationString);
-    console.log('saved Destination List' + localStorage.storedDestinationList);  
+    console.log('saved Destination List' + localStorage.storedDestinationItems);  
     // printing the current contents of the destinations in local storage after saving
     console.log('saved string'+destinationString);
 };

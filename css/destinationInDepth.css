@@ -40,6 +40,9 @@ h1, .destinationTitle{
     text-align: left;
     margin-bottom: 2%;
 }
+h3 {
+   color: #FFE4E1 !important; 
+}
 
 .destinationTagline {
     margin:auto;

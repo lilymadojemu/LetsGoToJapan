@@ -1,4 +1,4 @@
-const itineraryList = JSON.parse(localStorage.storedDestinationItems);
+let itineraryList = JSON.parse(localStorage.storedDestinationItems);
 
 document.addEventListener('DOMContentLoaded', function() {
     const itineraryInfoPrev = {
