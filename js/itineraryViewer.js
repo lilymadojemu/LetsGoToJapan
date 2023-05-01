@@ -165,7 +165,7 @@ function createItinerary(itineraryInfo) {
 
     // Images & Alts
     // Main Image
-    const itineraryMainImage = clone.querySelector('.locationHeaderImg');
+    const itineraryMainImage = clone.querySelector('#locationHeaderImg');
     itineraryMainImage.src = `itinerary-viewer-images/${destinationName}/${destinationName} Main Image.jpg`;
     itineraryMainImage.alt = itineraryInfo.headerImgAlt;
 

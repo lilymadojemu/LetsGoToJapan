@@ -1,5 +1,5 @@
 .itineraryTitle {
-    color:white !important;
+    color:#F7A8B8;
     text-align: center;
 }
 
@@ -7,3 +7,22 @@
     text-align: center;
 }
 
+.itineraryInfo a {
+    text-decoration: none;
+}
+
+.itineraryInfo a:link {
+    color:#FFE4E1;
+}
+
+.itineraryInfo a:active, .itineraryInfo a:visited, .itineraryInfo a:hover {
+    color:#FFB6C1;
+}
+
+#locationHeaderImg {
+    width: 100%;
+}
+
+.headerTitles {
+    color:#F7A8B8;
+}
