@@ -26,25 +26,17 @@
 
         <!-- JavaScript File -->
         <script defer src="js/index.js"></script>
-
-
-
-
     </head>
 
     <body>
-
-        <!-- Navigation + Logo Area -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html">
                   <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
@@ -95,29 +87,36 @@
           </div>
         </div>
         
-
         <h1> Discover New Destinations </h1> 
-        <h4> Click on a Destination on the map to explore somewhere new!</h4>
+        <h4> Click on a destination on the map to explore somewhere new!</h4>
         <div id="map"></div>
 
         <footer>
           <div class="row">
-            <div class="col">
-              <img id='torii-gate-footer-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
+            <div class="col-12 col-md-4">
+              <img id='torii-gate-footer-logo' class="img-fluid" src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
             </div>
-            <div class="col">
-              <div class="contactMe"> 
-                  <h2> Contact Me! </h2>
-                  <ul class="contactInfo">
-                    <li><img class="contactIcon" src="introduction-images/Gmail Icon.png" alt="Gmail Logo"><li class="contactMe">lmadojem@andrew.cmu.edu</li>
-                    <li><img class="contactIcon" src="introduction-images/Linkedin Icon.png" alt="Linkedin Logo"><li class="contactMe">https://www.linkedin.com/in/lilymadojemu/</li>
-                    <li><img class="contactIcon" src="introduction-images/Github Icon.png" alt="Github Logo"><li class="contactMe">https://github.com/lilymadojemu/LetsGoToJapan</li>
-                  </ul>
-              </div>              
+            <div class="col-12 col-md-8">
+              <div class="d-flex flex-column h-100">
+                <h2> Contact Me! </h2>
+                <ul class="list-unstyled flex-grow-1">
+                  <li class="d-flex align-items-center">
+                    <img class="mr-2 contactIcon" src="introduction-images/Gmail Icon.png" alt="Gmail Logo">
+                    <a href="mailto:lmadojem@andrew.cmu.edu">lmadojem@andrew.cmu.edu</a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <img class="mr-2 contactIcon" src="introduction-images/Linkedin Icon.png" alt="Linkedin Logo">
+                    <a href="https://www.linkedin.com/in/lilymadojemu/" target="_blank">https://www.linkedin.com/in/lilymadojemu/</a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <img class="mr-2 contactIcon" src="introduction-images/Github Icon.png" alt="Github Logo">
+                    <a href="https://github.com/lilymadojemu/LetsGoToJapan" target="_blank">https://github.com/lilymadojemu/LetsGoToJapan</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </footer>
-
+        </footer>           
     </body>
 </html>
 
