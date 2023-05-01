@@ -93,6 +93,9 @@ function deleteItinerary(itineraryInfoPrev){
     itineraryList.splice(itineraryList.indexOf(itineraryInfoPrev.element), 1);
     console.log('new itineraryList' + itineraryList );
 
+    localStorage.removeItem(itineraryInfoPrev.element);
+    localStorage.storedDestinationItems.removeItem(itineraryInfoPrev.element);
+
     // Update Local Storage
     saveToLocalStorage();
 };
@@ -106,7 +109,7 @@ function retrieveFromLocalStorage(){
         itineraryList = storedLocation;
         console.log(itineraryList);
     }
-    for (const key in destinationString) {
+    for (const key in storedLocation) {
         if (storedLocation.hasOwnProperty(key)) {
             createItineraryPreview(storedLocation[key]);
         }
@@ -116,6 +119,7 @@ function retrieveFromLocalStorage(){
 
 // Saving destinations shown on the itinerary overview page if updated
 function saveToLocalStorage(){
+
     const destinationString = JSON.stringify(itineraryList);
     localStorage.setItem('storedItineraryPrev',destinationString);    
     // printing the current contents of the cart in local storage after saving
