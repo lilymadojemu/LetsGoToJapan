@@ -138,20 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Array that will house products intended to be on itinerary page
-let itineraryList = [];
-
-const activities = []
-
-// Creating an instance of a calendar
-var calendarInstance1 = calendarJs("calendar", {
-    manualEditingEnabled: false,
-    startWeekOn: 1, // Start the calendar on Monday
-    weekNumbers: true, // Display week numbers
-    dayHeaderFormat: 'ddd',
-    showAllDayEvents: false,
-  });
-
+// Array that will house information on individual destination's itinerary page
+let savedItinerariesList = [];
 
 // Updating the DOM to show itinerary components
 function createItinerary(itineraryInfo) {
@@ -285,15 +273,7 @@ function createItinerary(itineraryInfo) {
     const pracInfoDescFour= clone.querySelector('.pracInfoDesc4');
     pracInfoDescFour.textContent = itineraryInfo.pracInfoFourDesc;
 
-    const myCal = clone.querySelector('#calendar');
 
-    const calendarInstance1 = calendarJs(myCal, {
-        manualEditingEnabled: false,
-        startWeekOn: 1, // Start the calendar on Monday
-        weekNumbers: false, // Display week numbers
-        dayHeaderFormat: 'ddd',
-        showAllDayEvents: false,
-    });
     
     // Array of activites +FoodDrink
     // Redirect to itinerary Preview/Overview Page
@@ -310,21 +290,81 @@ function createItinerary(itineraryInfo) {
         saveItinerary(destinationName);
     });
 
-  
+    const myCal = clone.querySelector('#calendar');
+
+    // Calendar
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    
+    // Possible Activities To Do (activities + FoodDrinks Sections)
+    const activities = [itineraryInfo.actOneTitle, itineraryInfo.actTwoTitle, itineraryInfo.actThreeTitle, itineraryInfo.actFourTitle, itineraryInfo.foodDrinkOneTitle, itineraryInfo.foodDrinkTwoTitle, itineraryInfo.foodDrinkThreeTitle, itineraryInfo.foodDrinkFourTitle]
+    // Corresponding descriptions for each activity
+    const descriptions = ["Description of activity 1", "Description of activity 2", "Description of activity 3", "Description of activity 4", "Description of food/drink 1", "Description of food/drink 2", "Description of food/drink 3", "Description of food/drink 4"];
+    // Array of the events that will be generated for the week
+    const weekEvents = [];
+    
+    // Iterate over each day of the week
+    daysOfWeek.forEach((day, index) => {
+      // Generate three random events for the current day and add to the calendar
+      for (let i = 0; i < 3; i++) {
+        // Generate a random time between 10am and 5pm
+        const startTime = new Date();
+        startTime.setDate(startTime.getDate() + index);
+        startTime.setHours(10 + Math.floor(Math.random() * 6));
+        startTime.setMinutes(Math.floor(Math.random() * 60));
+        startTime.setSeconds(0);
+        startTime.setMilliseconds(0);
+    
+        const endTime = new Date(startTime);
+        endTime.setHours(startTime.getHours() + 1);
+    
+        // Select a random activity and description from the activities and descriptions arrays
+        const randomIndex = Math.floor(Math.random() * activities.length);
+        const activity = activities[randomIndex];
+        const description = descriptions[randomIndex];
+    
+        // Create a new event with the random activity and time
+        var event = {
+          from: startTime,
+          to: endTime,
+          title: activity,
+          description: description,
+        };
+    
+        // Add the event to the weekEvents array
+        weekEvents.push(event);
+      }
+    });
+    
+    var calendarInstance = calendarJs(myCal, {
+      manualEditingEnabled: false,
+      events: weekEvents,
+      startWeekOn: 1, // Start the calendar on Monday
+      weekNumbers: false, // Display week numbers
+      dayHeaderFormat: 'ddd',
+      showAllDayEvents: false,
+      showEmptyDaysInWeekView: false,
+      useEscapeKeyToExitFullScreenMode: true,
+      numberOfWeeks: 1, // Show only one week
+
+    });
+    console.log(weekEvents);
+    
 
     // Adding location elements to the Itinerary DOM to be displayed
     const itineraryDestinationContainer = document.querySelector('.myItinerary');
     itineraryDestinationContainer.appendChild(clone);
 
+
+
 };
 
-// Saves Current Destination from itineraryList
+// Saves Current Destination Information(object) to savedItinerariesList for future viewing
 function saveItinerary(destinationName){
-    // Add actual destinationName to destinationList array
-    itineraryList.push(destinationName);
+    // saveEvents on calendar
 
-
-    console.log(destinationList);
+    // Add actual destinationName to savedItinerariesList array
+    savedItinerariesList.push(destinationName);
+    console.log(savedItinerariesList);
 
     // Update Local Storage
     saveToLocalStorage();
@@ -332,11 +372,17 @@ function saveItinerary(destinationName){
 
 // Deletes Destination from destinationList
 function deleteItinerary(destinationName){
-    // Remove the actual destinationName from destinationList array
-    itineraryList.splice(itineraryList.indexOf(destinationName), 1);
+    // If User saved itinerary then decided later to remove it
+    if (savedItinerariesList.includes(destinationName)) {
+        // Remove the actual destinationName from destinationList array
+        savedItinerariesList.splice(savedItinerariesList.indexOf(destinationName), 1);        
+    }
+
     // Remove itinerary and Location from local storage
+    // Remove from stored destinations and storeditinerary
+
     
-    // Redirect user to my itineraries
+    // Redirects user back to my itineraries
     window.location.href = "itinerariesOverview.html";
 
     // Update Local Storage
@@ -345,16 +391,16 @@ function deleteItinerary(destinationName){
 
 // Saves Current Itinerary Info 
 function saveToLocalStorage(){
-    const itineraryString = JSON.stringify(itineraryList);
-    localStorage.setItem('storedItineraryElem', itineraryString);    
-    // printing the current contents of the cart in local storage after saving
-    console.log('Items in itineraryList: ' + itineraryList);
+    const itineraryString = JSON.stringify(savedItinerariesList);
+    localStorage.setItem('storedItinerary', itineraryString);    
+    // printing the current contents what destination's itineraries have been saved and their information in local storage after saving
+    console.log('Items in itineraryList: ' + savedItinerariesList);
     console.log('Items in local storage: ' + localStorage.storedItinerary);
 };
 
 // Retrieves itinerary info from local storage 
 function retrieveFromLocalStorage(){
-    const itineraryString = localStorage.getItem('storedItineraryElem');
+    const itineraryString = localStorage.getItem('storedItinerary');
     const storedItinerary= JSON.parse(itineraryString);
     if (storedItinerary) {
         itineraryList = storedItinerary;
