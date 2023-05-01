@@ -1,4 +1,4 @@
-let itineraryList = JSON.parse(localStorage.storedDestinationItems);
+const itineraryList = JSON.parse(localStorage.storedDestinationItems);
 
 document.addEventListener('DOMContentLoaded', function() {
     const itineraryInfoPrev = {
@@ -94,7 +94,6 @@ function deleteItinerary(itineraryInfoPrev){
     console.log('new itineraryList' + itineraryList );
 
     localStorage.removeItem(itineraryInfoPrev.element);
-    localStorage.storedDestinationItems.removeItem(itineraryInfoPrev.element);
 
     // Update Local Storage
     saveToLocalStorage();
@@ -114,7 +113,6 @@ function retrieveFromLocalStorage(){
             createItineraryPreview(storedLocation[key]);
         }
     }
-    console.log(destinationString);
 }
 
 // Saving destinations shown on the itinerary overview page if updated

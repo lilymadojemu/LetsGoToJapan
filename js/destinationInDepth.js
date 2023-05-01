@@ -357,7 +357,7 @@ function retrieveFromLocalStorage(){
     console.log(storedDestination);
     if (storedDestination) {
         destinationList = storedDestination;
-        console.log('local storage'+ destinationList);
+        console.log('local storage'+ localStorage.getItem('storedDestinationItems'));
     }
 }
 
