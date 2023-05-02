@@ -1,5 +1,5 @@
 h4, h5, h6 {
-    color: aliceblue;
+    color: #333333 !important;
 }
 
 img {
@@ -9,12 +9,11 @@ img {
 .container {
     position: relative;
     text-align: center;
-    color: white;
 }
 
 .textOverlay {
     position: absolute;
     bottom: 8px;
     left: 16px;
-  }
+}
   

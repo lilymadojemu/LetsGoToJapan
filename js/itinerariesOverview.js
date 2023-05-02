@@ -90,10 +90,13 @@ function deleteItinerary(itineraryInfoPrev){
     itineraryInfoPrev.element.remove();
 
     // Remove the actual destination from itineraryList array
-    itineraryList.splice(itineraryList.indexOf(itineraryInfoPrev.element), 1);
-    console.log('new itineraryList' + itineraryList );
+    itineraryList.splice(itineraryList.indexOf(itineraryInfoPrev.engLocation), 1);
 
-    localStorage.removeItem(itineraryInfoPrev.element);
+    // Removing element from previous storedDestinationItems
+ 
+    const destinationString = JSON.stringify(itineraryList);
+    localStorage.setItem('storedDestinationItems', destinationString);
+    console.log('new storedDestinationItems' + localStorage.storedDestinationItems);
 
     // Update Local Storage
     saveToLocalStorage();
@@ -102,22 +105,31 @@ function deleteItinerary(itineraryInfoPrev){
 // Retrieves destinations in itinerary list from local storage
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedItineraryPrev');
+    console.log(destinationString)
     const storedLocation = JSON.parse(destinationString);
+
+    console.log(typeof(storedLocation));
     console.log('retrieved from local storage ' + destinationString);
+    console.log(storedLocation)
+    
     if (storedLocation) {
         itineraryList = storedLocation;
         console.log(itineraryList);
     }
     for (const key in storedLocation) {
-        if (storedLocation.hasOwnProperty(key)) {
-            createItineraryPreview(storedLocation[key]);
+        if (key in localStorage.getItem(storedItinerary) ) {
+            if (storedLocation.hasOwnProperty(key)) {
+                createItineraryPreview(storedLocation[key]);
+            }
+        }
+        else {
+            console.log('delete' + key)
         }
     }
 }
 
 // Saving destinations shown on the itinerary overview page if updated
 function saveToLocalStorage(){
-
     const destinationString = JSON.stringify(itineraryList);
     localStorage.setItem('storedItineraryPrev',destinationString);    
     // printing the current contents of the cart in local storage after saving

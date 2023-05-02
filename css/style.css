@@ -5,10 +5,15 @@
     width: 100%;
 }
 
+a {
+    text-align: left !important;
+}
+
 
 #torii-gate-logo{
     height: auto;
-    width: 30%;}
+    width: 30%;
+}
 
 #torii-gate-footer-logo{ 
     height: auto;

@@ -28,94 +28,98 @@
     </head>
 
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
-                  <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                      <a id="home-top" class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a id="itinerary-top" class="nav-link" href="itinerariesOverview.html">My Itineraries</a>
-                    </li>
-                  </ul>
-                </div>
-            </nav>
-        </header>
-
-        <h1> Let's Go To Japan!</h1>
-        <h4> Your Personal Guidebook and Itinerary Planner to Create your Best Japan Trip Ever!</h4>
-        <div class="container-top">
-          <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-bs-target="#slideshow" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#slideshow" data-bs-slide-to="1"></li>
-              </ol>
-
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="introduction-images/Mt Fuji Pic.jpg" alt="Mt.Fuji with a red temple at the foreground">
-                <div class="carousel-caption d-none d-md-block">
-                  <p> Explore New Places!<p>
-
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="introduction-images/clay-banks-hwLAI5lRhdM-unsplash.jpg" alt="Kyoto">
-                <div class="carousel-caption d-none d-md-block">
-                  <p href="itinerariesOverview.html"> Create the Perfect Trip!<p>
-                </div>
-              </div>
-            </div>
-            <!-- Carousel Controls -->
-            <a class="carousel-control-prev" href="#slideshow" role="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#slideshow" role="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </a>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a id="itinerary-top" class="nav-link" href="itinerariesOverview.html">My Itineraries</a>
+              </li>
+              <li class="nav-item">
+                <a id="destination-top" class="nav-link" href="index.html#recommendedDestinations">Destinations</a>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        <h1> Discover New Destinations </h1> 
-        <h4> Click on a destination on the map to explore somewhere new!</h4>
-        <div id="map"></div>
+      </nav>
+      
 
-        <footer>
-          <div class="row">
-            <div class="col-12 col-md-4">
-              <img id='torii-gate-footer-logo' class="img-fluid" src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
+      <h1> Let's Go To Japan!</h1>
+      <h4> Your Personal Guidebook and Itinerary Planner to Create your Best Japan Trip Ever!</h4>
+      <div class="container-top">
+        <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-bs-target="#slideshow" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="#slideshow" data-bs-slide-to="1"></li>
+            </ol>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="introduction-images/Mt Fuji Pic.jpg" alt="Mt.Fuji with a red temple at the foreground">
+              <div class="carousel-caption d-none d-md-block">
+                <p> Explore New Places!<p>
+
+              </div>
             </div>
-            <div class="col-12 col-md-8">
-              <div class="d-flex flex-column h-100">
-                <h2 class="footerContactHeading"> Contact Me! </h2>
-                <ul class="list-unstyled flex-grow-1">
-                  <li class="d-flex align-items-center">
-                    <img class="mr-2 contactIcon" src="introduction-images/Gmail Icon.png" alt="Gmail Logo">
-                    <a href="mailto:lmadojem@andrew.cmu.edu">lmadojem@andrew.cmu.edu</a>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="mr-2 contactIcon" src="introduction-images/Linkedin Icon.png" alt="Linkedin Logo">
-                    <a href="https://www.linkedin.com/in/lilymadojemu/" target="_blank">https://www.linkedin.com/in/lilymadojemu/</a>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="mr-2 contactIcon" src="introduction-images/Github Icon.png" alt="Github Logo">
-                    <a href="https://github.com/lilymadojemu/LetsGoToJapan" target="_blank">https://github.com/lilymadojemu/LetsGoToJapan</a>
-                  </li>
-                </ul>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="introduction-images/clay-banks-hwLAI5lRhdM-unsplash.jpg" alt="Kyoto">
+              <div class="carousel-caption d-none d-md-block">
+                <p href="itinerariesOverview.html"> Create the Perfect Trip!<p>
               </div>
             </div>
           </div>
-        </footer>           
+          <!-- Carousel Controls -->
+          <a class="carousel-control-prev" href="#slideshow" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#slideshow" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+        
+      <a id="recommendedDestinations"><h1> Discover New Destinations </h1></a>
+      <h4> Click on a destination on the map to explore somewhere new!</h4>
+      <div id="map"></div>
+
+      <footer>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <img id='torii-gate-footer-logo' class="img-fluid" src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
+          </div>
+          <div class="col-12 col-md-8">
+            <div >
+              <h2 class="footerContactHeading"> Contact Me! </h2>
+              <ul class="list-unstyled flex-grow-1">
+                <li>
+                  <img class="mr-2 contactIcon" src="introduction-images/Gmail Icon.png" alt="Gmail Logo">
+                  <a href="mailto:lmadojem@andrew.cmu.edu">lmadojem@andrew.cmu.edu</a>
+                </li>
+                <li>
+                  <img class="mr-2 contactIcon" src="introduction-images/Linkedin Icon.png" alt="Linkedin Logo">
+                  <a href="https://www.linkedin.com/in/lilymadojemu/" target="_blank">https://www.linkedin.com/in/lilymadojemu/</a>
+                </li>
+                <li>
+                  <img class="mr-2 contactIcon" src="introduction-images/Github Icon.png" alt="Github Logo">
+                  <a href="https://github.com/lilymadojemu/LetsGoToJapan" target="_blank">https://github.com/lilymadojemu/LetsGoToJapan</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>           
     </body>
 </html>
 

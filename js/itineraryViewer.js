@@ -1,3 +1,6 @@
+// Array that will house information on individual destination's itinerary page
+const savedItinerariesList = JSON.parse(localStorage.storedDestinationItems);
+
 // Gather info from URL
 const queryString = window.location.search;
 console.log(queryString);
@@ -138,8 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Array that will house information on individual destination's itinerary page
-let savedItinerariesList = [];
+
 
 // Updating the DOM to show itinerary components
 function createItinerary(itineraryInfo) {
@@ -273,9 +275,6 @@ function createItinerary(itineraryInfo) {
     const pracInfoDescFour= clone.querySelector('.pracInfoDesc4');
     pracInfoDescFour.textContent = itineraryInfo.pracInfoFourDesc;
 
-
-    
-    // Array of activites +FoodDrink
     // Redirect to itinerary Preview/Overview Page
     // Removes destination from itinerary list based on user input (click)
     const deleteItineraryBtn = clone.querySelector('.btn.btn-outline-danger');
@@ -283,12 +282,6 @@ function createItinerary(itineraryInfo) {
         deleteItinerary(destinationName);
     });
 
-    // Save Current Itinerary Information for later viewing based on user input (click)
-    const saveItineraryBtn = clone.querySelector('.btn.btn-outline-success');
-    saveItineraryBtn.addEventListener('click', () =>{
-        // Also Saves Current State of Calendar
-        saveItinerary(destinationName);
-    });
 
     const myCal = clone.querySelector('#calendar');
 
@@ -347,57 +340,39 @@ function createItinerary(itineraryInfo) {
       numberOfWeeks: 1, // Show only one week
 
     });
-    console.log(weekEvents);
-    
 
     // Adding location elements to the Itinerary DOM to be displayed
     const itineraryDestinationContainer = document.querySelector('.myItinerary');
     itineraryDestinationContainer.appendChild(clone);
-
-
-
 };
 
-// Saves Current Destination Information(object) to savedItinerariesList for future viewing
-function saveItinerary(destinationName){
-    // saveEvents on calendar
 
-    // Add actual destinationName to savedItinerariesList array
-    savedItinerariesList.push(destinationName);
-    console.log(savedItinerariesList);
+// Saves Current Itinerary Info 
+function saveToLocalStorage(){
+    const itineraryString = JSON.stringify(savedItinerariesList);
+    localStorage.setItem('storedItinerary', itineraryString);    
 
-    // Update Local Storage
-    saveToLocalStorage();
+    // printing the current contents what destination's itineraries have been saved and their information in local storage after saving
+    console.log('Items in itineraryList: ' + savedItinerariesList);
+    console.log('Items in local storage: ' + localStorage.storedItinerary);
 };
 
 // Deletes Destination from destinationList
 function deleteItinerary(destinationName){
-    // If User saved itinerary then decided later to remove it
-    if (savedItinerariesList.includes(destinationName)) {
-        // Remove the actual destinationName from destinationList array
-        savedItinerariesList.splice(savedItinerariesList.indexOf(destinationName), 1);        
-    }
+    // Remove the actual destinationName from destinationList array
+    savedItinerariesList.splice(savedItinerariesList.indexOf(destinationName), 1);        
 
-    // Remove itinerary and Location from local storage
-    // Remove from stored destinations and storeditinerary
+    // // Store the updated item in local storage
+    const destinationString = JSON.stringify(savedItinerariesList);
+    localStorage.setItem('storedDestinationItems', destinationString);
+    console.log('new storedDestinationItems' + localStorage.storedDestinationItems);
 
-    
     // Redirects user back to my itineraries
     window.location.href = "itinerariesOverview.html";
 
     // Update Local Storage
     saveToLocalStorage();
 };
-
-// Saves Current Itinerary Info 
-function saveToLocalStorage(){
-    const itineraryString = JSON.stringify(savedItinerariesList);
-    localStorage.setItem('storedItinerary', itineraryString);    
-    // printing the current contents what destination's itineraries have been saved and their information in local storage after saving
-    console.log('Items in itineraryList: ' + savedItinerariesList);
-    console.log('Items in local storage: ' + localStorage.storedItinerary);
-};
-
 // Retrieves itinerary info from local storage 
 function retrieveFromLocalStorage(){
     const itineraryString = localStorage.getItem('storedItinerary');
@@ -408,10 +383,10 @@ function retrieveFromLocalStorage(){
     }
 }
 
-if (localStorage.getItem('storedDestinations') != null) {
+if (localStorage.getItem('storedItinerary') != null) {
     retrieveFromLocalStorage();
 };
 
-if (localStorage.getItem('storedDestinations') == null) {
-    let itineraryList = [];
+if (localStorage.getItem('storedItinerary') == null) {
+    let savedItinerariesList = [];
 };

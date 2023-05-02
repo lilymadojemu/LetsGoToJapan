@@ -18,26 +18,29 @@
 
     <body>
         <!-- Navigation + Logo Area -->
-        <header>
-          <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="navbar-brand" href="index.html">
-                <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                    <a id="home-top" class="nav-link" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="itinerary-top" class="nav-link" href="itinerariesOverview.html">My Itineraries</a>
-                  </li>
-                </ul>
-              </div>
-          </nav>
-      </header>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img id='torii-gate-logo' src="introduction-images/Let's go to Japan Logo.png" alt="Torii Gate Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a id="itinerary-top" class="nav-link" href="itinerariesOverview.html">My Itineraries</a>
+                </li>
+                <li class="nav-item">
+                  <a id="destination-top" class="nav-link" href="index.html#recommendedDestinations">Destinations</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
         <div class="location-page">
           <template id="destinationTemplate">
@@ -46,8 +49,6 @@
                 <div class="row">
                   <div class="col">
                     <div class="leftContent">
-
-                      <!-- On Left side of the page -->
                       <img id="locationMainImg" class="img-fluid" src="" alt="">
                     </div>
                   </div>
@@ -57,9 +58,9 @@
                     <section class="destinationContent"> 
                       <h1 class="destinationTitle" class="fw-bold" ></h1> 
                       <h3 class="destinationTagline" class="fw-bold" ></h3>
-
-                      <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
-                      
+                      <div id="destinationBtn">
+                        <button type="button" class="btn btn-outline-success">Save to My Itineraries</button>
+                      </div>                      
                       <p class="destinationSummary" class="lead" ></p>
 
                       <div class="row">
@@ -193,18 +194,18 @@
               <img id='torii-gate-footer-logo' class="img-fluid" src="introduction-images/Let's go to Japan Logo.png" alt="Let's Go to Japan Logo">
             </div>
             <div class="col-12 col-md-8">
-              <div class="d-flex flex-column h-100">
-                <h2> Contact Me! </h2>
+              <div >
+                <h2 class="footerContactHeading"> Contact Me! </h2>
                 <ul class="list-unstyled flex-grow-1">
-                  <li class="d-flex align-items-center">
+                  <li>
                     <img class="mr-2 contactIcon" src="introduction-images/Gmail Icon.png" alt="Gmail Logo">
                     <a href="mailto:lmadojem@andrew.cmu.edu">lmadojem@andrew.cmu.edu</a>
                   </li>
-                  <li class="d-flex align-items-center">
+                  <li>
                     <img class="mr-2 contactIcon" src="introduction-images/Linkedin Icon.png" alt="Linkedin Logo">
                     <a href="https://www.linkedin.com/in/lilymadojemu/" target="_blank">https://www.linkedin.com/in/lilymadojemu/</a>
                   </li>
-                  <li class="d-flex align-items-center">
+                  <li>
                     <img class="mr-2 contactIcon" src="introduction-images/Github Icon.png" alt="Github Logo">
                     <a href="https://github.com/lilymadojemu/LetsGoToJapan" target="_blank">https://github.com/lilymadojemu/LetsGoToJapan</a>
                   </li>
@@ -212,6 +213,6 @@
               </div>
             </div>
           </div>
-        </footer> 
+        </footer>  
     </body>
 </html>
