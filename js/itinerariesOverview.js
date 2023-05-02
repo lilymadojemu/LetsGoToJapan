@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Sanrio Puroland": {
             "engLocation": "Sanrio Puroland",
             "jpnLocation":"サンリオピューロランド",
+            "romajiLocation":"Sanrio Puroland",
             "prevImgAlt":"Sanrio Characters Floating Over Park Entrance",
         },
         "Fushimi Inari Shrine": {
