@@ -3,15 +3,12 @@ const savedItinerariesList = JSON.parse(localStorage.storedDestinationItems);
 
 // Gather info from URL
 const queryString = window.location.search;
-console.log(queryString);
 
 // Creating a new query string with created url
 const params = new URLSearchParams(queryString);
-console.log(params);
 
 // Gets the current destination and stores it in a variable
 const destinationName = params.get('destinations');
-console.log(destinationName);
 
 document.addEventListener('DOMContentLoaded', function() {
     const itineraryInfo = {
@@ -130,10 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "pracInfoFourDesc":"Osaka Castle is typically open from 9:00 AM to 5:00 PM, with last entry at 4:30 PM. However, it is closed on December 28th and 29th. It may also be closed on certain other days for maintenance or special events.",
         },
     };
-    // Set that destination Name is equal to selected element from itinerariesOverview
-
     // Creates an Itinerary 
-    // createItinerary(destination);
     for (const key in itineraryInfo) {
         if (destinationName == key) {
             createItinerary(itineraryInfo[key]);
@@ -277,12 +271,12 @@ function createItinerary(itineraryInfo) {
 
     // Redirect to itinerary Preview/Overview Page
     // Removes destination from itinerary list based on user input (click)
-    const deleteItineraryBtn = clone.querySelector('.btn.btn-outline-danger');
+    const deleteItineraryBtn = clone.querySelector('.btn.btn-outline-light');
     deleteItineraryBtn.addEventListener('click', () =>{
         deleteItinerary(destinationName);
     });
 
-
+    // Clone of calendar
     const myCal = clone.querySelector('#calendar');
 
     // Calendar
@@ -291,7 +285,7 @@ function createItinerary(itineraryInfo) {
     // Possible Activities To Do (activities + FoodDrinks Sections)
     const activities = [itineraryInfo.actOneTitle, itineraryInfo.actTwoTitle, itineraryInfo.actThreeTitle, itineraryInfo.actFourTitle, itineraryInfo.foodDrinkOneTitle, itineraryInfo.foodDrinkTwoTitle, itineraryInfo.foodDrinkThreeTitle, itineraryInfo.foodDrinkFourTitle]
     // Corresponding descriptions for each activity
-    const descriptions = ["Description of activity 1", "Description of activity 2", "Description of activity 3", "Description of activity 4", "Description of food/drink 1", "Description of food/drink 2", "Description of food/drink 3", "Description of food/drink 4"];
+    const descriptions = [itineraryInfo.actOneDesc,itineraryInfo.actTwoDesc,itineraryInfo.actThreeDesc,itineraryInfo.actFourDesc, itineraryInfo.foodDrinkOneDesc, itineraryInfo.foodDrinkTwoDesc,itineraryInfo.foodDrinkThreeDesc,itineraryInfo.foodDrinkFourDesc];
     // Array of the events that will be generated for the week
     const weekEvents = [];
     
@@ -328,17 +322,19 @@ function createItinerary(itineraryInfo) {
       }
     });
     
+    // Creates Instance of a calendar
     var calendarInstance = calendarJs(myCal, {
-      manualEditingEnabled: false,
-      events: weekEvents,
-      startWeekOn: 1, // Start the calendar on Monday
-      weekNumbers: false, // Display week numbers
-      dayHeaderFormat: 'ddd',
-      showAllDayEvents: false,
-      showEmptyDaysInWeekView: false,
-      useEscapeKeyToExitFullScreenMode: true,
-      numberOfWeeks: 1, // Show only one week
-
+        manualEditingEnabled: false,
+        events: weekEvents,
+        startWeekOn: 1, // Start the calendar on Monday
+        weekNumbers: false, // Display week numbers
+        dayHeaderFormat: 'ddd',
+        showAllDayEvents: false,
+        showEmptyDaysInWeekView: false,
+        useEscapeKeyToExitFullScreenMode: true,
+        numberOfWeeks: 1, // Show only one week
+        tooltipsEnabled: false,
+        displayNav: false,
     });
 
     // Adding location elements to the Itinerary DOM to be displayed
@@ -357,15 +353,14 @@ function saveToLocalStorage(){
     console.log('Items in local storage: ' + localStorage.storedItinerary);
 };
 
-// Deletes Destination from destinationList
+// Deletes Destination from savedItinerariesList and local Storage and Redirects user to "My Itineraries"
 function deleteItinerary(destinationName){
-    // Remove the actual destinationName from destinationList array
+    // Remove the actual destinationName from savedItinerariesList array
     savedItinerariesList.splice(savedItinerariesList.indexOf(destinationName), 1);        
 
     // // Store the updated item in local storage
     const destinationString = JSON.stringify(savedItinerariesList);
     localStorage.setItem('storedDestinationItems', destinationString);
-    console.log('new storedDestinationItems' + localStorage.storedDestinationItems);
 
     // Redirects user back to my itineraries
     window.location.href = "itinerariesOverview.html";
