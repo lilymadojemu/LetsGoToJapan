@@ -1,5 +1,3 @@
-
-
 // Destination Class to save current destination's information
 class Destination {
     constructor(destinationTitle, destinationTagline, destinationSummary, activityImgOne, activityImgOneAlt, activityImgTwo, activityImgTwoAlt, activityImgThree, activityImgThreeAlt, activityTitleOne, activityTitleTwo, activityTitleThree, activityDescriptionOne, activityDescriptionTwo, activityDescriptionThree, japnTextOne, romajiTextOne, engTransOne, japnTextTwo, romajiTextTwo, engTransTwo, japnTextThree, romajiTextThree, engTransThree, japnTextFour, romajiTextFour, engTransFour, japnTextFive, romajiTextFive, engTransFive, seasonOne, seasonTwo, avoidTimesOne, avoidTimesTwo, locationMainImg, locationMainImgAlt) {
@@ -42,22 +40,21 @@ class Destination {
     }
 };
 
-// Array containing the destination housed on web page (only one at a time)
+// Array containing the destination housed on web page 
 let destinationList = []
 
 // Gather info from URL
 const queryString = window.location.search;
-console.log(queryString);
 
 // Creating a new query string with created url
 const params = new URLSearchParams(queryString);
-console.log(params);
 
-// Gets the current destination and stores it in a variable
+// Gets the current destination name and stores it in a variable
 const destinationName = params.get('destinations');
-console.log(destinationName);
 
+// Upon Page Load, Chosen Destination's Information is put on page
 document.addEventListener('DOMContentLoaded', function() {
+    // Destination Data
     const destinationInfo = {
         "Sanrio Puroland": {
             "destinationTitle": "Sanrio Puroland",
@@ -166,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "locationMainImgAlt":"Osaka Castle behind blooming cherry blossoms",
         },
     };
-    // createDestination(destination);
+    // Put sDestination Information on Page if Chosen Destination is in destinationInfo Object
     for (const key in destinationInfo) {
         if (destinationName == key) {
             const destinationElement = createDestination(destinationInfo[key]);
@@ -183,28 +180,26 @@ function addNewDestination(destinationTitle, destinationTagline, destinationSumm
 
 // Updating the DOM
 function createDestination(destinationInfo) {
-    console.log(destinationInfo);
     // Grabs a reference to the destination template:
     const template = document.querySelector('#destinationTemplate');
     const clone = template.content.cloneNode(true);
     destinationInfo.element = clone.querySelector('.destinationInfo');
+
     // update Dom Elements
 
-    // Images & Alts
-    // Main Image
+    // Main Image & Alt
     const destinationMainImage = clone.querySelector('#locationMainImg');
     destinationMainImage.src = `location-images/${destinationName}/${destinationName} Main Image.jpg`;
     destinationMainImage.alt = destinationInfo.locationMainImgAlt;
-    
-    // Activity One 
+    // Activity Image & Alt One 
     const destinationActOneImg = clone.querySelector('#activityImgOne');
     destinationActOneImg.src = `location-images/${destinationName}/${destinationName} Activity One.jpg`;
     destinationActOneImg.alt = destinationInfo.activityImgOneAlt;
-    // Activity Two
+    // Activity Image & Alt Two
     const destinationActTwoImg = clone.querySelector('#activityImgTwo');
     destinationActTwoImg.src = `location-images/${destinationName}/${destinationName} Activity Two.jpg`;
     destinationActTwoImg.alt = destinationInfo.activityImgTwoAlt;
-    // Activity Three
+    // Activity Image & Alt Three
     const destinationActThreeImg = clone.querySelector('#activityImgThree');
     destinationActThreeImg.src = `location-images/${destinationName}/${destinationName} Activity Three.jpg`;
     destinationActThreeImg.alt = destinationInfo.activityImgThreeAlt;
@@ -213,29 +208,25 @@ function createDestination(destinationInfo) {
     // Destination Name
     const destinationTopTitle = clone.querySelector('.destinationTitle')
     destinationTopTitle.textContent = 'Welcome to ' + destinationName + '!';
-
     // Destination Tagline
     const destinationTopTag = clone.querySelector('.destinationTagline');
     destinationTopTag.textContent = destinationInfo.destinationTagline;
-
     // Destination Summary
     const destinationTopSum  = clone.querySelector('.destinationSummary');
     destinationTopSum.textContent = destinationInfo.destinationSummary;
 
     // Activity Descriptions
-    // Activity 1
 
+    // Activity 1
     const actOneTitle = clone.querySelector('.activityTitleOne');
     actOneTitle.textContent = destinationInfo.activityTitleOne;
     const actOneDescription = clone.querySelector('.activityDescriptionOne');
     actOneDescription.textContent = destinationInfo.activityDescriptionOne;
-
     // Activity 2
     const actTwoTitle = clone.querySelector('.activityTitleTwo');
     actTwoTitle.textContent = destinationInfo.activityTitleTwo;
     const actTwoDescription = clone.querySelector('.activityDescriptionTwo');
     actTwoDescription.textContent = destinationInfo.activityDescriptionTwo;
-
     // Activity 3
     const actThreeTitle = clone.querySelector('.activityTitleThree');
     actThreeTitle.textContent = destinationInfo.activityTitleThree;
@@ -282,7 +273,6 @@ function createDestination(destinationInfo) {
     destinationEngTextFive.textContent = destinationInfo.engTransFive;
 
     // Best Visit Times
-
     // Off-Seasons
     const offSeasonOne = clone.querySelector('.seasonOne');
     offSeasonOne.textContent = destinationInfo.seasonOne;
@@ -301,14 +291,14 @@ function createDestination(destinationInfo) {
     toggleDestinationBtn.addEventListener('click', () => {
     if (isSaved) {
         deleteDestination(destinationName);
-        toggleDestinationBtn.classList.remove('btn-outline-danger');
-        toggleDestinationBtn.classList.add('btn-outline-success');
+        toggleDestinationBtn.classList.remove('btn-outline-light');
+        toggleDestinationBtn.classList.add('btn-outline-light');
         toggleDestinationBtn.textContent = 'Save to My Itineraries';
         isSaved = false;
     } else {
         saveDestination(destinationName);
-        toggleDestinationBtn.classList.remove('btn-outline-success');
-        toggleDestinationBtn.classList.add('btn-outline-danger');
+        toggleDestinationBtn.classList.remove('btn-outline-light');
+        toggleDestinationBtn.classList.add('btn-outline-light');
         toggleDestinationBtn.textContent = 'Remove from My Itineraries';
         isSaved = true;
     }
@@ -318,13 +308,12 @@ function createDestination(destinationInfo) {
     destinationContainer.appendChild(clone);
 
 };
+
 // Saves Current Destination from destinationList
 function saveDestination(destinationName){
     if (!destinationList.includes(destinationName)){
         // Add actual destinationName to destinationList array
         destinationList.push(destinationName);
-        console.log(destinationList);
-
         // Update Local Storage
         saveToLocalStorage();
     }
@@ -335,7 +324,6 @@ function saveDestination(destinationName){
 function deleteDestination(destinationName){
     // Remove the actual destinationName from destinationList array
     destinationList.splice(destinationList.indexOf(destinationName), 1)
-
     // Update Local Storage
     saveToLocalStorage();
 };
@@ -343,7 +331,6 @@ function deleteDestination(destinationName){
 // Save current destination info to local storage
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(destinationList);
-    console.log('saved' + destinationList)
     localStorage.setItem('storedDestinationItems', destinationString);
     console.log('saved Destination List' + localStorage.storedDestinationItems);  
     // printing the current contents of the destinations in local storage after saving
@@ -354,10 +341,8 @@ function saveToLocalStorage(){
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedDestinationItems');
     const storedDestination = JSON.parse(destinationString);
-    console.log(storedDestination);
     if (storedDestination) {
         destinationList = storedDestination;
-        console.log('local storage'+ localStorage.getItem('storedDestinationItems'));
     }
 }
 
