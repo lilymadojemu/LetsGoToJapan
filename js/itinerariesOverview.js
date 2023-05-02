@@ -1,12 +1,15 @@
+// Array of Destinations that have an itinerary based on what users have save to localStorage
 const itineraryList = JSON.parse(localStorage.storedDestinationItems);
 
+// Upon Page load, creates itineraries of locations in itineraryList
 document.addEventListener('DOMContentLoaded', function() {
+    // Itinerary Overview Data for each Destination
     const itineraryInfoPrev = {
         "Sanrio Puroland": {
             "engLocation": "Sanrio Puroland",
             "jpnLocation":"サンリオピューロランド",
             "romajiLocation":"Sanrio Puroland",
-            "prevImgAlt":"Sanrio Characters Floating Over Park Entrance",
+            "prevImgAlt":"Sanrio Characters",
         },
         "Fushimi Inari Shrine": {
             "engLocation": "Fushimi Inari Shrine",
@@ -22,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     };
     
+    // Create an Itineraries based on contents of itinerary List
     for (const key of itineraryList) {
-        console.log(key);
         if (key in itineraryInfoPrev) {
             createItineraryPreview(itineraryInfoPrev[key]);
         }
@@ -32,27 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
+// Creates Itineraries on Overview Page
 function createItineraryPreview(itineraryInfoPrev) {
-    console.log(itineraryInfoPrev);
     // Grabs a reference to the itineraryPreview template:
     const template = document.querySelector('#itineraryPreviewTemplate');
     const clone = template.content.cloneNode(true);
     itineraryInfoPrev.element = clone.querySelector('.itineraryInfoPrev');
 
-    // different image paths <-- Put into an array, then shuffle array (have if come with an output), set that output equal to .src
+    // Chooses a random image to be shown for each destination 
     // An array with the possible itinerary Preview Images
     const itineraryPrevImgs = [`itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 1.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 2.jpg`, `itinerary-overview-images/${itineraryInfoPrev.engLocation}/${itineraryInfoPrev.engLocation} Preview Image 3.jpg`];
     const randomPrevIndex = Math.floor(Math.random() * itineraryPrevImgs.length);
     const randomPrevPic = itineraryPrevImgs[randomPrevIndex];
-    console.log(randomPrevPic);
-    // update Dom Elements
 
-    // Itinerary Image
+    // update Dom Elements
+    // Itinerary Image & Alt
     const itineraryPreviewImg = clone.querySelector('#previewImg');
     itineraryPreviewImg.src = randomPrevPic;
-    console.log(itineraryPreviewImg.src);
     itineraryPreviewImg.alt = itineraryInfoPrev.prevImgAlt;
-
     // Destination Name (English,JPN, & Romaji)
     const locationName = clone.querySelector('.itineraryPrevTitle')
     locationName.textContent = itineraryInfoPrev.engLocation;
@@ -79,13 +79,12 @@ function createItineraryPreview(itineraryInfoPrev) {
     itineraryDestinationContainer.appendChild(clone);
 };
 
-// Saves Current Destination from destinationList
+//  Redirects user to itinerary detail page based on selection
 function editItinerary(destinationName){
-    // redirect user to itinerary page based on selection
     window.location.href = "itineraryViewer.html?destinations=" + encodeURIComponent(destinationName);
 };
 
-// Deletes Destination from destinationList
+// Deletes Destination from itineraryList and localStorage
 function deleteItinerary(itineraryInfoPrev){
     // Remove destination from the DOM
     itineraryInfoPrev.element.remove();
@@ -94,10 +93,8 @@ function deleteItinerary(itineraryInfoPrev){
     itineraryList.splice(itineraryList.indexOf(itineraryInfoPrev.engLocation), 1);
 
     // Removing element from previous storedDestinationItems
- 
     const destinationString = JSON.stringify(itineraryList);
     localStorage.setItem('storedDestinationItems', destinationString);
-    console.log('new storedDestinationItems' + localStorage.storedDestinationItems);
 
     // Update Local Storage
     saveToLocalStorage();
@@ -106,13 +103,7 @@ function deleteItinerary(itineraryInfoPrev){
 // Retrieves destinations in itinerary list from local storage
 function retrieveFromLocalStorage(){
     const destinationString = localStorage.getItem('storedItineraryPrev');
-    console.log(destinationString)
     const storedLocation = JSON.parse(destinationString);
-
-    console.log(typeof(storedLocation));
-    console.log('retrieved from local storage ' + destinationString);
-    console.log(storedLocation)
-    
     if (storedLocation) {
         itineraryList = storedLocation;
         console.log(itineraryList);
@@ -124,7 +115,7 @@ function retrieveFromLocalStorage(){
             }
         }
         else {
-            console.log('delete' + key)
+            console.log('deleted' + key)
         }
     }
 }
@@ -133,7 +124,7 @@ function retrieveFromLocalStorage(){
 function saveToLocalStorage(){
     const destinationString = JSON.stringify(itineraryList);
     localStorage.setItem('storedItineraryPrev',destinationString);    
-    // printing the current contents of the cart in local storage after saving
+    // printing the current contents of the itinerary page in local storage after saving
     console.log('Items in itinerary list: ' + itineraryList);
     console.log('Items in local storage: ' + localStorage.storedItineraryPrev);
 };
