@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head for the Itinerary Page -->
     <head>
-   
-
       <!-- CSS Files -->
       <!-- Bootstrap & Calendar.js -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -23,6 +20,7 @@
     </head>
 
     <body>
+      <!-- Navigation Area -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
@@ -53,12 +51,9 @@
             <div class="itineraryInfo">
               <!-- Destination Image Header -->
               <img id="locationHeaderImg" class="img-fluid" src="" alt="">
-
-
               <h2 class="itineraryTitle"></h2>
               <div class="itineraryBtns">
-                <!-- <button type="button" class="btn btn-outline-success">Save My Itinerary</button> -->
-                <button type="button" class="btn btn-outline-danger">Delete My Itinerary</button>                          
+                <button type="button" class="btn btn-outline-light">Delete My Itinerary</button>                          
               </div>
  
               <h3 class="headerTitles"> 1. Recommended Activities </h3>
@@ -79,7 +74,6 @@
 
                 <div class="col">
                   <div class="activities">
-
                     <!-- Activity 2 -->
                     <!-- Image of activity (with rounded corners) -->
                     <img class="img-thumbnail" id="itineraryActImg2" src="" alt="">
@@ -94,7 +88,6 @@
 
                 <div class="col">
                   <div class="activities">
-
                     <!-- Activity 3 -->
                     <!-- Image of activity (with rounded corners) -->
                     <img class="img-thumbnail"id="itineraryActImg3" src="" alt="">
@@ -140,13 +133,9 @@
 
                 <div class="col">
                   <div class="foodDrink">
-
                     <!-- foodDrink 2 -->
                     <img class="img-thumbnail" id="foodDrinkPic2" src="" alt="">
-
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextFD2" data-bs-toggle="collapse" href="#fd2" aria-expanded="false" aria-controls="fd2"></a>
-                    <!-- Description of activity here -->
                     <div class="collapse" id="fd2">
                         <p class="foodDrinkDesc2"></p>
                     </div>
@@ -155,15 +144,9 @@
 
                 <div class="col">
                   <div class="foodDrink">
-
                     <!-- foodDrink 3 -->
-                    <!-- Image of activity (with rounded corners) -->
                     <img class="img-thumbnail" id="foodDrinkPic3" src="" alt="">
-
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextFD3" data-bs-toggle="collapse" href="#fd3" aria-expanded="false" aria-controls="fd3"></a>
-                    
-                    <!-- Description of activity here -->
                     <div class="collapse" id="fd3">
                       <p class="foodDrinkDesc3"></p>
                     </div>
@@ -173,11 +156,8 @@
                 <div class="col">
                   <div class="foodDrink">
                     <!-- foodDrink 4 -->
-                    <!-- Image of activity (with rounded corners) -->
                     <img id="foodDrinkPic4" class="img-thumbnail" src="" alt="">
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextFD4" data-bs-toggle="collapse" href="#fd4" aria-expanded="false" aria-controls="fd4"></a>
-                      <!-- Description of activity here -->
                     <div class="collapse out" id="fd4">
                         <p class="foodDrinkDesc4"></p>
                     </div>
@@ -190,10 +170,8 @@
                 <div class="col">
                   <div class="pracInfo">
                     <!-- Info 1 -->
-                    <!-- Image of related Info (with rounded corners) -->
+                    <!-- Image of related Info-->
                     <img id="itineraryPicsPrac1" class="img-thumbnail" src="" alt="">
-
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextPrac1" data-bs-toggle="collapse" href="#pracInfo1" aria-expanded="false" aria-controls="pracInfo1"></a>
                     <!-- Description of info. here -->
                     <div class="collapse" id="pracInfo1">
@@ -205,10 +183,8 @@
                 <div class="col">
                   <div class="pracInfo">
                     <!-- Info 2 -->
-                    <!-- Image of related Info (with rounded corners) -->
+                    <!-- Image of related Info-->
                     <img id="itineraryPicsPrac2" class="img-thumbnail" src="" alt="">
-
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextPrac2" data-bs-toggle="collapse" href="#pracInfo2" aria-expanded="false" aria-controls="pracInfo2"></a>
                     <!-- Description of info. here -->
                     <div class="collapse" id="pracInfo2">
@@ -219,12 +195,9 @@
 
                 <div class="col">
                   <div class="pracInfo">
-
                     <!-- Info 3-->
-                    <!-- Image of related Info (with rounded corners) -->
+                    <!-- Image of related Info-->
                     <img class="img-thumbnail" id="itineraryPicsPrac3" src="" alt="">
-
-                    <!-- Text on top of image stating activity name-->
                     <a class="overlayTextPrac3" data-bs-toggle="collapse" href="#pracInfo3" aria-expanded="false" aria-controls="pracInfo3"></a>
                     <!-- Description of info. here -->
                     <div class="collapse" id="pracInfo3">
@@ -236,10 +209,8 @@
                 <div class="col">
                   <div class="pracInfo">
                     <!-- Info 4 -->
-                    <!-- Image of related Info (with rounded corners) -->
+                    <!-- Image of related Info -->
                     <img class="img-thumbnail" id="itineraryPicsPrac4" src="" alt="">
-
-                    <!-- overlayText on top of image stating activity name-->
                     <a class="overlayTextPrac4" data-bs-toggle="collapse" href="#pracInfo4" aria-expanded="false" aria-controls="pracInfo4"></a>
                     <!-- Description of info. here -->
                     <div class="collapse" id="pracInfo4">
@@ -250,6 +221,7 @@
               </div>
 
               <h3 class="headerTitles"> Your Generated Calendar of Events </h3>
+              <!-- User can refresh and repopulate calendar with different events listed on the page-->
               <div id="calendarRefresh">
                 <button onClick="window.location.reload();"> Get a New Calendar</button>
               </div>
@@ -257,9 +229,9 @@
               <div id="calendar"></div>                  
             </div>
           </template>
-          
         </div>
         <div class="myItinerary"></div>
+
         <footer>
           <div class="row">
             <div class="col-12 col-md-4">
